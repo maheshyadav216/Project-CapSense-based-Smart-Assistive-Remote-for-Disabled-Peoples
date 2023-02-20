@@ -1,0 +1,1966 @@
+Archive member included to satisfy reference by file (symbol)
+
+.\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\main.o (CapSense_Start)
+.\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Processing.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o) (CapSense_DpInitialize)
+.\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o) (CapSense_DsInitialize)
+.\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Tuner.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o) (CapSense_TuInitialize)
+.\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o) (CapSense_FtInitialize)
+.\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\main.o (CapSense_IsBusy)
+.\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o) (CapSense_CSXInitialize)
+.\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Processing.o) (CapSense_DpFindLocalMaxDd)
+.\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Gesture.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o) (CapSense_InitializeGestures)
+.\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\main.o (EZI2C_Start)
+.\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C.o) (EZI2C_EzI2CInit)
+.\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C_INT.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o) (EZI2C_EZI2C_STRETCH_ISR)
+.\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(Red_LED.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\main.o (Red_LED_Write)
+.\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\main.o (PWM_Green_WriteCompare)
+.\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\main.o (PWM_Blue_WriteCompare)
+.\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o) (CapSense_ISR_StartEx)
+.\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_TMG.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Gesture.o) (CapSense_TMG_DecodeAllGestures)
+.\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o (CyIntEnable)
+.\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o) (CySysClkWcoEnabled)
+.\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyBootAsmGnu.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o) (CyDelayCycles)
+.\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyFlash.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o) (CySysFlashSetWaitCycles)
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_TMG.o) (Gesture_DecodeEdgeSwipeGestures)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o) (__aeabi_uidiv)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_divsi3.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o) (__aeabi_idiv)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
+                              c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o) (__aeabi_idiv0)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o (__errno)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+                              c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o (exit)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+                              c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o) (_global_impure_ptr)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+                              c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o (__libc_init_array)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+                              .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o) (memcpy)
+c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+                              c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o (memset)
+
+Allocating common symbols
+Common symbol       size              file
+
+EZI2C_offsetBuf1    0x2               .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+Gesture_direction4Way
+                    0x1               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_prevDTCenterY
+                    0x2               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_prevDTCenterX
+                    0x2               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_lastY0      0x2               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_firstX1     0x2               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_dtCenterY   0x2               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_pIsSettlingTimedOut
+                    0x4               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_octantLocation
+                    0x1               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_deltaY      0x2               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_firstClickY
+                    0x2               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_pGestureCounter
+                    0x4               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_pPrevX1     0x4               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_pPrevGestureId
+                    0x4               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+EZI2C_indexBuf1     0x2               .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+Gesture_lastX0      0x2               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_firstY1     0x2               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+EZI2C_fsmState      0x1               .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+Gesture_pPrevX0     0x4               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+EZI2C_protectBuf1   0x2               .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+Gesture_firstY0     0x2               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+EZI2C_curStatus     0x1               .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+CapSense_dsRam      0x288             .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o)
+Gesture_clickCounter
+                    0x1               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_pCanDetectSt
+                    0x4               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_touchDuration
+                    0x2               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_direction8Way
+                    0x1               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_dtCenterX   0x2               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_lastY1      0x2               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_settlingStartTime
+                    0x4               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_lastX1      0x2               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_pPrevY1     0x4               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_clickAndDrag
+                    0x1               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+CapSense_curRamSnsPtr
+                    0x4               .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+Gesture_pSwitchHistory
+                    0x4               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+EZI2C_dataBuffer1   0x4               .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+Gesture_firstClickX
+                    0x2               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_pPrevDtGestureId
+                    0x4               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_pPrevTouchNum
+                    0x4               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_pPrevY0     0x4               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+EZI2C_bufSizeBuf1   0x2               .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+Gesture_deltaX      0x2               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_interClickDuration
+                    0x2               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+Gesture_firstX0     0x2               C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+CapSense_curSnsIOPtr
+                    0x4               .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+ .data          0x00000000        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .text          0x00000000       0x78 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .ARM.extab     0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .ARM.exidx     0x00000000        0x8 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\main.o
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\main.o
+ .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\main.o
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+ .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .data          0x00000000        0x4 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .text._exit    0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .text._sbrk    0x00000000       0x30 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o)
+ .text.CapSense_Stop
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o)
+ .text.CapSense_Resume
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o)
+ .text.CapSense_ProcessWidget
+                0x00000000       0x50 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o)
+ .text.CapSense_ProcessWidgetExt
+                0x00000000       0x58 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o)
+ .text.CapSense_ProcessSensorExt
+                0x00000000       0x44 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o)
+ .text.CapSense_Sleep
+                0x00000000        0x4 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o)
+ .text.CapSense_Wakeup
+                0x00000000        0x4 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Processing.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Processing.o)
+ .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Processing.o)
+ .text.CapSense_DpProcessCsxSensorRawCountsExt
+                0x00000000       0x2c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Processing.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o)
+ .text.DsParseParamId
+                0x00000000       0x80 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o)
+ .text.CapSense_GetParam
+                0x00000000       0x60 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o)
+ .text.CapSense_SetParam
+                0x00000000       0x58 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o)
+ .text.CapSense_IsAnyWidgetActive
+                0x00000000       0x20 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o)
+ .text.CapSense_IsWidgetActive
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o)
+ .text.CapSense_IsSensorActive
+                0x00000000       0x34 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Tuner.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Tuner.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+ .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+ .text.CapSense_UpdateSensorBaseline
+                0x00000000       0x2c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+ .text.CapSense_UpdateWidgetBaseline
+                0x00000000       0x30 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+ .text.CapSense_UpdateAllBaselines
+                0x00000000       0x1c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+ .text.CapSense_SetupWidgetExt
+                0x00000000       0x58 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+ .text.CapSense_ScanExt
+                0x00000000       0x2c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+ .text.CapSense_SetPinState
+                0x00000000       0xe8 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+ .text.CapSense_SsSetClockDividers
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+ .text.CapSense_SetInactiveElectrodeState
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+ .text.CapSense_SsCSXPostSingleScan
+                0x00000000       0x38 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+ .text.CapSense_CSXScanExt
+                0x00000000       0x1c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+ .text.CapSense_CSXSetupWidgetExt
+                0x00000000       0x84 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Gesture.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Gesture.o)
+ .text.CapSense_SetGestureTimestamp
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Gesture.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C.o)
+ .text.EZI2C_ScbModeStop
+                0x00000000        0x8 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C.o)
+ .text.EZI2C_Stop
+                0x00000000       0x2c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C.o)
+ .text.EZI2C_SetRxFifoLevel
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C.o)
+ .text.EZI2C_SetTxFifoLevel
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C.o)
+ .text.EZI2C_SetCustomInterruptHandler
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+ .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+ .text.EZI2C_EzI2CStop
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+ .text.EZI2C_EzI2CGetActivity
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+ .text.EZI2C_EzI2CSetAddress1
+                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+ .text.EZI2C_EzI2CGetAddress1
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+ .text.EZI2C_EzI2CSetReadBoundaryBuffer1
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C_INT.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C_INT.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(Red_LED.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(Red_LED.o)
+ .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(Red_LED.o)
+ .text.Red_LED_SetDriveMode
+                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(Red_LED.o)
+ .text.Red_LED_Read
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(Red_LED.o)
+ .text.Red_LED_ReadDataReg
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(Red_LED.o)
+ .text.Red_LED_SetInterruptMode
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(Red_LED.o)
+ .text.Red_LED_ClearInterrupt
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(Red_LED.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_Stop
+                0x00000000       0x1c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_SetMode
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_SetQDMode
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_SetPrescaler
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_SetOneShot
+                0x00000000       0x30 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_SetPWMMode
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_SetPWMSyncKill
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_SetPWMStopOnKill
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_SetPWMDeadTime
+                0x00000000       0x2c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_SetPWMInvert
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_ReadCounter
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_SetCounterMode
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_ReadPeriod
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_SetCompareSwap
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_WritePeriodBuf
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_ReadPeriodBuf
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_SetPeriodSwap
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_WriteCompareBuf
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_ReadCompareBuf
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_ReadCapture
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_ReadCaptureBuf
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_SetCaptureMode
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_SetReloadMode
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_SetStartMode
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_SetStopMode
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_SetCountMode
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_ReadStatus
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_GetInterruptSourceMasked
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_GetInterruptSource
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_ClearInterrupt
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text.PWM_Green_SetInterrupt
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_Stop
+                0x00000000       0x1c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_SetMode
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_SetQDMode
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_SetPrescaler
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_SetOneShot
+                0x00000000       0x30 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_SetPWMMode
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_SetPWMSyncKill
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_SetPWMStopOnKill
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_SetPWMDeadTime
+                0x00000000       0x2c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_SetPWMInvert
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_ReadCounter
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_SetCounterMode
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_ReadPeriod
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_SetCompareSwap
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_WritePeriodBuf
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_ReadPeriodBuf
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_SetPeriodSwap
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_WriteCompareBuf
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_ReadCompareBuf
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_ReadCapture
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_ReadCaptureBuf
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_SetCaptureMode
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_SetReloadMode
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_SetStartMode
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_SetStopMode
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_SetCountMode
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_ReadStatus
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_GetInterruptSourceMasked
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_GetInterruptSource
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_ClearInterrupt
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text.PWM_Blue_SetInterrupt
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+ .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+ .text.CapSense_ISR_Interrupt
+                0x00000000        0x4 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+ .text.CapSense_ISR_GetVector
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+ .text.CapSense_ISR_GetPriority
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+ .text.CapSense_ISR_GetState
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+ .text.CapSense_ISR_Start
+                0x00000000       0x1c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+ .text.CapSense_ISR_Stop
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+ .text.CapSense_ISR_SetPending
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+ .text.CapSense_ISR_ClearPending
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_TMG.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_TMG.o)
+ .text.CapSense_TMG_BallisticsMultiplier
+                0x00000000        0x4 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_TMG.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CySysClkImoStart
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CySysClkImoStop
+                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CySysClkWriteHfclkDirect
+                0x00000000       0x20 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CySysEnablePumpClock
+                0x00000000       0x34 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CySysClkGetSysclkSource
+                0x00000000       0x1c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CySysClkWriteSysclkDiv
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CySysClkWriteHfclkDiv
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CySysGetResetReason
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CyDisableInts
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CyEnableInts
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CyIntGetState
+                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CyIntSetPending
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CyIntClearPending
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CyIntGetSysVector
+                0x00000000       0x1c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CyIntGetVector
+                0x00000000       0x20 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CyIntGetPriority
+                0x00000000       0x2c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CySoftwareReset
+                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CyDelayFreq
+                0x00000000       0x4c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CySysTickStop
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CySysTickDisableInterrupt
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CySysTickGetReload
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CySysTickGetValue
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CySysTickGetClockSource
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CySysTickGetCallback
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CyGetUniqueId
+                0x00000000       0x70 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysClkIloStart
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysClkIloStop
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysClkIloStartMeasurement
+                0x00000000       0x34 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysClkIloStopMeasurement
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysClkIloCompensate
+                0x00000000      0x10c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysClkWcoStart
+                0x00000000       0x40 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysClkWcoStop
+                0x00000000       0x1c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysClkWcoSetPowerMode
+                0x00000000       0x4c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysClkWcoClockOutSelect
+                0x00000000       0x2c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysWdtGetEnabledStatus
+                0x00000000       0x1c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysWdtEnable
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysWdtSetMatch
+                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysWdtGetMatch
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysWdtGetCount
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysWdtSetIgnoreBits
+                0x00000000       0x20 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysWdtGetIgnoreBits
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysWdtClearInterrupt
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysWdtMaskInterrupt
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysWdtUnmaskInterrupt
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysWdtSetInterruptCallback
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysWdtGetInterruptCallback
+                0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysWdtIsr
+                0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysTimerGetEnabledStatus
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysTimerSetMode
+                0x00000000       0x40 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysTimerGetMode
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysTimerSetClearOnMatch
+                0x00000000       0x34 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysTimerGetClearOnMatch
+                0x00000000       0x24 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysTimerEnable
+                0x00000000       0x3c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysTimerDisable
+                0x00000000       0x3c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysTimerSetCascade
+                0x00000000       0x34 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysTimerGetCascade
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysTimerSetMatch
+                0x00000000       0x54 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysTimerSetToggleBit
+                0x00000000       0x30 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysTimerGetToggleBit
+                0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysTimerGetMatch
+                0x00000000       0x20 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysTimerGetCount
+                0x00000000       0x3c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysTimerGetInterruptSource
+                0x00000000       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysTimerSetInterruptCallback
+                0x00000000       0x20 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysTimerGetInterruptCallback
+                0x00000000       0x20 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysTimerEnableIsr
+                0x00000000       0x34 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysTimerDisableIsr
+                0x00000000       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysTimerResetCounters
+                0x00000000       0x20 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysTimerDelayUntilMatch
+                0x00000000       0x6c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysTimerDelay
+                0x00000000       0x3c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .rodata        0x00000000        0xc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyBootAsmGnu.o)
+ .bss           0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyBootAsmGnu.o)
+ .text          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyFlash.o)
+ .data          0x00000000        0x0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyFlash.o)
+ .bss           0x00000000       0x18 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyFlash.o)
+ .text.CySysFlashClockBackup
+                0x00000000       0x64 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyFlash.o)
+ .text.CySysFlashClockConfig
+                0x00000000       0x54 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyFlash.o)
+ .text.CySysFlashClockRestore
+                0x00000000       0x64 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyFlash.o)
+ .text.CySysFlashWriteRow
+                0x00000000      0x120 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyFlash.o)
+ .text.CySysSFlashWriteUserRow
+                0x00000000      0x108 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyFlash.o)
+ .text          0x00000000        0x0 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_DecodeFlick
+                0x00000000       0x64 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetInterClickDuration
+                0x00000000        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetClickCounter
+                0x00000000        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetFirstClickX
+                0x00000000        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetFirstClickY
+                0x00000000        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetScrollDebounce
+                0x00000000       0x18 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetScrollIdFromDirection
+                0x00000000       0x24 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_CalculateScrollCounts
+                0x00000000       0xa4 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetScrollCnt
+                0x00000000        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetDecayCnt
+                0x00000000       0x24 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_DecodeInertialScroll
+                0x00000000      0x284 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_SetValueViaPointer8
+                0x00000000        0x8 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetValueViaPointer8
+                0x00000000        0x8 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetValueViaPointer16
+                0x00000000        0x8 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_DetermineDirection8way
+                0x00000000       0x18 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_DetermineDTDirection
+                0x00000000       0x40 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_UpdatePrevDTCoordinateCenter
+                0x00000000       0x24 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_UpdateDTPanDelta
+                0x00000000       0x44 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_UpdateCurrentTouchPos
+                0x00000000       0x1c C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_ScrollManager
+                0x00000000       0xf4 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_DecodeFlickGestures
+                0x00000000      0x10c C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_DecodeSTScrollGestures
+                0x00000000      0x188 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GeneralDTGesturesPostProcess
+                0x00000000      0x100 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_DecodeDTZoomGestures
+                0x00000000      0x244 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_DecodeDTScrollGestures
+                0x00000000      0x210 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_Decode
+                0x00000000        0x4 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetTouchDuration
+                0x00000000        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetFirstX0
+                0x00000000        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetFirstY0
+                0x00000000        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetLastX0
+                0x00000000        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetLastY0
+                0x00000000        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetGestureCounter
+                0x00000000       0x10 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetSettlingStartTime
+                0x00000000        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetOctantLocation
+                0x00000000        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetDirection4Way
+                0x00000000        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetDirection8Way
+                0x00000000        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetDeltaX
+                0x00000000        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetDeltaY
+                0x00000000        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetDTCenterX
+                0x00000000        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetDTCenterY
+                0x00000000        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetFirstX1
+                0x00000000        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetFirstY1
+                0x00000000        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetLastX1
+                0x00000000        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_GetLastY1
+                0x00000000        0xc C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .rodata        0x00000000       0x40 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_divsi3.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_divsi3.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .text.exit     0x00000000       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .rodata._global_impure_ptr
+                0x00000000        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+ .text          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+ .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+ .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rom              0x00000000         0x00010000         xr
+ram              0x20000000         0x00002000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+LOAD c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+LOAD c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+START GROUP
+LOAD .\CortexM0p\ARM_GCC_541\Debug\main.o
+LOAD .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+LOAD .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+LOAD .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+LOAD .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a
+LOAD C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_P4_v7_0\PSoC4\Library\Capsense_P4Library_GCCp.a
+LOAD C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Ballistic_GCC_M0p.a
+LOAD C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a
+END GROUP
+START GROUP
+LOAD c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a
+LOAD c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a
+LOAD c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a
+END GROUP
+START GROUP
+LOAD c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a
+LOAD c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc_nano.a
+END GROUP
+LOAD c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+LOAD c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+START GROUP
+LOAD c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a
+LOAD c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libc.a
+LOAD c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libnosys.a
+END GROUP
+                0x00000000                CY_APPL_ORIGIN = 0x0
+                0x00000080                CY_FLASH_ROW_SIZE = 0x80
+                0x00000001                CY_APPL_NUM = 0x1
+                0x00000001                CY_APPL_MAX = 0x1
+                0x00000040                CY_METADATA_SIZE = 0x40
+                0x00000000                CY_APPL_LOADABLE = 0x0
+                0x00000000                CY_CHECKSUM_EXCLUDE_SIZE = ALIGN (0x0, CY_FLASH_ROW_SIZE)
+                0x00000000                CY_APP_FOR_STACK_AND_COPIER = 0x0
+                [!provide]                PROVIDE (__cy_heap_start, _end)
+                0x00000001                PROVIDE (__cy_region_num, ((__cy_regions_end - __cy_regions) / 0x10))
+                0x20002000                PROVIDE (__cy_stack, (ORIGIN (ram) + LENGTH (ram)))
+                [!provide]                PROVIDE (__cy_heap_end, (__cy_stack - 0x800))
+
+.cybootloader   0x00000000        0x0
+ *(.cybootloader)
+                0x00000000                appl1_start = CY_APPL_ORIGIN?CY_APPL_ORIGIN:ALIGN (CY_FLASH_ROW_SIZE)
+                0x00007f80                appl2_start = (appl1_start + ALIGN ((((LENGTH (rom) - appl1_start) - (0x2 * CY_FLASH_ROW_SIZE)) / 0x2), CY_FLASH_ROW_SIZE))
+                0x00000000                appl_start = (CY_APPL_NUM == 0x1)?appl1_start:appl2_start
+                0x00000001                cy_project_type_bootloader = (appl_start == 0x0)?0x1:0x0
+                0x00000000                cy_project_type_app_for_stack_and_copier = (CY_APP_FOR_STACK_AND_COPIER == 0x1)?0x1:0x0
+
+.text           0x00000000     0x462e
+ CREATE_OBJECT_SYMBOLS
+                0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
+ *(.romvectors)
+ .romvectors    0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+                0x00000000                RomVectors
+                0x00000001                ASSERT ((. != __cy_interrupt_vector), No interrupt vector)
+                0x00000001                ASSERT (CY_APPL_ORIGIN?(SIZEOF (.cybootloader) <= CY_APPL_ORIGIN):0x1, Wrong image location)
+                0x00000010                PROVIDE (__cy_reset, Reset)
+ *(.text.Reset)
+ .text.Reset    0x00000010        0xc .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+                0x00000010                Reset
+                0x00000001                ASSERT ((. != __cy_reset), No reset code)
+ *(.psocinit)
+ .psocinit      0x0000001c      0x158 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000000c4                cyfitter_cfg
+                0x00000174                . = MAX (., 0x100)
+ *(.text .text.* .gnu.linkonce.t.*)
+ .text          0x00000174       0x60 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .text.main     0x000001d4      0x108 .\CortexM0p\ARM_GCC_541\Debug\main.o
+                0x000001d4                main
+ .text.SetAnalogRoutingPumps
+                0x000002dc       0x38 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000002dc                SetAnalogRoutingPumps
+ .text.AnalogSetDefault
+                0x00000314       0x3c .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .text.IntDefaultHandler
+                0x00000350       0x10 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+                0x00000350                IntDefaultHandler
+ .text.Start_c  0x00000360       0x48 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+                0x00000360                Start_c
+ .text.initialize_psoc
+                0x000003a8       0x40 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+                0x000003a8                initialize_psoc
+ .text.CapSense_Initialize
+                0x000003e8       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o)
+                0x000003e8                CapSense_Initialize
+ .text.CapSense_Start
+                0x00000410       0x50 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o)
+                0x00000410                CapSense_Start
+ .text.CapSense_ProcessAllWidgets
+                0x00000460       0x44 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o)
+                0x00000460                CapSense_ProcessAllWidgets
+ .text.CapSense_DpInitialize
+                0x000004a4       0x80 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Processing.o)
+                0x000004a4                CapSense_DpInitialize
+ .text.CapSense_DpUpdateDifferences
+                0x00000524       0x18 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Processing.o)
+                0x00000524                CapSense_DpUpdateDifferences
+ .text.CapSense_DpProcessCsxWidgetRawCounts
+                0x0000053c       0x38 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Processing.o)
+                0x0000053c                CapSense_DpProcessCsxWidgetRawCounts
+ .text.CapSense_DpProcessCsxTouchpad
+                0x00000574       0x20 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Processing.o)
+                0x00000574                CapSense_DpProcessCsxTouchpad
+ .text.CapSense_DpProcessCsxWidgetStatus
+                0x00000594       0x58 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Processing.o)
+                0x00000594                CapSense_DpProcessCsxWidgetStatus
+ .text.CapSense_DsInitialize
+                0x000005ec       0xa0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o)
+                0x000005ec                CapSense_DsInitialize
+ .text.CapSense_GetXYCoordinates
+                0x0000068c       0x40 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o)
+                0x0000068c                CapSense_GetXYCoordinates
+ .text.CapSense_TuInitialize
+                0x000006cc       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Tuner.o)
+                0x000006cc                CapSense_TuInitialize
+ .text.CapSense_RunTuner
+                0x000006e0      0x120 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Tuner.o)
+                0x000006e0                CapSense_RunTuner
+ .text.CapSense_FtInitialize
+                0x00000800        0x4 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+                0x00000800                CapSense_FtInitialize
+ .text.CapSense_FtInitializeBaselineChannel
+                0x00000804       0x20 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+                0x00000804                CapSense_FtInitializeBaselineChannel
+ .text.CapSense_FtInitializeBaseline
+                0x00000824       0x20 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+                0x00000824                CapSense_FtInitializeBaseline
+ .text.CapSense_InitializeSensorBaseline
+                0x00000844       0x2c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+                0x00000844                CapSense_InitializeSensorBaseline
+ .text.CapSense_InitializeWidgetBaseline
+                0x00000870       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+                0x00000870                CapSense_InitializeWidgetBaseline
+ .text.CapSense_InitializeAllBaselines
+                0x00000898       0x18 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+                0x00000898                CapSense_InitializeAllBaselines
+ .text.CapSense_FtIIR1stOrder
+                0x000008b0       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+                0x000008b0                CapSense_FtIIR1stOrder
+ .text.CapSense_FtUpdateBaseline
+                0x000008c4       0xa0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+                0x000008c4                CapSense_FtUpdateBaseline
+ .text.CapSense_FtJitter
+                0x00000964       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+                0x00000964                CapSense_FtJitter
+ .text.CapSense_SsCalcLfsrSize
+                0x00000974       0x84 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+ .text.CapSense_SsCalcLfsrScale
+                0x000009f8       0x44 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+ .text.CapSense_SsSetWidgetTxClkSrc
+                0x00000a3c       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+ .text.CapSense_IsBusy
+                0x00000a64       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+                0x00000a64                CapSense_IsBusy
+ .text.CapSense_SetupWidget
+                0x00000a74       0x40 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+                0x00000a74                CapSense_SetupWidget
+ .text.CapSense_Scan
+                0x00000ab4       0x2c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+                0x00000ab4                CapSense_Scan
+ .text.CapSense_ScanAllWidgets
+                0x00000ae0       0x3c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+                0x00000ae0                CapSense_ScanAllWidgets
+ .text.CapSense_SsSetAllIOsState
+                0x00000b1c       0x80 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+                0x00000b1c                CapSense_SsSetAllIOsState
+ .text.CapSense_SsPostAllWidgetsScan
+                0x00000b9c        0x4 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+                0x00000b9c                CapSense_SsPostAllWidgetsScan
+ .text.CapSense_SsIsrInitialize
+                0x00000ba0        0x8 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+                0x00000ba0                CapSense_SsIsrInitialize
+ .text.CapSense_SsSetModClkClockDivider
+                0x00000ba8       0x30 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+                0x00000ba8                CapSense_SsSetModClkClockDivider
+ .text.CapSense_SsSetSnsClockDivider
+                0x00000bd8       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+                0x00000bd8                CapSense_SsSetSnsClockDivider
+ .text.CapSense_CalibrateWidget
+                0x00000bec       0x1c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+                0x00000bec                CapSense_CalibrateWidget
+ .text.CapSense_CalibrateAllWidgets
+                0x00000c08       0x1c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+                0x00000c08                CapSense_CalibrateAllWidgets
+ .text.CapSense_SsInitializeSourceSenseClk
+                0x00000c24       0x24 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+                0x00000c24                CapSense_SsInitializeSourceSenseClk
+ .text.CapSense_DischargeExtCapacitors
+                0x00000c48       0xd4 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+                0x00000c48                CapSense_DischargeExtCapacitors
+ .text.CapSense_WriteBitsSafe
+                0x00000d1c       0x1c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+                0x00000d1c                CapSense_WriteBitsSafe
+ .text.CapSense_SsDisableCSXMode
+                0x00000d38       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+ .text.CapSense_SsSwitchSensingMode
+                0x00000d60       0x40 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+                0x00000d60                CapSense_SsSwitchSensingMode
+ .text.CapSense_SsInitialize
+                0x00000da0       0x2c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+                0x00000da0                CapSense_SsInitialize
+ .text.CapSense_SsCSXCalibrateCheck
+                0x00000dcc       0x94 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+ .text.CapSense_SsCalcCsxScanPeriod
+                0x00000e60       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+ .text.CapSense_SsCSXStartSample
+                0x00000e74      0x158 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+ .text.CapSense_CSXScanISR
+                0x00000fcc       0x90 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+                0x00000fcc                CapSense_CSXScanISR
+ .text.CapSense_CSXInitialize
+                0x0000105c      0x1fc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+                0x0000105c                CapSense_CSXInitialize
+ .text.CapSense_CSXCalibrateWidget
+                0x00001258      0x12c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+                0x00001258                CapSense_CSXCalibrateWidget
+ .text.CapSense_CSXConnectTx
+                0x00001384       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+                0x00001384                CapSense_CSXConnectTx
+ .text.CapSense_CSXConnectRx
+                0x000013ac       0x24 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+                0x000013ac                CapSense_CSXConnectRx
+ .text.CapSense_CSXScan
+                0x000013d0       0x90 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+                0x000013d0                CapSense_CSXScan
+ .text.CapSense_CSXDisconnectTx
+                0x00001460       0x48 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+                0x00001460                CapSense_CSXDisconnectTx
+ .text.CapSense_CSXDisconnectRx
+                0x000014a8       0x50 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+                0x000014a8                CapSense_CSXDisconnectRx
+ .text.CapSense_SsCSXPostMultiScan
+                0x000014f8       0xdc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+ .text.CapSense_CSXElectrodeCheck
+                0x000015d4       0x24 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+                0x000015d4                CapSense_CSXElectrodeCheck
+ .text.CapSense_CSXSetupWidget
+                0x000015f8       0x6c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+                0x000015f8                CapSense_CSXSetupWidget
+ .text.CapSense_SsCSXGetTxClkDivider
+                0x00001664        0xc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+                0x00001664                CapSense_SsCSXGetTxClkDivider
+ .text.CapSense_TransferTouch
+                0x00001670       0x4c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+ .text.CapSense_NewTouch
+                0x000016bc       0x70 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+ .text.CapSense_CalcDistance
+                0x0000172c       0x38 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+ .text.CapSense_FillDistanceMap
+                0x00001764       0x80 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+ .text.CapSense_CopyTouchRecord
+                0x000017e4       0x20 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+ .text.CapSense_Hungarian
+                0x00001804      0x1a0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+ .text.CapSense_DpFindLocalMaxDd
+                0x000019a4      0x1a0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+                0x000019a4                CapSense_DpFindLocalMaxDd
+ .text.CapSense_DpCalcTouchPadCentroid
+                0x00001b44      0x1a4 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+                0x00001b44                CapSense_DpCalcTouchPadCentroid
+ .text.CapSense_DpTouchTracking
+                0x00001ce8      0x34c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+                0x00001ce8                CapSense_DpTouchTracking
+ .text.CapSense_InitPosFiltersSd
+                0x00002034        0x8 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+                0x00002034                CapSense_InitPosFiltersSd
+ .text.CapSense_InitPosFiltersDd
+                0x0000203c       0x18 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+                0x0000203c                CapSense_InitPosFiltersDd
+ .text.CapSense_RunPosFiltersDd
+                0x00002054       0x48 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+                0x00002054                CapSense_RunPosFiltersDd
+ .text.CapSense_DpFilterTouchRecord
+                0x0000209c      0x154 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+                0x0000209c                CapSense_DpFilterTouchRecord
+ .text.CapSense_GetTouchParams
+                0x000021f0       0xb4 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Gesture.o)
+                0x000021f0                CapSense_GetTouchParams
+ .text.CapSense_InitializeGestures
+                0x000022a4       0x38 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Gesture.o)
+                0x000022a4                CapSense_InitializeGestures
+ .text.CapSense_DecodeWidgetGestures
+                0x000022dc       0xc0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Gesture.o)
+                0x000022dc                CapSense_DecodeWidgetGestures
+ .text.CapSense_IncrementGestureTimestamp
+                0x0000239c       0x1c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Gesture.o)
+                0x0000239c                CapSense_IncrementGestureTimestamp
+ .text.EZI2C_ScbEnableIntr
+                0x000023b8        0xc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C.o)
+ .text.EZI2C_Init
+                0x000023c4        0x8 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C.o)
+                0x000023c4                EZI2C_Init
+ .text.EZI2C_Enable
+                0x000023cc       0x18 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C.o)
+                0x000023cc                EZI2C_Enable
+ .text.EZI2C_Start
+                0x000023e4       0x20 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C.o)
+                0x000023e4                EZI2C_Start
+ .text.EZI2C_EzI2CInit
+                0x00002404       0xc4 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+                0x00002404                EZI2C_EzI2CInit
+ .text.EZI2C_EzI2CSetBuffer1
+                0x000024c8       0x30 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+                0x000024c8                EZI2C_EzI2CSetBuffer1
+ .text.EZI2C_EZI2C_STRETCH_ISR
+                0x000024f8      0x350 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C_INT.o)
+                0x000024f8                EZI2C_EZI2C_STRETCH_ISR
+ .text.Red_LED_Write
+                0x00002848       0x18 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(Red_LED.o)
+                0x00002848                Red_LED_Write
+ .text.PWM_Green_WriteCounter
+                0x00002860       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+                0x00002860                PWM_Green_WriteCounter
+ .text.PWM_Green_WritePeriod
+                0x00002870       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+                0x00002870                PWM_Green_WritePeriod
+ .text.PWM_Green_WriteCompare
+                0x00002880       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+                0x00002880                PWM_Green_WriteCompare
+ .text.PWM_Green_ReadCompare
+                0x00002890       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+                0x00002890                PWM_Green_ReadCompare
+ .text.PWM_Green_TriggerCommand
+                0x000028a0       0x1c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+                0x000028a0                PWM_Green_TriggerCommand
+ .text.PWM_Green_Enable
+                0x000028bc       0x24 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+                0x000028bc                PWM_Green_Enable
+ .text.PWM_Green_SetInterruptMode
+                0x000028e0        0xc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+                0x000028e0                PWM_Green_SetInterruptMode
+ .text.PWM_Green_Init
+                0x000028ec       0x4c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+                0x000028ec                PWM_Green_Init
+ .text.PWM_Green_Start
+                0x00002938       0x20 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+                0x00002938                PWM_Green_Start
+ .text.PWM_Blue_WriteCounter
+                0x00002958       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+                0x00002958                PWM_Blue_WriteCounter
+ .text.PWM_Blue_WritePeriod
+                0x00002968       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+                0x00002968                PWM_Blue_WritePeriod
+ .text.PWM_Blue_WriteCompare
+                0x00002978       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+                0x00002978                PWM_Blue_WriteCompare
+ .text.PWM_Blue_ReadCompare
+                0x00002988       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+                0x00002988                PWM_Blue_ReadCompare
+ .text.PWM_Blue_TriggerCommand
+                0x00002998       0x1c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+                0x00002998                PWM_Blue_TriggerCommand
+ .text.PWM_Blue_Enable
+                0x000029b4       0x24 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+                0x000029b4                PWM_Blue_Enable
+ .text.PWM_Blue_SetInterruptMode
+                0x000029d8        0xc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+                0x000029d8                PWM_Blue_SetInterruptMode
+ .text.PWM_Blue_Init
+                0x000029e4       0x4c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+                0x000029e4                PWM_Blue_Init
+ .text.PWM_Blue_Start
+                0x00002a30       0x20 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+                0x00002a30                PWM_Blue_Start
+ .text.CapSense_ISR_SetVector
+                0x00002a50        0xc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+                0x00002a50                CapSense_ISR_SetVector
+ .text.CapSense_ISR_SetPriority
+                0x00002a5c       0x24 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+                0x00002a5c                CapSense_ISR_SetPriority
+ .text.CapSense_ISR_Enable
+                0x00002a80       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+                0x00002a80                CapSense_ISR_Enable
+ .text.CapSense_ISR_Disable
+                0x00002a90       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+                0x00002a90                CapSense_ISR_Disable
+ .text.CapSense_ISR_StartEx
+                0x00002aa0       0x1c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+                0x00002aa0                CapSense_ISR_StartEx
+ .text.CapSense_TMG_DecodeAllGestures
+                0x00002abc       0xf0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_TMG.o)
+                0x00002abc                CapSense_TMG_DecodeAllGestures
+ .text.CySysClkImoDisableWcoLock
+                0x00002bac       0x4c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+                0x00002bac                CySysClkImoDisableWcoLock
+ .text.CySysClkImoGetWcoLock
+                0x00002bf8       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+                0x00002bf8                CySysClkImoGetWcoLock
+ .text.CyIntEnable
+                0x00002c0c       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+                0x00002c0c                CyIntEnable
+ .text.CyIntDisable
+                0x00002c20       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+                0x00002c20                CyIntDisable
+ .text.CyHalt   0x00002c34        0x4 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+                0x00002c34                CyHalt
+ .text.CyIntSetSysVector
+                0x00002c38       0x20 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+                0x00002c38                CyIntSetSysVector
+ .text.CyIntSetVector
+                0x00002c58       0x24 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+                0x00002c58                CyIntSetVector
+ .text.CyIntSetPriority
+                0x00002c7c       0x4c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+                0x00002c7c                CyIntSetPriority
+ .text.CyDelay  0x00002cc8       0x30 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+                0x00002cc8                CyDelay
+ .text.CySysClkImoEnableWcoLock
+                0x00002cf8       0xd0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+                0x00002cf8                CySysClkImoEnableWcoLock
+ .text.CySysClkWriteImoFreq
+                0x00002dc8       0xd8 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+                0x00002dc8                CySysClkWriteImoFreq
+ .text.CyDelayUs
+                0x00002ea0       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+                0x00002ea0                CyDelayUs
+ .text.CySysTickEnableInterrupt
+                0x00002eb4       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+                0x00002eb4                CySysTickEnableInterrupt
+ .text.CySysTickEnable
+                0x00002ec4       0x18 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+                0x00002ec4                CySysTickEnable
+ .text.CySysTickSetReload
+                0x00002edc       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+                0x00002edc                CySysTickSetReload
+ .text.CySysTickSetClockSource
+                0x00002eec       0x20 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+                0x00002eec                CySysTickSetClockSource
+ .text.CySysTickGetCountFlag
+                0x00002f0c       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+                0x00002f0c                CySysTickGetCountFlag
+ .text.CySysTickServiceCallbacks
+                0x00002f1c       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .text.CySysTickClear
+                0x00002f44        0xc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+                0x00002f44                CySysTickClear
+ .text.CySysTickInit
+                0x00002f50       0x44 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+                0x00002f50                CySysTickInit
+ .text.CySysTickStart
+                0x00002f94       0x20 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+                0x00002f94                CySysTickStart
+ .text.CySysTickSetCallback
+                0x00002fb4       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+                0x00002fb4                CySysTickSetCallback
+ .text.CySysClkGetTimerSource
+                0x00002fc4       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .text.CySysClkWcoEnabled
+                0x00002fd4       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+                0x00002fd4                CySysClkWcoEnabled
+ .text.CySysWdtDisable
+                0x00002fe8       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+                0x00002fe8                CySysWdtDisable
+ .text.CySysClkSetTimerSource
+                0x00002ff8       0x68 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+                0x00002ff8                CySysClkSetTimerSource
+ .text.CySysTimerClearInterrupt
+                0x00003060       0x2c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+                0x00003060                CySysTimerClearInterrupt
+ .text.CySysTimerIsr
+                0x0000308c       0xa4 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+                0x0000308c                CySysTimerIsr
+ .text          0x00003130       0x20 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyBootAsmGnu.o)
+                0x00003130                CyDelayCycles
+                0x00003142                CyEnterCriticalSection
+                0x0000314a                CyExitCriticalSection
+ .text.CySysFlashSetWaitCycles
+                0x00003150       0x54 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyFlash.o)
+                0x00003150                CySysFlashSetWaitCycles
+ .text.Gesture_ResetClickTimer
+                0x000031a4       0x1c C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_ApplyMasks
+                0x000031c0       0x94 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_FindDirection8way
+                0x00003254       0x7c C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .text.Gesture_UpdateLastReportedGestureID
+                0x000032d0       0x10 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+                0x000032d0                Gesture_UpdateLastReportedGestureID
+ .text.Gesture_CalculateDTCoordinateCenter
+                0x000032e0       0x2c C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+                0x000032e0                Gesture_CalculateDTCoordinateCenter
+ .text.Gesture_UpdatePreviousCoordinatesForFinger1
+                0x0000330c       0x28 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+                0x0000330c                Gesture_UpdatePreviousCoordinatesForFinger1
+ .text.Gesture_PostProcessSTGestures
+                0x00003334       0x50 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+                0x00003334                Gesture_PostProcessSTGestures
+ .text.Gesture_UpdatePreviousCoordinatesForFinger2
+                0x00003384       0x2c C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+                0x00003384                Gesture_UpdatePreviousCoordinatesForFinger2
+ .text.Gesture_UpdateGestureCounter
+                0x000033b0       0x2c C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+                0x000033b0                Gesture_UpdateGestureCounter
+ .text.Gesture_DecodeClickGestures
+                0x000033dc      0x3b8 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+                0x000033dc                Gesture_DecodeClickGestures
+ .text.Gesture_DetermineDirection
+                0x00003794       0xc8 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+                0x00003794                Gesture_DetermineDirection
+ .text.Gesture_ApplyWholeMask
+                0x0000385c       0x64 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+                0x0000385c                Gesture_ApplyWholeMask
+ .text.Gesture_PreprocessGestures
+                0x000038c0      0x29c C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+                0x000038c0                Gesture_PreprocessGestures
+ .text.Gesture_DecodeTouchdownAndLiftoff
+                0x00003b5c       0x1c C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+                0x00003b5c                Gesture_DecodeTouchdownAndLiftoff
+ .text.Gesture_GeneralSTGesturesPostProcess
+                0x00003b78       0xac C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+                0x00003b78                Gesture_GeneralSTGesturesPostProcess
+ .text.Gesture_DecodeEdgeSwipeGestures
+                0x00003c24      0x344 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+                0x00003c24                Gesture_DecodeEdgeSwipeGestures
+ .text.Gesture_DecodeSTRotateGestures
+                0x00003f68      0x1f8 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+                0x00003f68                Gesture_DecodeSTRotateGestures
+ .text.Gesture_DecodeAllClickGestures
+                0x00004160       0xdc C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+                0x00004160                Gesture_DecodeAllClickGestures
+ .text.Gesture_Init
+                0x0000423c       0x8c C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+                0x0000423c                Gesture_Init
+ .text          0x000042c8      0x114 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+                0x000042c8                __aeabi_uidiv
+                0x000042c8                __udivsi3
+                0x000043d4                __aeabi_uidivmod
+ .text          0x000043dc      0x1d4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_divsi3.o)
+                0x000043dc                __divsi3
+                0x000043dc                __aeabi_idiv
+                0x000045a8                __aeabi_idivmod
+ .text          0x000045b0        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
+                0x000045b0                __aeabi_idiv0
+                0x000045b0                __aeabi_ldiv0
+ .text.__errno  0x000045b4        0xc c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+                0x000045b4                __errno
+ .text.__libc_init_array
+                0x000045c0       0x4c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+                0x000045c0                __libc_init_array
+ .text.memcpy   0x0000460c       0x12 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+                0x0000460c                memcpy
+ .text.memset   0x0000461e       0x10 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+                0x0000461e                memset
+ *(.plt)
+ *(.gnu.warning)
+ *(.glue_7t)
+ .glue_7t       0x0000462e        0x0 linker stubs
+ *(.glue_7)
+ .glue_7        0x0000462e        0x0 linker stubs
+ *(.vfp11_veneer)
+ .vfp11_veneer  0x0000462e        0x0 linker stubs
+ *(.bootloader)
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+ *(.gcc_except_table)
+
+.v4_bx          0x00004630        0x0
+ .v4_bx         0x00004630        0x0 linker stubs
+
+.iplt           0x00004630        0x0
+ .iplt          0x00004630        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+
+.eh_frame       0x00004630        0x4
+ *(.eh_frame)
+ .eh_frame      0x00004630        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .eh_frame      0x00004630        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+                [!provide]                PROVIDE (__exidx_start, .)
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x00004634                __exidx_end = .
+
+.rodata         0x00004634      0x2ec
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x00004634      0x264 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o)
+                0x00004634                CapSense_ramIdacInit
+                0x00004668                CapSense_dsFlash
+                0x000046a0                CapSense_ramWidgetInit
+                0x000046b8                CapSense_ramGesturesInit
+                0x00004710                CapSense_ioList
+ .rodata        0x00004898       0x1c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Tuner.o)
+ .rodata        0x000048b4       0x31 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+                0x000048b4                CapSense_idacGainTable
+                0x000048e4                CapSense_scanFreqIndex
+ .rodata.str1.1
+                0x000048e5        0x2 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+                0x000048e8                . = ALIGN (0x4)
+ *fill*         0x000048e7        0x1 
+ *(.init)
+ .init          0x000048e8        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+                0x000048e8                _init
+ .init          0x000048ec        0x8 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+                0x000048f4                . = ALIGN (0x4)
+                0x000048f4                __preinit_array_start = .
+ *(.preinit_array)
+                0x000048f4                __preinit_array_end = .
+                0x000048f4                . = ALIGN (0x4)
+                0x000048f4                __init_array_start = .
+ *(SORT(.init_array.*))
+ *(.init_array)
+ .init_array    0x000048f4        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .init_array    0x000048f8        0x4 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+                0x000048fc                __init_array_end = .
+                0x000048fc                . = ALIGN (0x4)
+ *(.fini)
+ .fini          0x000048fc        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+                0x000048fc                _fini
+ .fini          0x00004900        0x8 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+                0x00004908                . = ALIGN (0x4)
+                0x00004908                __fini_array_start = .
+ *(.fini_array)
+ .fini_array    0x00004908        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ *(SORT(.fini_array.*))
+                0x0000490c                __fini_array_end = .
+                0x0000490c                . = ALIGN (0x4)
+ *crtbegin.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *crtend.o(.ctors)
+                0x0000490c                . = ALIGN (0x4)
+ *crtbegin.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *crtend.o(.dtors)
+                0x0000490c                . = ALIGN (0x4)
+                0x0000490c                __cy_regions = .
+                0x0000490c        0x4 LONG 0x4920 __cy_region_init_ram
+                0x00004910        0x4 LONG 0x20000090 __cy_region_start_data
+                0x00004914        0x4 LONG 0xe0 __cy_region_init_size_ram
+                0x00004918        0x4 LONG 0x548 __cy_region_zero_size_ram
+                0x0000491c                __cy_regions_end = .
+                0x00004920                . = ALIGN (0x8)
+ *fill*         0x0000491c        0x4 
+                0x00004920                _etext = .
+
+.cy_checksum_exclude
+                0x00004920        0x0
+ *(.cy_checksum_exclude)
+
+.ramvectors     0x20000000       0x90
+                0x20000000                __cy_region_start_ram = .
+ *(.ramvectors)
+ .ramvectors    0x20000000       0x90 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+                0x20000000                CyRamVectors
+
+.noinit
+ *(.noinit)
+
+.data           0x20000090       0xe0 load address 0x00004920
+                0x20000090                __cy_region_start_data = .
+ *(.jcr)
+ .jcr           0x20000090        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .jcr           0x20000090        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+ *(.got.plt)
+ *(.got)
+ *(.shdata)
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x20000094        0x4 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+                0x20000094                CapSense_CSXPostScanApiPtr
+ .data          0x20000098       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+                0x20000098                CySysClkPumpConfig
+                0x2000009c                cydelay32kMs
+                0x200000a0                cydelayFreqKhz
+                0x200000a4                cydelayFreqMhz
+                0x200000a8                cydelayFreqHz
+ .data          0x200000ac        0x4 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .data          0x200000b0       0x5a C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ *fill*         0x2000010a        0x2 
+ .data.impure_data
+                0x2000010c       0x60 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .data._impure_ptr
+                0x2000016c        0x4 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+                0x2000016c                _impure_ptr
+                0x20000170                . = ALIGN (0x8)
+ *(.ram)
+                0x20000170                _edata = .
+
+.igot.plt       0x20000170        0x0 load address 0x00004a00
+ .igot.plt      0x20000170        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+
+.bss            0x20000170      0x548 load address 0x00004a00
+                0x20000170                PROVIDE (__bss_start__, .)
+ *(.shbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x20000170       0x1c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .bss           0x2000018c        0x1 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o)
+ *fill*         0x2000018d        0x3 
+ .bss           0x20000190       0x42 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o)
+ *fill*         0x200001d2        0x2 
+ .bss           0x200001d4        0x4 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Tuner.o)
+ .bss           0x200001d8        0xa .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+                0x200001d8                CapSense_currentSenseMethod
+                0x200001d9                CapSense_requestScanAllWidget
+                0x200001dc                CapSense_curFlashWdgtPtr
+                0x200001e0                CapSense_sensorIndex
+                0x200001e1                CapSense_widgetIndex
+ *fill*         0x200001e2        0x2 
+ .bss           0x200001e4       0x12 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+                0x200001e4                CapSense_csxScanPeriod
+                0x200001e6                CapSense_csxRawCount
+ *fill*         0x200001f6        0x2 
+ .bss           0x200001f8       0xcf .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+ *fill*         0x200002c7        0x1 
+ .bss           0x200002c8       0x18 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Gesture.o)
+ .bss           0x200002e0        0x8 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C.o)
+                0x200002e0                EZI2C_initVar
+                0x200002e4                EZI2C_customIntrHandler
+ .bss           0x200002e8        0x2 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C_INT.o)
+ .bss           0x200002ea        0x1 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+                0x200002ea                PWM_Green_initVar
+ .bss           0x200002eb        0x1 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+                0x200002eb                PWM_Blue_initVar
+ .bss           0x200002ec       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_TMG.o)
+ .bss           0x200002fc       0x18 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+                0x20000310                CySysTickInitVar
+ .bss           0x20000314       0x18 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .bss           0x2000032c       0x79 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+                0x20000343                Gesture_prevScrollId
+ *(COMMON)
+ *fill*         0x200003a5        0x3 
+ COMMON         0x200003a8      0x288 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o)
+                0x200003a8                CapSense_dsRam
+ COMMON         0x20000630        0x8 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+                0x20000630                CapSense_curRamSnsPtr
+                0x20000634                CapSense_curSnsIOPtr
+ COMMON         0x20000638       0x12 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+                0x20000638                EZI2C_offsetBuf1
+                0x2000063a                EZI2C_indexBuf1
+                0x2000063c                EZI2C_fsmState
+                0x2000063e                EZI2C_protectBuf1
+                0x20000640                EZI2C_curStatus
+                0x20000644                EZI2C_dataBuffer1
+                0x20000648                EZI2C_bufSizeBuf1
+ *fill*         0x2000064a        0x2 
+ COMMON         0x2000064c       0x66 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+                0x2000064c                Gesture_direction4Way
+                0x2000064e                Gesture_prevDTCenterY
+                0x20000650                Gesture_prevDTCenterX
+                0x20000652                Gesture_lastY0
+                0x20000654                Gesture_firstX1
+                0x20000656                Gesture_dtCenterY
+                0x20000658                Gesture_pIsSettlingTimedOut
+                0x2000065c                Gesture_octantLocation
+                0x2000065e                Gesture_deltaY
+                0x20000660                Gesture_firstClickY
+                0x20000664                Gesture_pGestureCounter
+                0x20000668                Gesture_pPrevX1
+                0x2000066c                Gesture_pPrevGestureId
+                0x20000670                Gesture_lastX0
+                0x20000672                Gesture_firstY1
+                0x20000674                Gesture_pPrevX0
+                0x20000678                Gesture_firstY0
+                0x2000067a                Gesture_clickCounter
+                0x2000067c                Gesture_pCanDetectSt
+                0x20000680                Gesture_touchDuration
+                0x20000682                Gesture_direction8Way
+                0x20000684                Gesture_dtCenterX
+                0x20000686                Gesture_lastY1
+                0x20000688                Gesture_settlingStartTime
+                0x2000068c                Gesture_lastX1
+                0x20000690                Gesture_pPrevY1
+                0x20000694                Gesture_clickAndDrag
+                0x20000698                Gesture_pSwitchHistory
+                0x2000069c                Gesture_firstClickX
+                0x200006a0                Gesture_pPrevDtGestureId
+                0x200006a4                Gesture_pPrevTouchNum
+                0x200006a8                Gesture_pPrevY0
+                0x200006ac                Gesture_deltaX
+                0x200006ae                Gesture_interClickDuration
+                0x200006b0                Gesture_firstX0
+                0x200006b8                . = ALIGN (0x8)
+ *fill*         0x200006b2        0x6 
+ *(.ram.b)
+                0x200006b8                _end = .
+                0x200006b8                __end = .
+                0x200006b8                PROVIDE (end, .)
+                0x200006b8                PROVIDE (__bss_end__, .)
+                0x00004920                __cy_region_init_ram = LOADADDR (.data)
+                0x000000e0                __cy_region_init_size_ram = (_edata - ADDR (.data))
+                0x00000548                __cy_region_zero_size_ram = (_end - _edata)
+
+.heap           0x200006b8       0x80 load address 0x00004a00
+                0x200006b8                . = _end
+                0x20000738                . = (. + 0x80)
+ *fill*         0x200006b8       0x80 
+                0x20000738                __cy_heap_limit = .
+
+.stack          0x20001800      0x800
+                0x20001800                __cy_stack_limit = .
+                0x20002000                . = (. + 0x800)
+ *fill*         0x20001800      0x800 
+                0x00000001                ASSERT ((__cy_stack_limit >= __cy_heap_limit), region RAM overflowed with stack)
+                0x00000000                cy_checksum_exclude_size = (CY_APPL_LOADABLE == 0x1)?SIZEOF (.cy_checksum_exclude):0x0
+                0x00000001                ASSERT ((cy_checksum_exclude_size <= CY_CHECKSUM_EXCLUDE_SIZE), CY_BOOT: Section .cy_checksum_exclude size exceedes specified limit.)
+                0x0000ffc0                cyloadermeta_start = (cy_project_type_bootloader || cy_project_type_app_for_stack_and_copier)?(LENGTH (rom) - CY_METADATA_SIZE):0xf0000000
+
+.cyloadermeta
+ *(.cyloadermeta)
+                0x0000ffc0                cyloadablemeta_start = cy_project_type_app_for_stack_and_copier?((LENGTH (rom) - CY_FLASH_ROW_SIZE) - CY_METADATA_SIZE):((LENGTH (rom) - (CY_FLASH_ROW_SIZE * (CY_APPL_NUM - 0x1))) - CY_METADATA_SIZE)
+
+.cyloadablemeta
+ *(.cyloadablemeta)
+
+.cyflashprotect
+                0x90400000       0x40
+ *(.cyflashprotect)
+ .cyflashprotect
+                0x90400000       0x40 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+                0x90400000                cy_meta_flashprotect
+
+.cymeta         0x90500000        0xc
+ *(.cymeta)
+ .cymeta        0x90500000        0xc .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+                0x90500000                cy_metadata
+
+.cychipprotect  0x90600000        0x1
+ *(.cychipprotect)
+ .cychipprotect
+                0x90600000        0x1 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+                0x90600000                cy_meta_chipprotect
+
+.rel.dyn        0x00004a00        0x0 load address 0x90600004
+ .rel.iplt      0x00004a00        0x0 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0xcb8
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 .\CortexM0p\ARM_GCC_541\Debug\main.o
+ .debug_aranges
+                0x00000020       0x38 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_aranges
+                0x00000058       0x18 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+ .debug_aranges
+                0x00000070       0x48 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .debug_aranges
+                0x000000b8       0x68 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o)
+ .debug_aranges
+                0x00000120       0x48 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Processing.o)
+ .debug_aranges
+                0x00000168       0x58 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o)
+ .debug_aranges
+                0x000001c0       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Tuner.o)
+ .debug_aranges
+                0x000001e8       0x78 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+ .debug_aranges
+                0x00000260       0xe0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+ .debug_aranges
+                0x00000340       0xa8 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+ .debug_aranges
+                0x000003e8       0x80 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+ .debug_aranges
+                0x00000468       0x40 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Gesture.o)
+ .debug_aranges
+                0x000004a8       0x60 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C.o)
+ .debug_aranges
+                0x00000508       0x50 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+ .debug_aranges
+                0x00000558       0x20 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C_INT.o)
+ .debug_aranges
+                0x00000578       0x48 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(Red_LED.o)
+ .debug_aranges
+                0x000005c0      0x158 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .debug_aranges
+                0x00000718      0x158 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .debug_aranges
+                0x00000870       0x80 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+ .debug_aranges
+                0x000008f0       0x28 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_TMG.o)
+ .debug_aranges
+                0x00000918      0x190 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .debug_aranges
+                0x00000aa8      0x1a8 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .debug_aranges
+                0x00000c50       0x20 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyBootAsmGnu.o)
+ .debug_aranges
+                0x00000c70       0x48 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyFlash.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0xdeb5
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000      0xa72 .\CortexM0p\ARM_GCC_541\Debug\main.o
+ .debug_info    0x00000a72      0x1c5 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_info    0x00000c37       0xf8 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+ .debug_info    0x00000d2f      0x3a5 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .debug_info    0x000010d4      0xf25 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o)
+ .debug_info    0x00001ff9     0x101f .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Processing.o)
+ .debug_info    0x00003018     0x10dc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o)
+ .debug_info    0x000040f4      0xb74 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Tuner.o)
+ .debug_info    0x00004c68      0x90d .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+ .debug_info    0x00005575     0x1684 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+ .debug_info    0x00006bf9     0x14e4 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+ .debug_info    0x000080dd     0x1092 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+ .debug_info    0x0000916f      0xe16 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Gesture.o)
+ .debug_info    0x00009f85      0x298 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C.o)
+ .debug_info    0x0000a21d      0x319 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+ .debug_info    0x0000a536      0x1e4 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C_INT.o)
+ .debug_info    0x0000a71a      0x19d .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(Red_LED.o)
+ .debug_info    0x0000a8b7      0x909 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .debug_info    0x0000b1c0      0x909 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .debug_info    0x0000bac9      0x305 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+ .debug_info    0x0000bdce      0x316 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_TMG.o)
+ .debug_info    0x0000c0e4      0xbce .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .debug_info    0x0000ccb2      0xd06 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .debug_info    0x0000d9b8       0xe6 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyBootAsmGnu.o)
+ .debug_info    0x0000da9e      0x417 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyFlash.o)
+
+.debug_abbrev   0x00000000     0x27ce
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x163 .\CortexM0p\ARM_GCC_541\Debug\main.o
+ .debug_abbrev  0x00000163       0xe8 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_abbrev  0x0000024b       0x5d .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+ .debug_abbrev  0x000002a8      0x1d0 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .debug_abbrev  0x00000478      0x243 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o)
+ .debug_abbrev  0x000006bb      0x237 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Processing.o)
+ .debug_abbrev  0x000008f2      0x23b .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o)
+ .debug_abbrev  0x00000b2d      0x191 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Tuner.o)
+ .debug_abbrev  0x00000cbe      0x202 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+ .debug_abbrev  0x00000ec0      0x233 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+ .debug_abbrev  0x000010f3      0x307 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+ .debug_abbrev  0x000013fa      0x284 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+ .debug_abbrev  0x0000167e      0x2aa .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Gesture.o)
+ .debug_abbrev  0x00001928      0x118 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C.o)
+ .debug_abbrev  0x00001a40      0x13a .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+ .debug_abbrev  0x00001b7a       0xbf .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C_INT.o)
+ .debug_abbrev  0x00001c39       0xc8 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(Red_LED.o)
+ .debug_abbrev  0x00001d01      0x119 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .debug_abbrev  0x00001e1a      0x119 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .debug_abbrev  0x00001f33      0x19a .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+ .debug_abbrev  0x000020cd      0x153 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_TMG.o)
+ .debug_abbrev  0x00002220      0x1f5 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .debug_abbrev  0x00002415      0x207 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .debug_abbrev  0x0000261c       0x14 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x00002630      0x19e .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyFlash.o)
+
+.debug_line     0x00000000     0x40a6
+ *(.debug_line)
+ .debug_line    0x00000000      0x298 .\CortexM0p\ARM_GCC_541\Debug\main.o
+ .debug_line    0x00000298       0xd6 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_line    0x0000036e      0x141 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+ .debug_line    0x000004af      0x247 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .debug_line    0x000006f6      0x340 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o)
+ .debug_line    0x00000a36      0x2c3 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Processing.o)
+ .debug_line    0x00000cf9      0x302 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o)
+ .debug_line    0x00000ffb      0x22b .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Tuner.o)
+ .debug_line    0x00001226      0x1d4 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+ .debug_line    0x000013fa      0x597 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+ .debug_line    0x00001991      0x4b5 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+ .debug_line    0x00001e46      0x4c7 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+ .debug_line    0x0000230d      0x26e .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Gesture.o)
+ .debug_line    0x0000257b      0x128 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C.o)
+ .debug_line    0x000026a3      0x103 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+ .debug_line    0x000027a6      0x13a .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C_INT.o)
+ .debug_line    0x000028e0       0xbf .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(Red_LED.o)
+ .debug_line    0x0000299f      0x382 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .debug_line    0x00002d21      0x381 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .debug_line    0x000030a2      0x158 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+ .debug_line    0x000031fa      0x1c7 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_TMG.o)
+ .debug_line    0x000033c1      0x4dc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .debug_line    0x0000389d      0x5c1 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .debug_line    0x00003e5e       0x68 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyBootAsmGnu.o)
+ .debug_line    0x00003ec6      0x1e0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyFlash.o)
+
+.debug_frame    0x00000000     0x2280
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x30 .\CortexM0p\ARM_GCC_541\Debug\main.o
+ .debug_frame   0x00000030       0x74 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_frame   0x000000a4       0xbc .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .debug_frame   0x00000160      0x120 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o)
+ .debug_frame   0x00000280       0xe0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Processing.o)
+ .debug_frame   0x00000360       0xdc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o)
+ .debug_frame   0x0000043c       0x40 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Tuner.o)
+ .debug_frame   0x0000047c      0x158 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+ .debug_frame   0x000005d4      0x2e4 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+ .debug_frame   0x000008b8      0x224 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+ .debug_frame   0x00000adc      0x210 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+ .debug_frame   0x00000cec       0x8c .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Gesture.o)
+ .debug_frame   0x00000d78       0xe8 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C.o)
+ .debug_frame   0x00000e60       0xa8 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+ .debug_frame   0x00000f08       0x30 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C_INT.o)
+ .debug_frame   0x00000f38       0x70 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(Red_LED.o)
+ .debug_frame   0x00000fa8      0x3a0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .debug_frame   0x00001348      0x3a0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .debug_frame   0x000016e8      0x110 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+ .debug_frame   0x000017f8       0x48 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_TMG.o)
+ .debug_frame   0x00001840      0x418 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .debug_frame   0x00001c58      0x484 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .debug_frame   0x000020dc       0xa8 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyFlash.o)
+ .debug_frame   0x00002184       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+ .debug_frame   0x000021a4       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_divsi3.o)
+ .debug_frame   0x000021c4       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .debug_frame   0x000021e4       0x28 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .debug_frame   0x0000220c       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .debug_frame   0x00002238       0x28 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x00002260       0x20 c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+
+.debug_str      0x00000000     0x4391
+ *(.debug_str)
+ .debug_str     0x00000000      0xae1 .\CortexM0p\ARM_GCC_541\Debug\main.o
+                                0xb3e (size before relaxing)
+ .debug_str     0x00000ae1       0xc3 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+                                0x2a5 (size before relaxing)
+ .debug_str     0x00000ba4       0x59 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+                                0x222 (size before relaxing)
+ .debug_str     0x00000bfd      0x155 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+                                0x369 (size before relaxing)
+ .debug_str     0x00000d52      0x508 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o)
+                                0xf11 (size before relaxing)
+ .debug_str     0x0000125a      0x2f3 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Processing.o)
+                               0x1015 (size before relaxing)
+ .debug_str     0x0000154d      0x237 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o)
+                                0xfa7 (size before relaxing)
+ .debug_str     0x00001784      0x15f .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Tuner.o)
+                                0xcf6 (size before relaxing)
+ .debug_str     0x000018e3      0x1cc .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+                                0x783 (size before relaxing)
+ .debug_str     0x00001aaf      0x646 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+                               0x1386 (size before relaxing)
+ .debug_str     0x000020f5      0x314 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+                               0x12a7 (size before relaxing)
+ .debug_str     0x00002409      0x369 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+                                0x929 (size before relaxing)
+ .debug_str     0x00002772      0x208 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Gesture.o)
+                                0xf2e (size before relaxing)
+ .debug_str     0x0000297a      0x12b .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C.o)
+                                0x338 (size before relaxing)
+ .debug_str     0x00002aa5      0x136 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+                                0x392 (size before relaxing)
+ .debug_str     0x00002bdb       0x97 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C_INT.o)
+                                0x328 (size before relaxing)
+ .debug_str     0x00002c72       0xab .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(Red_LED.o)
+                                0x29e (size before relaxing)
+ .debug_str     0x00002d1d      0x449 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+                                0x6b3 (size before relaxing)
+ .debug_str     0x00003166      0x36b .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+                                0x689 (size before relaxing)
+ .debug_str     0x000034d1      0x14b .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+                                0x3a6 (size before relaxing)
+ .debug_str     0x0000361c      0x1c5 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_TMG.o)
+                                0x3fd (size before relaxing)
+ .debug_str     0x000037e1      0x468 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+                                0x765 (size before relaxing)
+ .debug_str     0x00003c49      0x62b .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+                                0x8f3 (size before relaxing)
+ .debug_str     0x00004274      0x11d .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyFlash.o)
+                                0x37c (size before relaxing)
+
+.debug_loc      0x00000000     0x60b6
+ *(.debug_loc)
+ .debug_loc     0x00000000       0x56 .\CortexM0p\ARM_GCC_541\Debug\main.o
+ .debug_loc     0x00000056       0x35 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_loc     0x0000008b      0x14f .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .debug_loc     0x000001da      0x40d .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o)
+ .debug_loc     0x000005e7      0x4c9 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Processing.o)
+ .debug_loc     0x00000ab0      0x4aa .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o)
+ .debug_loc     0x00000f5a      0x176 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Tuner.o)
+ .debug_loc     0x000010d0      0x5f6 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+ .debug_loc     0x000016c6      0x953 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+ .debug_loc     0x00002019      0x796 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+ .debug_loc     0x000027af     0x14e3 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+ .debug_loc     0x00003c92      0x236 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Gesture.o)
+ .debug_loc     0x00003ec8       0x7e .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C.o)
+ .debug_loc     0x00003f46       0xec .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+ .debug_loc     0x00004032      0x132 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C_INT.o)
+ .debug_loc     0x00004164       0xa2 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(Red_LED.o)
+ .debug_loc     0x00004206      0x547 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .debug_loc     0x0000474d      0x547 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .debug_loc     0x00004c94       0x82 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+ .debug_loc     0x00004d16      0x182 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_TMG.o)
+ .debug_loc     0x00004e98      0x5d9 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .debug_loc     0x00005471      0xa88 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .debug_loc     0x00005ef9      0x1bd .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyFlash.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_ranges   0x00000000      0xb10
+ *(.debug_ranges)
+ .debug_ranges  0x00000000       0x10 .\CortexM0p\ARM_GCC_541\Debug\main.o
+ .debug_ranges  0x00000010       0x28 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_ranges  0x00000038       0x38 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .debug_ranges  0x00000070       0x58 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o)
+ .debug_ranges  0x000000c8       0x38 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Processing.o)
+ .debug_ranges  0x00000100       0x48 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o)
+ .debug_ranges  0x00000148       0x18 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Tuner.o)
+ .debug_ranges  0x00000160       0x68 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+ .debug_ranges  0x000001c8       0xd0 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+ .debug_ranges  0x00000298       0x98 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+ .debug_ranges  0x00000330       0x70 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+ .debug_ranges  0x000003a0       0x30 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Gesture.o)
+ .debug_ranges  0x000003d0       0x50 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C.o)
+ .debug_ranges  0x00000420       0x40 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+ .debug_ranges  0x00000460       0x10 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C_INT.o)
+ .debug_ranges  0x00000470       0x38 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(Red_LED.o)
+ .debug_ranges  0x000004a8      0x148 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .debug_ranges  0x000005f0      0x148 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .debug_ranges  0x00000738       0x70 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+ .debug_ranges  0x000007a8       0x18 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_TMG.o)
+ .debug_ranges  0x000007c0      0x180 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .debug_ranges  0x00000940      0x198 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .debug_ranges  0x00000ad8       0x38 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyFlash.o)
+
+.comment        0x00000000       0x6e
+ .comment       0x00000000       0x6e .\CortexM0p\ARM_GCC_541\Debug\main.o
+                                 0x6f (size before relaxing)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Processing.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Tuner.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Gesture.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C_INT.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(Red_LED.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_TMG.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .comment       0x0000006e       0x6f .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyFlash.o)
+ .comment       0x0000006e       0x6f C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.note.gnu.arm.ident
+ *(.note.gnu.arm.ident)
+
+.ARM.attributes
+                0x00000000       0x28
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x1e c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+ .ARM.attributes
+                0x0000001e       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+ .ARM.attributes
+                0x0000004a       0x1b c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .ARM.attributes
+                0x00000065       0x32 .\CortexM0p\ARM_GCC_541\Debug\main.o
+ .ARM.attributes
+                0x00000097       0x32 .\CortexM0p\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .ARM.attributes
+                0x000000c9       0x32 .\CortexM0p\ARM_GCC_541\Debug\cymetadata.o
+ .ARM.attributes
+                0x000000fb       0x32 .\CortexM0p\ARM_GCC_541\Debug\Cm0plusStart.o
+ .ARM.attributes
+                0x0000012d       0x32 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Control.o)
+ .ARM.attributes
+                0x0000015f       0x32 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Processing.o)
+ .ARM.attributes
+                0x00000191       0x32 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Structure.o)
+ .ARM.attributes
+                0x000001c3       0x32 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Tuner.o)
+ .ARM.attributes
+                0x000001f5       0x32 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Filter.o)
+ .ARM.attributes
+                0x00000227       0x32 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Sensing.o)
+ .ARM.attributes
+                0x00000259       0x32 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_SensingCSX_LL.o)
+ .ARM.attributes
+                0x0000028b       0x32 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Centroid_LL.o)
+ .ARM.attributes
+                0x000002bd       0x32 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_Gesture.o)
+ .ARM.attributes
+                0x000002ef       0x32 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C.o)
+ .ARM.attributes
+                0x00000321       0x32 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C.o)
+ .ARM.attributes
+                0x00000353       0x32 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(EZI2C_EZI2C_INT.o)
+ .ARM.attributes
+                0x00000385       0x32 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(Red_LED.o)
+ .ARM.attributes
+                0x000003b7       0x32 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Green.o)
+ .ARM.attributes
+                0x000003e9       0x32 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(PWM_Blue.o)
+ .ARM.attributes
+                0x0000041b       0x32 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_ISR.o)
+ .ARM.attributes
+                0x0000044d       0x32 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CapSense_TMG.o)
+ .ARM.attributes
+                0x0000047f       0x32 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLib.o)
+ .ARM.attributes
+                0x000004b1       0x32 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyLFClk.o)
+ .ARM.attributes
+                0x000004e3       0x22 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyBootAsmGnu.o)
+ .ARM.attributes
+                0x00000505       0x32 .\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.a(CyFlash.o)
+ .ARM.attributes
+                0x00000537       0x32 C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\CapSense_TMG_v2_0\Library\Gestures_GCC_M0p.a(Gesture.o)
+ .ARM.attributes
+                0x00000569       0x1e c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x00000587       0x1e c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_divsi3.o)
+ .ARM.attributes
+                0x000005a5       0x1e c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m\libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x000005c3       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-errno.o)
+ .ARM.attributes
+                0x000005ef       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-exit.o)
+ .ARM.attributes
+                0x0000061b       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-impure.o)
+ .ARM.attributes
+                0x00000647       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-init.o)
+ .ARM.attributes
+                0x00000673       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .ARM.attributes
+                0x0000069f       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m\libg_nano.a(lib_a-memset.o)
+ .ARM.attributes
+                0x000006cb       0x2c c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtend.o
+ .ARM.attributes
+                0x000006f7       0x1e c:/program files (x86)/cypress/psoc creator/4.4/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+
+/DISCARD/
+ *(.note.GNU-stack)
+OUTPUT(C:\Users\inspiron\Documents\PSoC Creator\Projects\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.cydsn\CortexM0p\ARM_GCC_541\Debug\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.elf elf32-littlearm)

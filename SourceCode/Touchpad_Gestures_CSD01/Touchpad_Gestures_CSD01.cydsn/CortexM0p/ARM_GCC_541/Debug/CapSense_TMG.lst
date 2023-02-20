@@ -1,0 +1,1797 @@
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0plus
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"CapSense_TMG.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.CapSense_TMG_DecodeAllGestures,"ax",%progbits
+  20              		.align	2
+  21              		.global	CapSense_TMG_DecodeAllGestures
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	CapSense_TMG_DecodeAllGestures, %function
+  25              	CapSense_TMG_DecodeAllGestures:
+  26              	.LFB0:
+  27              		.file 1 "Generated_Source\\PSoC4\\CapSense_TMG.c"
+   1:Generated_Source\PSoC4/CapSense_TMG.c **** /*******************************************************************************
+   2:Generated_Source\PSoC4/CapSense_TMG.c **** * File Name: CapSense_TMG.c
+   3:Generated_Source\PSoC4/CapSense_TMG.c **** * Version 2.0
+   4:Generated_Source\PSoC4/CapSense_TMG.c **** *
+   5:Generated_Source\PSoC4/CapSense_TMG.c **** * Description:
+   6:Generated_Source\PSoC4/CapSense_TMG.c **** *  This file provides the source code of the API for the CapSense TMG component.
+   7:Generated_Source\PSoC4/CapSense_TMG.c **** *
+   8:Generated_Source\PSoC4/CapSense_TMG.c **** ********************************************************************************
+   9:Generated_Source\PSoC4/CapSense_TMG.c **** * Copyright 2014, Cypress Semiconductor Corporation.  All rights reserved.
+  10:Generated_Source\PSoC4/CapSense_TMG.c **** * You may use this file only in accordance with the license, terms, conditions,
+  11:Generated_Source\PSoC4/CapSense_TMG.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  12:Generated_Source\PSoC4/CapSense_TMG.c **** * the software package with which this file was provided.
+  13:Generated_Source\PSoC4/CapSense_TMG.c **** *******************************************************************************/
+  14:Generated_Source\PSoC4/CapSense_TMG.c **** 
+  15:Generated_Source\PSoC4/CapSense_TMG.c **** #include "CapSense_TMG.h"
+  16:Generated_Source\PSoC4/CapSense_TMG.c **** 
+  17:Generated_Source\PSoC4/CapSense_TMG.c **** 
+  18:Generated_Source\PSoC4/CapSense_TMG.c **** /*******************************************************************************
+  19:Generated_Source\PSoC4/CapSense_TMG.c **** * Function Name: CapSense_TMG_DecodeAllGestures
+  20:Generated_Source\PSoC4/CapSense_TMG.c **** ********************************************************************************
+  21:Generated_Source\PSoC4/CapSense_TMG.c **** *
+  22:Generated_Source\PSoC4/CapSense_TMG.c **** * Summary:
+  23:Generated_Source\PSoC4/CapSense_TMG.c **** *  Decodes all enabled gestures in the customizer and returns the detected
+  24:Generated_Source\PSoC4/CapSense_TMG.c **** *  gesture code.
+  25:Generated_Source\PSoC4/CapSense_TMG.c **** *  CapSense_TMG_InitGestures and CapSense_TMG_TimerEnableInt has to be
+  26:Generated_Source\PSoC4/CapSense_TMG.c **** *  called once prior calling this or any other API for gesture decoding.
+  27:Generated_Source\PSoC4/CapSense_TMG.c **** *
+  28:Generated_Source\PSoC4/CapSense_TMG.c **** * Parameters:
+  29:Generated_Source\PSoC4/CapSense_TMG.c **** *  touchNumber: Number of fingers on the trackpad. Valid range 0-2.
+  30:Generated_Source\PSoC4/CapSense_TMG.c **** *  currentTimestamp : Current timestamp value.
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 2
+
+
+  31:Generated_Source\PSoC4/CapSense_TMG.c **** *  pos: Pointer to structure with coordinates of touches.
+  32:Generated_Source\PSoC4/CapSense_TMG.c **** *
+  33:Generated_Source\PSoC4/CapSense_TMG.c **** * Return:
+  34:Generated_Source\PSoC4/CapSense_TMG.c **** *  Detected gesture code.
+  35:Generated_Source\PSoC4/CapSense_TMG.c **** *
+  36:Generated_Source\PSoC4/CapSense_TMG.c **** *******************************************************************************/
+  37:Generated_Source\PSoC4/CapSense_TMG.c **** uint32_t CapSense_TMG_DecodeAllGestures(uint32_t touchNumber, uint32_t currentTimestamp, const CapS
+  38:Generated_Source\PSoC4/CapSense_TMG.c **** {
+  28              		.loc 1 38 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 8
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              	.LVL0:
+  33 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+  34              		.cfi_def_cfa_offset 20
+  35              		.cfi_offset 4, -20
+  36              		.cfi_offset 5, -16
+  37              		.cfi_offset 6, -12
+  38              		.cfi_offset 7, -8
+  39              		.cfi_offset 14, -4
+  40 0002 83B0     		sub	sp, sp, #12
+  41              		.cfi_def_cfa_offset 32
+  42 0004 0C00     		movs	r4, r1
+  43 0006 0092     		str	r2, [sp]
+  44              	.LVL1:
+  39:Generated_Source\PSoC4/CapSense_TMG.c ****     uint32_t gestureID = CapSense_TMG_NO_GESTURE;
+  40:Generated_Source\PSoC4/CapSense_TMG.c ****     #if(0u != CapSense_TMG_GESTURES_ENABLED)
+  41:Generated_Source\PSoC4/CapSense_TMG.c ****         /* Variable for detected click gestures */
+  42:Generated_Source\PSoC4/CapSense_TMG.c ****         uint32_t clickGesture = CapSense_TMG_NO_GESTURE;
+  43:Generated_Source\PSoC4/CapSense_TMG.c **** 
+  44:Generated_Source\PSoC4/CapSense_TMG.c ****         /* Variable for detected single touch gestures */
+  45:Generated_Source\PSoC4/CapSense_TMG.c ****         uint32_t stGesture = CapSense_TMG_NO_GESTURE;
+  46:Generated_Source\PSoC4/CapSense_TMG.c **** 
+  47:Generated_Source\PSoC4/CapSense_TMG.c ****         /* Variable for detected double touch gestures */
+  48:Generated_Source\PSoC4/CapSense_TMG.c ****         uint32_t dtGesture = CapSense_TMG_NO_GESTURE;
+  49:Generated_Source\PSoC4/CapSense_TMG.c **** 
+  50:Generated_Source\PSoC4/CapSense_TMG.c ****         #if (CapSense_TMG_ROTATE_ENABLED != 0u)
+  51:Generated_Source\PSoC4/CapSense_TMG.c ****             static uint32_t rotationActive = 0u;
+  52:Generated_Source\PSoC4/CapSense_TMG.c ****         #endif /* (CapSense_TMG_ROTATE_ENABLED != 0u) */
+  53:Generated_Source\PSoC4/CapSense_TMG.c **** 
+  54:Generated_Source\PSoC4/CapSense_TMG.c ****         #if (CapSense_TMG_EDGE_SWIPE_ENABLED != 0u)
+  55:Generated_Source\PSoC4/CapSense_TMG.c ****             static uint32_t edgeTimeoutStamp = 0u;
+  56:Generated_Source\PSoC4/CapSense_TMG.c ****             uint32_t deltaTimeoutStamp = 0u;
+  57:Generated_Source\PSoC4/CapSense_TMG.c ****         #endif /* (CapSense_TMG_EDGE_SWIPE_ENABLED != 0u) */
+  58:Generated_Source\PSoC4/CapSense_TMG.c **** 
+  59:Generated_Source\PSoC4/CapSense_TMG.c ****         #if ((CapSense_TMG_EDGE_SWIPE_ENABLED == 1u) && ((CapSense_TMG_CLICKS_ENABLED == 1u) ||\
+  60:Generated_Source\PSoC4/CapSense_TMG.c ****                                                              (CapSense_TMG_ST_SCROLLS_ENABLED == 1u
+  61:Generated_Source\PSoC4/CapSense_TMG.c ****                                                              (CapSense_TMG_ROTATE_ENABLED == 1u)))
+  62:Generated_Source\PSoC4/CapSense_TMG.c ****             static uint32_t edgeSwipeActive = 0u;
+  63:Generated_Source\PSoC4/CapSense_TMG.c ****         #endif /* ((CapSense_TMG_EDGE_SWIPE_ENABLED == 1u) && ((CapSense_TMG_CLICKS_ENABLED == 1u) 
+  64:Generated_Source\PSoC4/CapSense_TMG.c ****                                                                    (CapSense_TMG_ST_SCROLLS_ENABLED
+  65:Generated_Source\PSoC4/CapSense_TMG.c ****                                                                    (CapSense_TMG_ROTATE_ENABLED == 
+  66:Generated_Source\PSoC4/CapSense_TMG.c **** 
+  67:Generated_Source\PSoC4/CapSense_TMG.c ****         #if ((CapSense_TMG_CLICKS_ENABLED == 1u) && ((CapSense_TMG_EDGE_SWIPE_ENABLED == 1u) ||\
+  68:Generated_Source\PSoC4/CapSense_TMG.c ****                                                          (CapSense_TMG_ST_SCROLLS_ENABLED == 1u) ||
+  69:Generated_Source\PSoC4/CapSense_TMG.c ****                                                          (CapSense_TMG_ROTATE_ENABLED == 1u)))
+  70:Generated_Source\PSoC4/CapSense_TMG.c ****             static uint32_t clickAndDragActive = 0u;
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 3
+
+
+  71:Generated_Source\PSoC4/CapSense_TMG.c ****         #endif /* ((CapSense_TMG_CLICKS_ENABLED == 1u) && ((CapSense_TMG_EDGE_SWIPE_ENABLED == 1u) 
+  72:Generated_Source\PSoC4/CapSense_TMG.c ****                                                                (CapSense_TMG_ST_SCROLLS_ENABLED == 
+  73:Generated_Source\PSoC4/CapSense_TMG.c ****                                                                (CapSense_TMG_ROTATE_ENABLED == 1u))
+  74:Generated_Source\PSoC4/CapSense_TMG.c **** 
+  75:Generated_Source\PSoC4/CapSense_TMG.c ****         #if (CapSense_TMG_EDGE_SWIPE_ENABLED == 1u)
+  76:Generated_Source\PSoC4/CapSense_TMG.c ****             uint32_t edgeSwipeGesture = CapSense_TMG_NO_GESTURE;
+  77:Generated_Source\PSoC4/CapSense_TMG.c ****         #endif /* (CapSense_TMG_EDGE_SWIPE_ENABLED == 1u) */
+  78:Generated_Source\PSoC4/CapSense_TMG.c **** 
+  79:Generated_Source\PSoC4/CapSense_TMG.c ****         #if ((CapSense_TMG_CLICKS_ENABLED != 0u) || (CapSense_TMG_EDGE_SWIPE_ENABLED != 0u))
+  80:Generated_Source\PSoC4/CapSense_TMG.c ****             clickGesture = Gesture_DecodeAllClickGestures((uint8_t)touchNumber, currentTimestamp, p
+  45              		.loc 1 80 0
+  46 0008 C5B2     		uxtb	r5, r0
+  47 000a 2800     		movs	r0, r5
+  48              	.LVL2:
+  49 000c FFF7FEFF 		bl	Gesture_DecodeAllClickGestures
+  50              	.LVL3:
+  51 0010 0190     		str	r0, [sp, #4]
+  52 0012 0600     		movs	r6, r0
+  53              	.LVL4:
+  81:Generated_Source\PSoC4/CapSense_TMG.c ****         #endif /* ((CapSense_TMG_CLICKS_ENABLED != 0u) || (CapSense_TMG_EDGE_SWIPE_ENABLED != 0u)) 
+  82:Generated_Source\PSoC4/CapSense_TMG.c **** 
+  83:Generated_Source\PSoC4/CapSense_TMG.c ****         #if (CapSense_TMG_CLICKS_ENABLED != 0u)
+  84:Generated_Source\PSoC4/CapSense_TMG.c ****             gestureID = clickGesture;
+  85:Generated_Source\PSoC4/CapSense_TMG.c ****             #if ((CapSense_TMG_EDGE_SWIPE_ENABLED == 1u) || (CapSense_TMG_ST_SCROLLS_ENABLED == 1u)
+  86:Generated_Source\PSoC4/CapSense_TMG.c ****             if (clickGesture == CapSense_TMG_CLICK_AND_DRAG)
+  54              		.loc 1 86 0
+  55 0014 2428     		cmp	r0, #36
+  56 0016 02D1     		bne	.L2
+  87:Generated_Source\PSoC4/CapSense_TMG.c ****             {
+  88:Generated_Source\PSoC4/CapSense_TMG.c ****                 clickAndDragActive = 1u;
+  57              		.loc 1 88 0
+  58 0018 0122     		movs	r2, #1
+  59 001a 334B     		ldr	r3, .L17
+  60 001c 1A60     		str	r2, [r3]
+  61              	.L2:
+  89:Generated_Source\PSoC4/CapSense_TMG.c ****             }
+  90:Generated_Source\PSoC4/CapSense_TMG.c ****             #endif /* ((CapSense_TMG_CLICKS_ENABLED == 1u) || (CapSense_TMG_ST_SCROLLS_ENABLED == 1
+  91:Generated_Source\PSoC4/CapSense_TMG.c ****         #endif /* (CapSense_TMG_CLICKS_ENABLED != 0u) */
+  92:Generated_Source\PSoC4/CapSense_TMG.c **** 
+  93:Generated_Source\PSoC4/CapSense_TMG.c ****         #if (CapSense_TMG_ROTATE_ENABLED == 1u)
+  94:Generated_Source\PSoC4/CapSense_TMG.c ****             stGesture = Gesture_DecodeSTRotateGestures((uint8_t)touchNumber, currentTimestamp, pos)
+  62              		.loc 1 94 0
+  63 001e 009A     		ldr	r2, [sp]
+  64 0020 2100     		movs	r1, r4
+  65 0022 2800     		movs	r0, r5
+  66              	.LVL5:
+  67 0024 FFF7FEFF 		bl	Gesture_DecodeSTRotateGestures
+  68              	.LVL6:
+  69 0028 0700     		movs	r7, r0
+  70              	.LVL7:
+  95:Generated_Source\PSoC4/CapSense_TMG.c **** 
+  96:Generated_Source\PSoC4/CapSense_TMG.c ****             #if ((CapSense_TMG_EDGE_SWIPE_ENABLED == 1u) || (CapSense_TMG_CLICKS_ENABLED == 1u))
+  97:Generated_Source\PSoC4/CapSense_TMG.c ****                 #if ((CapSense_TMG_EDGE_SWIPE_ENABLED == 1u) && (CapSense_TMG_CLICKS_ENABLED == 1u)
+  98:Generated_Source\PSoC4/CapSense_TMG.c ****                     if ((clickAndDragActive == 1u) || (edgeSwipeActive == 1u))
+  71              		.loc 1 98 0
+  72 002a 2F4B     		ldr	r3, .L17
+  73 002c 1B68     		ldr	r3, [r3]
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 4
+
+
+  74 002e 012B     		cmp	r3, #1
+  75 0030 04D0     		beq	.L13
+  76              		.loc 1 98 0 is_stmt 0 discriminator 1
+  77 0032 2D4B     		ldr	r3, .L17
+  78 0034 5B68     		ldr	r3, [r3, #4]
+  79 0036 012B     		cmp	r3, #1
+  80 0038 03D1     		bne	.L3
+  81 003a 01E0     		b	.L14
+  82              	.L13:
+  99:Generated_Source\PSoC4/CapSense_TMG.c ****                 #elif (CapSense_TMG_CLICKS_ENABLED == 1u)
+ 100:Generated_Source\PSoC4/CapSense_TMG.c ****                     if (clickAndDragActive == 1u)
+ 101:Generated_Source\PSoC4/CapSense_TMG.c ****                 #elif (CapSense_TMG_EDGE_SWIPE_ENABLED == 1u)
+ 102:Generated_Source\PSoC4/CapSense_TMG.c ****                     if (edgeSwipeActive == 1u)
+ 103:Generated_Source\PSoC4/CapSense_TMG.c ****                 #endif /* ((CapSense_TMG_EDGE_SWIPE_ENABLED == 1u) && (CapSense_TMG_CLICKS_ENABLED 
+ 104:Generated_Source\PSoC4/CapSense_TMG.c ****                 {
+ 105:Generated_Source\PSoC4/CapSense_TMG.c ****                     stGesture = CapSense_TMG_NO_GESTURE;
+  83              		.loc 1 105 0 is_stmt 1
+  84 003c 0027     		movs	r7, #0
+  85 003e 00E0     		b	.L3
+  86              	.L14:
+  87 0040 0027     		movs	r7, #0
+  88              	.L3:
+  89              	.LVL8:
+ 106:Generated_Source\PSoC4/CapSense_TMG.c ****                 }
+ 107:Generated_Source\PSoC4/CapSense_TMG.c ****             #endif /* ((CapSense_TMG_EDGE_SWIPE_ENABLED == 1u) || (CapSense_TMG_CLICKS_ENABLED == 1
+ 108:Generated_Source\PSoC4/CapSense_TMG.c ****             if ((stGesture == CapSense_TMG_ROTATE_CW) || (stGesture == CapSense_TMG_ROTATE_CCW))
+  90              		.loc 1 108 0
+  91 0042 3B00     		movs	r3, r7
+  92 0044 283B     		subs	r3, r3, #40
+  93 0046 012B     		cmp	r3, #1
+  94 0048 03D8     		bhi	.L4
+ 109:Generated_Source\PSoC4/CapSense_TMG.c ****             {
+ 110:Generated_Source\PSoC4/CapSense_TMG.c ****                 rotationActive = CapSense_TMG_ROTATE_TO_OTHER_DEBOUNCE;
+  95              		.loc 1 110 0
+  96 004a 0A22     		movs	r2, #10
+  97 004c 264B     		ldr	r3, .L17
+  98 004e 9A60     		str	r2, [r3, #8]
+  99 0050 06E0     		b	.L5
+ 100              	.L4:
+ 111:Generated_Source\PSoC4/CapSense_TMG.c ****             }
+ 112:Generated_Source\PSoC4/CapSense_TMG.c ****             else
+ 113:Generated_Source\PSoC4/CapSense_TMG.c ****             {
+ 114:Generated_Source\PSoC4/CapSense_TMG.c ****                 if (rotationActive > 0u)
+ 101              		.loc 1 114 0
+ 102 0052 254B     		ldr	r3, .L17
+ 103 0054 9B68     		ldr	r3, [r3, #8]
+ 104 0056 002B     		cmp	r3, #0
+ 105 0058 02D0     		beq	.L5
+ 115:Generated_Source\PSoC4/CapSense_TMG.c ****                 {
+ 116:Generated_Source\PSoC4/CapSense_TMG.c ****                     rotationActive--;
+ 106              		.loc 1 116 0
+ 107 005a 013B     		subs	r3, r3, #1
+ 108 005c 224A     		ldr	r2, .L17
+ 109 005e 9360     		str	r3, [r2, #8]
+ 110              	.L5:
+ 117:Generated_Source\PSoC4/CapSense_TMG.c ****                 }
+ 118:Generated_Source\PSoC4/CapSense_TMG.c ****             }
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 5
+
+
+ 119:Generated_Source\PSoC4/CapSense_TMG.c **** 
+ 120:Generated_Source\PSoC4/CapSense_TMG.c ****             if (((stGesture == CapSense_TMG_NO_GESTURE)||(stGesture == CapSense_TMG_TOUCHDOWN) \
+ 121:Generated_Source\PSoC4/CapSense_TMG.c ****                                             ||(stGesture == CapSense_TMG_LIFT_OFF))&&(rotationActiv
+ 122:Generated_Source\PSoC4/CapSense_TMG.c ****         #else
+ 123:Generated_Source\PSoC4/CapSense_TMG.c ****             if ((stGesture == CapSense_TMG_NO_GESTURE)||(stGesture == CapSense_TMG_TOUCHDOWN) \
+ 124:Generated_Source\PSoC4/CapSense_TMG.c ****                                             ||(stGesture == CapSense_TMG_LIFT_OFF))
+ 125:Generated_Source\PSoC4/CapSense_TMG.c ****         #endif /* (CapSense_TMG_ROTATE_ENABLED == 1u) */
+ 126:Generated_Source\PSoC4/CapSense_TMG.c ****         {
+ 127:Generated_Source\PSoC4/CapSense_TMG.c ****             #if (CapSense_TMG_ST_SCROLLS_ENABLED == 1u)
+ 128:Generated_Source\PSoC4/CapSense_TMG.c ****                 #if ((CapSense_TMG_EDGE_SWIPE_ENABLED == 1u) && (CapSense_TMG_CLICKS_ENABLED == 1u)
+ 129:Generated_Source\PSoC4/CapSense_TMG.c ****                     if ((clickAndDragActive == 0u)&&(edgeSwipeActive == 0u))
+ 130:Generated_Source\PSoC4/CapSense_TMG.c ****                 #elif (CapSense_TMG_CLICKS_ENABLED == 1u)
+ 131:Generated_Source\PSoC4/CapSense_TMG.c ****                     if (clickAndDragActive == 0u)
+ 132:Generated_Source\PSoC4/CapSense_TMG.c ****                 #elif (CapSense_TMG_EDGE_SWIPE_ENABLED == 1u)
+ 133:Generated_Source\PSoC4/CapSense_TMG.c ****                     if (edgeSwipeActive == 0u)
+ 134:Generated_Source\PSoC4/CapSense_TMG.c ****                 #else
+ 135:Generated_Source\PSoC4/CapSense_TMG.c ****                     if (1u == 1u)
+ 136:Generated_Source\PSoC4/CapSense_TMG.c ****                 #endif /* ((CapSense_TMG_EDGE_SWIPE_ENABLED == 1u) && (CapSense_TMG_CLICKS_ENABLED 
+ 137:Generated_Source\PSoC4/CapSense_TMG.c ****                 {
+ 138:Generated_Source\PSoC4/CapSense_TMG.c ****                     stGesture = Gesture_DecodeSTScrollGestures((uint8_t)touchNumber, currentTimesta
+ 139:Generated_Source\PSoC4/CapSense_TMG.c ****                 }
+ 140:Generated_Source\PSoC4/CapSense_TMG.c ****             #elif (CapSense_TMG_FLICKS_ENABLED == 1u)
+ 141:Generated_Source\PSoC4/CapSense_TMG.c ****                 stGesture = Gesture_DecodeFlickGestures((uint8_t)touchNumber, currentTimestamp, pos
+ 142:Generated_Source\PSoC4/CapSense_TMG.c ****             #endif /* (CapSense_TMG_ST_SCROLLS_ENABLED == 1u) */
+ 143:Generated_Source\PSoC4/CapSense_TMG.c ****         }
+ 144:Generated_Source\PSoC4/CapSense_TMG.c **** 
+ 145:Generated_Source\PSoC4/CapSense_TMG.c ****         #if (CapSense_TMG_EDGE_SWIPE_ENABLED == 1u)
+ 146:Generated_Source\PSoC4/CapSense_TMG.c ****             edgeSwipeGesture = Gesture_DecodeEdgeSwipeGestures((uint8_t)touchNumber, currentTimesta
+ 111              		.loc 1 146 0
+ 112 0060 009A     		ldr	r2, [sp]
+ 113 0062 2100     		movs	r1, r4
+ 114 0064 2800     		movs	r0, r5
+ 115 0066 FFF7FEFF 		bl	Gesture_DecodeEdgeSwipeGestures
+ 116              	.LVL9:
+ 147:Generated_Source\PSoC4/CapSense_TMG.c **** 
+ 148:Generated_Source\PSoC4/CapSense_TMG.c ****             #if (CapSense_TMG_ROTATE_ENABLED == 1u)
+ 149:Generated_Source\PSoC4/CapSense_TMG.c ****                 if (((edgeSwipeGesture != CapSense_TMG_NO_GESTURE) && \
+ 117              		.loc 1 149 0
+ 118 006a 0028     		cmp	r0, #0
+ 119 006c 0BD0     		beq	.L6
+ 120              		.loc 1 149 0 is_stmt 0 discriminator 1
+ 121 006e 2F28     		cmp	r0, #47
+ 122 0070 09D0     		beq	.L6
+ 150:Generated_Source\PSoC4/CapSense_TMG.c ****                     (edgeSwipeGesture != CapSense_TMG_TOUCHDOWN) && (edgeSwipeGesture != CapSense_T
+ 123              		.loc 1 150 0 is_stmt 1
+ 124 0072 4F28     		cmp	r0, #79
+ 125 0074 07D0     		beq	.L6
+ 151:Generated_Source\PSoC4/CapSense_TMG.c ****                                                                                             && (rot
+ 126              		.loc 1 151 0
+ 127 0076 1C4B     		ldr	r3, .L17
+ 128 0078 9B68     		ldr	r3, [r3, #8]
+ 129 007a 002B     		cmp	r3, #0
+ 130 007c 03D1     		bne	.L6
+ 131              	.LVL10:
+ 152:Generated_Source\PSoC4/CapSense_TMG.c ****             #else
+ 153:Generated_Source\PSoC4/CapSense_TMG.c ****                 if ((edgeSwipeGesture != CapSense_TMG_NO_GESTURE) && \
+ 154:Generated_Source\PSoC4/CapSense_TMG.c ****                     (edgeSwipeGesture != CapSense_TMG_TOUCHDOWN) && (edgeSwipeGesture != CapSense_T
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 6
+
+
+ 155:Generated_Source\PSoC4/CapSense_TMG.c ****             #endif /* (CapSense_TMG_ROTATE_ENABLED == 1u) */
+ 156:Generated_Source\PSoC4/CapSense_TMG.c ****             {
+ 157:Generated_Source\PSoC4/CapSense_TMG.c ****                 stGesture = edgeSwipeGesture;
+ 158:Generated_Source\PSoC4/CapSense_TMG.c ****                 #if ((CapSense_TMG_EDGE_SWIPE_ENABLED == 1u) && ((CapSense_TMG_CLICKS_ENABLED == 1u
+ 159:Generated_Source\PSoC4/CapSense_TMG.c ****                                                                      (CapSense_TMG_ST_SCROLLS_ENABL
+ 160:Generated_Source\PSoC4/CapSense_TMG.c ****                                                                      (CapSense_TMG_ROTATE_ENABLED =
+ 161:Generated_Source\PSoC4/CapSense_TMG.c ****                     edgeSwipeActive = 1u;
+ 132              		.loc 1 161 0
+ 133 007e 0122     		movs	r2, #1
+ 134 0080 194B     		ldr	r3, .L17
+ 135 0082 5A60     		str	r2, [r3, #4]
+ 157:Generated_Source\PSoC4/CapSense_TMG.c ****                 #if ((CapSense_TMG_EDGE_SWIPE_ENABLED == 1u) && ((CapSense_TMG_CLICKS_ENABLED == 1u
+ 136              		.loc 1 157 0
+ 137 0084 0700     		movs	r7, r0
+ 138              	.LVL11:
+ 139              	.L6:
+ 162:Generated_Source\PSoC4/CapSense_TMG.c ****                 #endif /* ((CapSense_TMG_EDGE_SWIPE_ENABLED == 1u) && ((CapSense_TMG_CLICKS_ENABLED
+ 163:Generated_Source\PSoC4/CapSense_TMG.c ****                                                                            (CapSense_TMG_ST_SCROLLS
+ 164:Generated_Source\PSoC4/CapSense_TMG.c ****                                                                            (CapSense_TMG_ROTATE_ENA
+ 165:Generated_Source\PSoC4/CapSense_TMG.c ****             }
+ 166:Generated_Source\PSoC4/CapSense_TMG.c ****         #endif /* (CapSense_TMG_EDGE_SWIPE_ENABLED == 1u) */
+ 167:Generated_Source\PSoC4/CapSense_TMG.c **** 
+ 168:Generated_Source\PSoC4/CapSense_TMG.c ****         if ((stGesture != CapSense_TMG_NO_GESTURE)&&(stGesture != CapSense_TMG_TOUCHDOWN) \
+ 140              		.loc 1 168 0
+ 141 0086 002F     		cmp	r7, #0
+ 142 0088 05D0     		beq	.L15
+ 143              		.loc 1 168 0 is_stmt 0 discriminator 1
+ 144 008a 2F2F     		cmp	r7, #47
+ 145 008c 05D0     		beq	.L16
+ 169:Generated_Source\PSoC4/CapSense_TMG.c ****                                             &&(stGesture != CapSense_TMG_LIFT_OFF))
+ 146              		.loc 1 169 0 is_stmt 1
+ 147 008e 4F2F     		cmp	r7, #79
+ 148 0090 04D1     		bne	.L7
+ 170:Generated_Source\PSoC4/CapSense_TMG.c ****         {
+ 171:Generated_Source\PSoC4/CapSense_TMG.c ****             gestureID = stGesture;
+ 172:Generated_Source\PSoC4/CapSense_TMG.c ****         }
+ 173:Generated_Source\PSoC4/CapSense_TMG.c ****         else if ((clickGesture == CapSense_TMG_TOUCHDOWN) || (clickGesture == CapSense_TMG_LIFT_OFF
+ 174:Generated_Source\PSoC4/CapSense_TMG.c ****         {
+ 175:Generated_Source\PSoC4/CapSense_TMG.c ****             #if(CapSense_TMG_CLICKS_ENABLED != 0u)
+ 176:Generated_Source\PSoC4/CapSense_TMG.c ****                 gestureID = clickGesture;
+ 149              		.loc 1 176 0
+ 150 0092 019F     		ldr	r7, [sp, #4]
+ 151              	.LVL12:
+ 152 0094 02E0     		b	.L7
+ 153              	.LVL13:
+ 154              	.L15:
+ 155 0096 019F     		ldr	r7, [sp, #4]
+ 156              	.LVL14:
+ 157 0098 00E0     		b	.L7
+ 158              	.LVL15:
+ 159              	.L16:
+ 160 009a 019F     		ldr	r7, [sp, #4]
+ 161              	.LVL16:
+ 162              	.L7:
+ 177:Generated_Source\PSoC4/CapSense_TMG.c ****             #else
+ 178:Generated_Source\PSoC4/CapSense_TMG.c ****                 gestureID = CapSense_TMG_NO_GESTURE;
+ 179:Generated_Source\PSoC4/CapSense_TMG.c ****             #endif /* (CapSense_TMG_CLICKS_ENABLED != 0u) */
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 7
+
+
+ 180:Generated_Source\PSoC4/CapSense_TMG.c ****         }
+ 181:Generated_Source\PSoC4/CapSense_TMG.c ****         else
+ 182:Generated_Source\PSoC4/CapSense_TMG.c ****         {
+ 183:Generated_Source\PSoC4/CapSense_TMG.c ****             /* Do not change gestureID */
+ 184:Generated_Source\PSoC4/CapSense_TMG.c ****         }
+ 185:Generated_Source\PSoC4/CapSense_TMG.c **** 
+ 186:Generated_Source\PSoC4/CapSense_TMG.c ****         dtGesture = CapSense_TMG_DecodeZoomGestures(touchNumber, currentTimestamp, pos);
+ 187:Generated_Source\PSoC4/CapSense_TMG.c ****         if ((dtGesture == CapSense_TMG_NO_GESTURE) || (dtGesture == CapSense_TMG_TOUCHDOWN) \
+ 188:Generated_Source\PSoC4/CapSense_TMG.c ****                                             || (dtGesture == CapSense_TMG_LIFT_OFF))
+ 189:Generated_Source\PSoC4/CapSense_TMG.c ****         {
+ 190:Generated_Source\PSoC4/CapSense_TMG.c ****             dtGesture = CapSense_TMG_DecodeDTScrollGestures(touchNumber, currentTimestamp, pos);
+ 191:Generated_Source\PSoC4/CapSense_TMG.c ****         }
+ 192:Generated_Source\PSoC4/CapSense_TMG.c ****         else
+ 193:Generated_Source\PSoC4/CapSense_TMG.c ****         {
+ 194:Generated_Source\PSoC4/CapSense_TMG.c ****             (void)CapSense_TMG_DecodeDTScrollGestures(touchNumber, currentTimestamp, pos);
+ 195:Generated_Source\PSoC4/CapSense_TMG.c ****         }
+ 196:Generated_Source\PSoC4/CapSense_TMG.c **** 
+ 197:Generated_Source\PSoC4/CapSense_TMG.c ****         if ((dtGesture != CapSense_TMG_NO_GESTURE) && (dtGesture != CapSense_TMG_TOUCHDOWN) \
+ 198:Generated_Source\PSoC4/CapSense_TMG.c ****                                             && (dtGesture != CapSense_TMG_LIFT_OFF))
+ 199:Generated_Source\PSoC4/CapSense_TMG.c ****         {
+ 200:Generated_Source\PSoC4/CapSense_TMG.c ****             gestureID = dtGesture;
+ 201:Generated_Source\PSoC4/CapSense_TMG.c ****         }
+ 202:Generated_Source\PSoC4/CapSense_TMG.c **** 
+ 203:Generated_Source\PSoC4/CapSense_TMG.c ****         #if (CapSense_TMG_EDGE_SWIPE_ENABLED != 0u)
+ 204:Generated_Source\PSoC4/CapSense_TMG.c ****             if((gestureID >= CapSense_TMG_EDGE_SWIPE_LEFT)&&(gestureID <= CapSense_TMG_EDGE_SWIPE_B
+ 163              		.loc 1 204 0
+ 164 009c 3B00     		movs	r3, r7
+ 165 009e A03B     		subs	r3, r3, #160
+ 166 00a0 062B     		cmp	r3, #6
+ 167 00a2 01D8     		bhi	.L8
+ 205:Generated_Source\PSoC4/CapSense_TMG.c ****             {
+ 206:Generated_Source\PSoC4/CapSense_TMG.c ****                 edgeTimeoutStamp = currentTimestamp;
+ 168              		.loc 1 206 0
+ 169 00a4 104B     		ldr	r3, .L17
+ 170 00a6 DC60     		str	r4, [r3, #12]
+ 171              	.L8:
+ 207:Generated_Source\PSoC4/CapSense_TMG.c ****             }
+ 208:Generated_Source\PSoC4/CapSense_TMG.c ****         #endif /* (CapSense_TMG_EDGE_SWIPE_ENABLED != 0u) */
+ 209:Generated_Source\PSoC4/CapSense_TMG.c **** 
+ 210:Generated_Source\PSoC4/CapSense_TMG.c ****         if ((clickGesture == CapSense_TMG_LIFT_OFF) || (clickGesture == CapSense_TMG_TOUCHDOWN) || 
+ 172              		.loc 1 210 0
+ 173 00a8 4F2E     		cmp	r6, #79
+ 174 00aa 03D0     		beq	.L9
+ 175              		.loc 1 210 0 is_stmt 0 discriminator 1
+ 176 00ac 2F2E     		cmp	r6, #47
+ 177 00ae 01D0     		beq	.L9
+ 178              		.loc 1 210 0 discriminator 2
+ 179 00b0 002F     		cmp	r7, #0
+ 180 00b2 16D1     		bne	.L10
+ 181              	.L9:
+ 211:Generated_Source\PSoC4/CapSense_TMG.c ****                 (gestureID == CapSense_TMG_NO_GESTURE))
+ 212:Generated_Source\PSoC4/CapSense_TMG.c ****         {
+ 213:Generated_Source\PSoC4/CapSense_TMG.c ****             #if ((CapSense_TMG_CLICKS_ENABLED == 1u) && ((CapSense_TMG_EDGE_SWIPE_ENABLED == 1u) ||
+ 214:Generated_Source\PSoC4/CapSense_TMG.c ****                                                              (CapSense_TMG_ST_SCROLLS_ENABLED == 1u
+ 215:Generated_Source\PSoC4/CapSense_TMG.c ****                                                              (CapSense_TMG_ROTATE_ENABLED == 1u)))
+ 216:Generated_Source\PSoC4/CapSense_TMG.c ****                 if(0u != clickAndDragActive)
+ 182              		.loc 1 216 0 is_stmt 1
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 8
+
+
+ 183 00b4 0C4B     		ldr	r3, .L17
+ 184 00b6 1B68     		ldr	r3, [r3]
+ 185 00b8 002B     		cmp	r3, #0
+ 186 00ba 02D0     		beq	.L11
+ 217:Generated_Source\PSoC4/CapSense_TMG.c ****                 {
+ 218:Generated_Source\PSoC4/CapSense_TMG.c ****                     clickAndDragActive = 0u;
+ 187              		.loc 1 218 0
+ 188 00bc 0022     		movs	r2, #0
+ 189 00be 0A4B     		ldr	r3, .L17
+ 190 00c0 1A60     		str	r2, [r3]
+ 191              	.L11:
+ 219:Generated_Source\PSoC4/CapSense_TMG.c ****                 }
+ 220:Generated_Source\PSoC4/CapSense_TMG.c ****             #endif /* ((CapSense_TMG_CLICKS_ENABLED == 1u) && ((CapSense_TMG_EDGE_SWIPE_ENABLED == 
+ 221:Generated_Source\PSoC4/CapSense_TMG.c ****                                                                    (CapSense_TMG_ST_SCROLLS_ENABLED
+ 222:Generated_Source\PSoC4/CapSense_TMG.c ****                                                                    (CapSense_TMG_ROTATE_ENABLED == 
+ 223:Generated_Source\PSoC4/CapSense_TMG.c **** 
+ 224:Generated_Source\PSoC4/CapSense_TMG.c ****             #if (CapSense_TMG_EDGE_SWIPE_ENABLED != 0u)
+ 225:Generated_Source\PSoC4/CapSense_TMG.c ****             deltaTimeoutStamp = currentTimestamp - edgeTimeoutStamp;
+ 192              		.loc 1 225 0
+ 193 00c2 094B     		ldr	r3, .L17
+ 194 00c4 DB68     		ldr	r3, [r3, #12]
+ 195 00c6 E41A     		subs	r4, r4, r3
+ 196              	.LVL17:
+ 226:Generated_Source\PSoC4/CapSense_TMG.c ****             if ((clickGesture == CapSense_TMG_LIFT_OFF) || (deltaTimeoutStamp >= CapSense_TMG_EDGE_
+ 197              		.loc 1 226 0
+ 198 00c8 4F2E     		cmp	r6, #79
+ 199 00ca 02D0     		beq	.L12
+ 200              		.loc 1 226 0 is_stmt 0 discriminator 1
+ 201 00cc 074B     		ldr	r3, .L17+4
+ 202 00ce 9C42     		cmp	r4, r3
+ 203 00d0 07D9     		bls	.L10
+ 204              	.L12:
+ 227:Generated_Source\PSoC4/CapSense_TMG.c ****             {
+ 228:Generated_Source\PSoC4/CapSense_TMG.c ****                 edgeTimeoutStamp = 0u;
+ 205              		.loc 1 228 0 is_stmt 1
+ 206 00d2 054B     		ldr	r3, .L17
+ 207 00d4 0022     		movs	r2, #0
+ 208 00d6 DA60     		str	r2, [r3, #12]
+ 229:Generated_Source\PSoC4/CapSense_TMG.c ****                 #if ((CapSense_TMG_EDGE_SWIPE_ENABLED == 1u) && ((CapSense_TMG_CLICKS_ENABLED == 1u
+ 230:Generated_Source\PSoC4/CapSense_TMG.c ****                                                                             (CapSense_TMG_ST_SCROLL
+ 231:Generated_Source\PSoC4/CapSense_TMG.c ****                     if(0u != edgeSwipeActive)
+ 209              		.loc 1 231 0
+ 210 00d8 5B68     		ldr	r3, [r3, #4]
+ 211 00da 002B     		cmp	r3, #0
+ 212 00dc 01D0     		beq	.L10
+ 232:Generated_Source\PSoC4/CapSense_TMG.c ****                     {
+ 233:Generated_Source\PSoC4/CapSense_TMG.c ****                         edgeSwipeActive = 0u;
+ 213              		.loc 1 233 0
+ 214 00de 024B     		ldr	r3, .L17
+ 215 00e0 5A60     		str	r2, [r3, #4]
+ 216              	.LVL18:
+ 217              	.L10:
+ 234:Generated_Source\PSoC4/CapSense_TMG.c ****                     }
+ 235:Generated_Source\PSoC4/CapSense_TMG.c **** 
+ 236:Generated_Source\PSoC4/CapSense_TMG.c ****                 #endif /* ((CapSense_TMG_EDGE_SWIPE_ENABLED == 1u) && ((CapSense_TMG_CLICKS_ENABLED
+ 237:Generated_Source\PSoC4/CapSense_TMG.c ****                                                                             (CapSense_TMG_ST_SCROLL
+ 238:Generated_Source\PSoC4/CapSense_TMG.c ****             }
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 9
+
+
+ 239:Generated_Source\PSoC4/CapSense_TMG.c ****             #endif /* (CapSense_TMG_EDGE_SWIPE_ENABLED != 0u) */
+ 240:Generated_Source\PSoC4/CapSense_TMG.c ****         }
+ 241:Generated_Source\PSoC4/CapSense_TMG.c ****     #endif /* (0u != CapSense_TMG_GESTURES_ENABLED) */
+ 242:Generated_Source\PSoC4/CapSense_TMG.c **** 
+ 243:Generated_Source\PSoC4/CapSense_TMG.c ****     return (gestureID);
+ 244:Generated_Source\PSoC4/CapSense_TMG.c **** }
+ 218              		.loc 1 244 0
+ 219 00e2 3800     		movs	r0, r7
+ 220              	.LVL19:
+ 221 00e4 03B0     		add	sp, sp, #12
+ 222              	.LVL20:
+ 223              		@ sp needed
+ 224              	.LVL21:
+ 225              	.LVL22:
+ 226 00e6 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 227              	.L18:
+ 228              		.align	2
+ 229              	.L17:
+ 230 00e8 00000000 		.word	.LANCHOR0
+ 231 00ec CF070000 		.word	1999
+ 232              		.cfi_endproc
+ 233              	.LFE0:
+ 234              		.size	CapSense_TMG_DecodeAllGestures, .-CapSense_TMG_DecodeAllGestures
+ 235              		.section	.text.CapSense_TMG_BallisticsMultiplier,"ax",%progbits
+ 236              		.align	2
+ 237              		.global	CapSense_TMG_BallisticsMultiplier
+ 238              		.code	16
+ 239              		.thumb_func
+ 240              		.type	CapSense_TMG_BallisticsMultiplier, %function
+ 241              	CapSense_TMG_BallisticsMultiplier:
+ 242              	.LFB1:
+ 245:Generated_Source\PSoC4/CapSense_TMG.c **** 
+ 246:Generated_Source\PSoC4/CapSense_TMG.c **** 
+ 247:Generated_Source\PSoC4/CapSense_TMG.c **** /*******************************************************************************
+ 248:Generated_Source\PSoC4/CapSense_TMG.c **** * Function Name: CapSense_TMG_ballisticsMultiplier
+ 249:Generated_Source\PSoC4/CapSense_TMG.c **** ********************************************************************************
+ 250:Generated_Source\PSoC4/CapSense_TMG.c **** *
+ 251:Generated_Source\PSoC4/CapSense_TMG.c **** * Summary:
+ 252:Generated_Source\PSoC4/CapSense_TMG.c **** *  This API is to run the ballistic Multiplier.
+ 253:Generated_Source\PSoC4/CapSense_TMG.c **** *  CapSense_TMG_TimerEnableInt has to be called once prior calling this API.
+ 254:Generated_Source\PSoC4/CapSense_TMG.c **** *
+ 255:Generated_Source\PSoC4/CapSense_TMG.c **** * Parameters:
+ 256:Generated_Source\PSoC4/CapSense_TMG.c **** *   ballisticMultiplier: Pointer to the structure which contains API parameters.
+ 257:Generated_Source\PSoC4/CapSense_TMG.c **** *   currentTimestamp : Current timestamp value.
+ 258:Generated_Source\PSoC4/CapSense_TMG.c **** *   pos: Pointer to dX and dY coordinates.
+ 259:Generated_Source\PSoC4/CapSense_TMG.c **** *
+ 260:Generated_Source\PSoC4/CapSense_TMG.c **** * Return:
+ 261:Generated_Source\PSoC4/CapSense_TMG.c **** *  None
+ 262:Generated_Source\PSoC4/CapSense_TMG.c **** *
+ 263:Generated_Source\PSoC4/CapSense_TMG.c **** * Global Variables:
+ 264:Generated_Source\PSoC4/CapSense_TMG.c **** *  None
+ 265:Generated_Source\PSoC4/CapSense_TMG.c **** *
+ 266:Generated_Source\PSoC4/CapSense_TMG.c **** *******************************************************************************/
+ 267:Generated_Source\PSoC4/CapSense_TMG.c **** void CapSense_TMG_BallisticsMultiplier(const CapSense_TMG_BALLISTIC_MULT * ballisticMultiplier, uin
+ 268:Generated_Source\PSoC4/CapSense_TMG.c **** {
+ 243              		.loc 1 268 0
+ 244              		.cfi_startproc
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 10
+
+
+ 245              		@ args = 0, pretend = 0, frame = 0
+ 246              		@ frame_needed = 0, uses_anonymous_args = 0
+ 247              		@ link register save eliminated.
+ 248              	.LVL23:
+ 269:Generated_Source\PSoC4/CapSense_TMG.c ****     #if (CapSense_TMG_BALLISTICS_ENABLED == 1u)
+ 270:Generated_Source\PSoC4/CapSense_TMG.c ****         CapSense_TMG_BALLISTIC_MULT_INT ballisticsStrct;
+ 271:Generated_Source\PSoC4/CapSense_TMG.c ****         ballisticsStrct.paramStr = *ballisticMultiplier;
+ 272:Generated_Source\PSoC4/CapSense_TMG.c ****         ballisticsStrct.currentTimestamp = currentTimestamp;
+ 273:Generated_Source\PSoC4/CapSense_TMG.c ****         BallisticMultiplier(&ballisticsStrct, pos);
+ 274:Generated_Source\PSoC4/CapSense_TMG.c ****     #endif /* (CapSense_TMG_BALLISTICS_ENABLED == 1u) */
+ 275:Generated_Source\PSoC4/CapSense_TMG.c **** }
+ 249              		.loc 1 275 0
+ 250              		@ sp needed
+ 251 0000 7047     		bx	lr
+ 252              		.cfi_endproc
+ 253              	.LFE1:
+ 254              		.size	CapSense_TMG_BallisticsMultiplier, .-CapSense_TMG_BallisticsMultiplier
+ 255 0002 C046     		.bss
+ 256              		.align	2
+ 257              		.set	.LANCHOR0,. + 0
+ 258              		.type	clickAndDragActive.4341, %object
+ 259              		.size	clickAndDragActive.4341, 4
+ 260              	clickAndDragActive.4341:
+ 261 0000 00000000 		.space	4
+ 262              		.type	edgeSwipeActive.4340, %object
+ 263              		.size	edgeSwipeActive.4340, 4
+ 264              	edgeSwipeActive.4340:
+ 265 0004 00000000 		.space	4
+ 266              		.type	rotationActive.4337, %object
+ 267              		.size	rotationActive.4337, 4
+ 268              	rotationActive.4337:
+ 269 0008 00000000 		.space	4
+ 270              		.type	edgeTimeoutStamp.4338, %object
+ 271              		.size	edgeTimeoutStamp.4338, 4
+ 272              	edgeTimeoutStamp.4338:
+ 273 000c 00000000 		.space	4
+ 274              		.text
+ 275              	.Letext0:
+ 276              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 277              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 278              		.file 4 "Generated_Source\\PSoC4\\CapSense_TMG.h"
+ 279              		.section	.debug_info,"",%progbits
+ 280              	.Ldebug_info0:
+ 281 0000 12030000 		.4byte	0x312
+ 282 0004 0400     		.2byte	0x4
+ 283 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 284 000a 04       		.byte	0x4
+ 285 000b 01       		.uleb128 0x1
+ 286 000c 25000000 		.4byte	.LASF40
+ 287 0010 0C       		.byte	0xc
+ 288 0011 50020000 		.4byte	.LASF41
+ 289 0015 32010000 		.4byte	.LASF42
+ 290 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 291 001d 00000000 		.4byte	0
+ 292 0021 00000000 		.4byte	.Ldebug_line0
+ 293 0025 02       		.uleb128 0x2
+ 294 0026 01       		.byte	0x1
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 11
+
+
+ 295 0027 06       		.byte	0x6
+ 296 0028 03020000 		.4byte	.LASF0
+ 297 002c 03       		.uleb128 0x3
+ 298 002d 28010000 		.4byte	.LASF2
+ 299 0031 02       		.byte	0x2
+ 300 0032 1D       		.byte	0x1d
+ 301 0033 37000000 		.4byte	0x37
+ 302 0037 02       		.uleb128 0x2
+ 303 0038 01       		.byte	0x1
+ 304 0039 08       		.byte	0x8
+ 305 003a F5010000 		.4byte	.LASF1
+ 306 003e 03       		.uleb128 0x3
+ 307 003f 71030000 		.4byte	.LASF3
+ 308 0043 02       		.byte	0x2
+ 309 0044 29       		.byte	0x29
+ 310 0045 49000000 		.4byte	0x49
+ 311 0049 02       		.uleb128 0x2
+ 312 004a 02       		.byte	0x2
+ 313 004b 05       		.byte	0x5
+ 314 004c 00000000 		.4byte	.LASF4
+ 315 0050 03       		.uleb128 0x3
+ 316 0051 CF000000 		.4byte	.LASF5
+ 317 0055 02       		.byte	0x2
+ 318 0056 2B       		.byte	0x2b
+ 319 0057 5B000000 		.4byte	0x5b
+ 320 005b 02       		.uleb128 0x2
+ 321 005c 02       		.byte	0x2
+ 322 005d 07       		.byte	0x7
+ 323 005e B7020000 		.4byte	.LASF6
+ 324 0062 02       		.uleb128 0x2
+ 325 0063 04       		.byte	0x4
+ 326 0064 05       		.byte	0x5
+ 327 0065 00010000 		.4byte	.LASF7
+ 328 0069 03       		.uleb128 0x3
+ 329 006a C4000000 		.4byte	.LASF8
+ 330 006e 02       		.byte	0x2
+ 331 006f 41       		.byte	0x41
+ 332 0070 74000000 		.4byte	0x74
+ 333 0074 02       		.uleb128 0x2
+ 334 0075 04       		.byte	0x4
+ 335 0076 07       		.byte	0x7
+ 336 0077 2B030000 		.4byte	.LASF9
+ 337 007b 02       		.uleb128 0x2
+ 338 007c 08       		.byte	0x8
+ 339 007d 05       		.byte	0x5
+ 340 007e F2000000 		.4byte	.LASF10
+ 341 0082 02       		.uleb128 0x2
+ 342 0083 08       		.byte	0x8
+ 343 0084 07       		.byte	0x7
+ 344 0085 0F020000 		.4byte	.LASF11
+ 345 0089 04       		.uleb128 0x4
+ 346 008a 04       		.byte	0x4
+ 347 008b 05       		.byte	0x5
+ 348 008c 696E7400 		.ascii	"int\000"
+ 349 0090 02       		.uleb128 0x2
+ 350 0091 04       		.byte	0x4
+ 351 0092 07       		.byte	0x7
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 12
+
+
+ 352 0093 3A020000 		.4byte	.LASF12
+ 353 0097 03       		.uleb128 0x3
+ 354 0098 DA000000 		.4byte	.LASF13
+ 355 009c 03       		.byte	0x3
+ 356 009d 18       		.byte	0x18
+ 357 009e 2C000000 		.4byte	0x2c
+ 358 00a2 03       		.uleb128 0x3
+ 359 00a3 E6020000 		.4byte	.LASF14
+ 360 00a7 03       		.byte	0x3
+ 361 00a8 20       		.byte	0x20
+ 362 00a9 3E000000 		.4byte	0x3e
+ 363 00ad 03       		.uleb128 0x3
+ 364 00ae 47020000 		.4byte	.LASF15
+ 365 00b2 03       		.byte	0x3
+ 366 00b3 24       		.byte	0x24
+ 367 00b4 50000000 		.4byte	0x50
+ 368 00b8 03       		.uleb128 0x3
+ 369 00b9 26020000 		.4byte	.LASF16
+ 370 00bd 03       		.byte	0x3
+ 371 00be 30       		.byte	0x30
+ 372 00bf 69000000 		.4byte	0x69
+ 373 00c3 05       		.uleb128 0x5
+ 374 00c4 06       		.byte	0x6
+ 375 00c5 04       		.byte	0x4
+ 376 00c6 F801     		.2byte	0x1f8
+ 377 00c8 1B010000 		.4byte	0x11b
+ 378 00cc 06       		.uleb128 0x6
+ 379 00cd 54030000 		.4byte	.LASF17
+ 380 00d1 04       		.byte	0x4
+ 381 00d2 FB01     		.2byte	0x1fb
+ 382 00d4 97000000 		.4byte	0x97
+ 383 00d8 00       		.byte	0
+ 384 00d9 06       		.uleb128 0x6
+ 385 00da 2F020000 		.4byte	.LASF18
+ 386 00de 04       		.byte	0x4
+ 387 00df FD01     		.2byte	0x1fd
+ 388 00e1 97000000 		.4byte	0x97
+ 389 00e5 01       		.byte	0x1
+ 390 00e6 06       		.uleb128 0x6
+ 391 00e7 D2030000 		.4byte	.LASF19
+ 392 00eb 04       		.byte	0x4
+ 393 00ec FF01     		.2byte	0x1ff
+ 394 00ee 97000000 		.4byte	0x97
+ 395 00f2 02       		.byte	0x2
+ 396 00f3 06       		.uleb128 0x6
+ 397 00f4 B7000000 		.4byte	.LASF20
+ 398 00f8 04       		.byte	0x4
+ 399 00f9 0102     		.2byte	0x201
+ 400 00fb 97000000 		.4byte	0x97
+ 401 00ff 03       		.byte	0x3
+ 402 0100 06       		.uleb128 0x6
+ 403 0101 DD030000 		.4byte	.LASF21
+ 404 0105 04       		.byte	0x4
+ 405 0106 0302     		.2byte	0x203
+ 406 0108 97000000 		.4byte	0x97
+ 407 010c 04       		.byte	0x4
+ 408 010d 06       		.uleb128 0x6
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 13
+
+
+ 409 010e ED030000 		.4byte	.LASF22
+ 410 0112 04       		.byte	0x4
+ 411 0113 0502     		.2byte	0x205
+ 412 0115 97000000 		.4byte	0x97
+ 413 0119 05       		.byte	0x5
+ 414 011a 00       		.byte	0
+ 415 011b 07       		.uleb128 0x7
+ 416 011c CA010000 		.4byte	.LASF23
+ 417 0120 04       		.byte	0x4
+ 418 0121 0602     		.2byte	0x206
+ 419 0123 C3000000 		.4byte	0xc3
+ 420 0127 05       		.uleb128 0x5
+ 421 0128 04       		.byte	0x4
+ 422 0129 04       		.byte	0x4
+ 423 012a 0C02     		.2byte	0x20c
+ 424 012c 47010000 		.4byte	0x147
+ 425 0130 08       		.uleb128 0x8
+ 426 0131 7800     		.ascii	"x\000"
+ 427 0133 04       		.byte	0x4
+ 428 0134 0D02     		.2byte	0x20d
+ 429 0136 AD000000 		.4byte	0xad
+ 430 013a 00       		.byte	0
+ 431 013b 08       		.uleb128 0x8
+ 432 013c 7900     		.ascii	"y\000"
+ 433 013e 04       		.byte	0x4
+ 434 013f 0E02     		.2byte	0x20e
+ 435 0141 AD000000 		.4byte	0xad
+ 436 0145 02       		.byte	0x2
+ 437 0146 00       		.byte	0
+ 438 0147 07       		.uleb128 0x7
+ 439 0148 0E030000 		.4byte	.LASF24
+ 440 014c 04       		.byte	0x4
+ 441 014d 0F02     		.2byte	0x20f
+ 442 014f 27010000 		.4byte	0x127
+ 443 0153 09       		.uleb128 0x9
+ 444 0154 09010000 		.4byte	.LASF43
+ 445 0158 01       		.byte	0x1
+ 446 0159 25       		.byte	0x25
+ 447 015a B8000000 		.4byte	0xb8
+ 448 015e 00000000 		.4byte	.LFB0
+ 449 0162 F0000000 		.4byte	.LFE0-.LFB0
+ 450 0166 01       		.uleb128 0x1
+ 451 0167 9C       		.byte	0x9c
+ 452 0168 94020000 		.4byte	0x294
+ 453 016c 0A       		.uleb128 0xa
+ 454 016d 54030000 		.4byte	.LASF17
+ 455 0171 01       		.byte	0x1
+ 456 0172 25       		.byte	0x25
+ 457 0173 B8000000 		.4byte	0xb8
+ 458 0177 00000000 		.4byte	.LLST0
+ 459 017b 0A       		.uleb128 0xa
+ 460 017c 60030000 		.4byte	.LASF25
+ 461 0180 01       		.byte	0x1
+ 462 0181 25       		.byte	0x25
+ 463 0182 B8000000 		.4byte	0xb8
+ 464 0186 21000000 		.4byte	.LLST1
+ 465 018a 0B       		.uleb128 0xb
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 14
+
+
+ 466 018b 706F7300 		.ascii	"pos\000"
+ 467 018f 01       		.byte	0x1
+ 468 0190 25       		.byte	0x25
+ 469 0191 94020000 		.4byte	0x294
+ 470 0195 4D000000 		.4byte	.LLST2
+ 471 0199 0C       		.uleb128 0xc
+ 472 019a 4A030000 		.4byte	.LASF26
+ 473 019e 01       		.byte	0x1
+ 474 019f 27       		.byte	0x27
+ 475 01a0 B8000000 		.4byte	0xb8
+ 476 01a4 78000000 		.4byte	.LLST3
+ 477 01a8 0C       		.uleb128 0xc
+ 478 01a9 3D030000 		.4byte	.LASF27
+ 479 01ad 01       		.byte	0x1
+ 480 01ae 2A       		.byte	0x2a
+ 481 01af B8000000 		.4byte	0xb8
+ 482 01b3 B8000000 		.4byte	.LLST4
+ 483 01b7 0C       		.uleb128 0xc
+ 484 01b8 DC020000 		.4byte	.LASF28
+ 485 01bc 01       		.byte	0x1
+ 486 01bd 2D       		.byte	0x2d
+ 487 01be B8000000 		.4byte	0xb8
+ 488 01c2 EE000000 		.4byte	.LLST5
+ 489 01c6 0D       		.uleb128 0xd
+ 490 01c7 0A000000 		.4byte	.LASF29
+ 491 01cb 01       		.byte	0x1
+ 492 01cc 30       		.byte	0x30
+ 493 01cd B8000000 		.4byte	0xb8
+ 494 01d1 00       		.byte	0
+ 495 01d2 0E       		.uleb128 0xe
+ 496 01d3 E6010000 		.4byte	.LASF30
+ 497 01d7 01       		.byte	0x1
+ 498 01d8 33       		.byte	0x33
+ 499 01d9 B8000000 		.4byte	0xb8
+ 500 01dd 05       		.uleb128 0x5
+ 501 01de 03       		.byte	0x3
+ 502 01df 08000000 		.4byte	rotationActive.4337
+ 503 01e3 0E       		.uleb128 0xe
+ 504 01e4 14000000 		.4byte	.LASF31
+ 505 01e8 01       		.byte	0x1
+ 506 01e9 37       		.byte	0x37
+ 507 01ea B8000000 		.4byte	0xb8
+ 508 01ee 05       		.uleb128 0x5
+ 509 01ef 03       		.byte	0x3
+ 510 01f0 0C000000 		.4byte	edgeTimeoutStamp.4338
+ 511 01f4 0C       		.uleb128 0xc
+ 512 01f5 CA020000 		.4byte	.LASF32
+ 513 01f9 01       		.byte	0x1
+ 514 01fa 38       		.byte	0x38
+ 515 01fb B8000000 		.4byte	0xb8
+ 516 01ff 44010000 		.4byte	.LLST6
+ 517 0203 0E       		.uleb128 0xe
+ 518 0204 E2000000 		.4byte	.LASF33
+ 519 0208 01       		.byte	0x1
+ 520 0209 3E       		.byte	0x3e
+ 521 020a B8000000 		.4byte	0xb8
+ 522 020e 05       		.uleb128 0x5
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 15
+
+
+ 523 020f 03       		.byte	0x3
+ 524 0210 04000000 		.4byte	edgeSwipeActive.4340
+ 525 0214 0E       		.uleb128 0xe
+ 526 0215 7B030000 		.4byte	.LASF34
+ 527 0219 01       		.byte	0x1
+ 528 021a 46       		.byte	0x46
+ 529 021b B8000000 		.4byte	0xb8
+ 530 021f 05       		.uleb128 0x5
+ 531 0220 03       		.byte	0x3
+ 532 0221 00000000 		.4byte	clickAndDragActive.4341
+ 533 0225 0C       		.uleb128 0xc
+ 534 0226 A2030000 		.4byte	.LASF35
+ 535 022a 01       		.byte	0x1
+ 536 022b 4C       		.byte	0x4c
+ 537 022c B8000000 		.4byte	0xb8
+ 538 0230 63010000 		.4byte	.LLST7
+ 539 0234 0F       		.uleb128 0xf
+ 540 0235 10000000 		.4byte	.LVL3
+ 541 0239 F1020000 		.4byte	0x2f1
+ 542 023d 55020000 		.4byte	0x255
+ 543 0241 10       		.uleb128 0x10
+ 544 0242 01       		.uleb128 0x1
+ 545 0243 50       		.byte	0x50
+ 546 0244 02       		.uleb128 0x2
+ 547 0245 75       		.byte	0x75
+ 548 0246 00       		.sleb128 0
+ 549 0247 10       		.uleb128 0x10
+ 550 0248 01       		.uleb128 0x1
+ 551 0249 51       		.byte	0x51
+ 552 024a 02       		.uleb128 0x2
+ 553 024b 74       		.byte	0x74
+ 554 024c 00       		.sleb128 0
+ 555 024d 10       		.uleb128 0x10
+ 556 024e 01       		.uleb128 0x1
+ 557 024f 52       		.byte	0x52
+ 558 0250 03       		.uleb128 0x3
+ 559 0251 7D       		.byte	0x7d
+ 560 0252 00       		.sleb128 0
+ 561 0253 06       		.byte	0x6
+ 562 0254 00       		.byte	0
+ 563 0255 0F       		.uleb128 0xf
+ 564 0256 28000000 		.4byte	.LVL6
+ 565 025a FD020000 		.4byte	0x2fd
+ 566 025e 76020000 		.4byte	0x276
+ 567 0262 10       		.uleb128 0x10
+ 568 0263 01       		.uleb128 0x1
+ 569 0264 50       		.byte	0x50
+ 570 0265 02       		.uleb128 0x2
+ 571 0266 75       		.byte	0x75
+ 572 0267 00       		.sleb128 0
+ 573 0268 10       		.uleb128 0x10
+ 574 0269 01       		.uleb128 0x1
+ 575 026a 51       		.byte	0x51
+ 576 026b 02       		.uleb128 0x2
+ 577 026c 74       		.byte	0x74
+ 578 026d 00       		.sleb128 0
+ 579 026e 10       		.uleb128 0x10
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 16
+
+
+ 580 026f 01       		.uleb128 0x1
+ 581 0270 52       		.byte	0x52
+ 582 0271 03       		.uleb128 0x3
+ 583 0272 7D       		.byte	0x7d
+ 584 0273 00       		.sleb128 0
+ 585 0274 06       		.byte	0x6
+ 586 0275 00       		.byte	0
+ 587 0276 11       		.uleb128 0x11
+ 588 0277 6A000000 		.4byte	.LVL9
+ 589 027b 09030000 		.4byte	0x309
+ 590 027f 10       		.uleb128 0x10
+ 591 0280 01       		.uleb128 0x1
+ 592 0281 50       		.byte	0x50
+ 593 0282 02       		.uleb128 0x2
+ 594 0283 75       		.byte	0x75
+ 595 0284 00       		.sleb128 0
+ 596 0285 10       		.uleb128 0x10
+ 597 0286 01       		.uleb128 0x1
+ 598 0287 51       		.byte	0x51
+ 599 0288 02       		.uleb128 0x2
+ 600 0289 74       		.byte	0x74
+ 601 028a 00       		.sleb128 0
+ 602 028b 10       		.uleb128 0x10
+ 603 028c 01       		.uleb128 0x1
+ 604 028d 52       		.byte	0x52
+ 605 028e 03       		.uleb128 0x3
+ 606 028f 7D       		.byte	0x7d
+ 607 0290 00       		.sleb128 0
+ 608 0291 06       		.byte	0x6
+ 609 0292 00       		.byte	0
+ 610 0293 00       		.byte	0
+ 611 0294 12       		.uleb128 0x12
+ 612 0295 04       		.byte	0x4
+ 613 0296 9A020000 		.4byte	0x29a
+ 614 029a 13       		.uleb128 0x13
+ 615 029b 47010000 		.4byte	0x147
+ 616 029f 14       		.uleb128 0x14
+ 617 02a0 76020000 		.4byte	.LASF44
+ 618 02a4 01       		.byte	0x1
+ 619 02a5 0B01     		.2byte	0x10b
+ 620 02a7 00000000 		.4byte	.LFB1
+ 621 02ab 02000000 		.4byte	.LFE1-.LFB1
+ 622 02af 01       		.uleb128 0x1
+ 623 02b0 9C       		.byte	0x9c
+ 624 02b1 E0020000 		.4byte	0x2e0
+ 625 02b5 15       		.uleb128 0x15
+ 626 02b6 8E030000 		.4byte	.LASF36
+ 627 02ba 01       		.byte	0x1
+ 628 02bb 0B01     		.2byte	0x10b
+ 629 02bd E0020000 		.4byte	0x2e0
+ 630 02c1 01       		.uleb128 0x1
+ 631 02c2 50       		.byte	0x50
+ 632 02c3 15       		.uleb128 0x15
+ 633 02c4 60030000 		.4byte	.LASF25
+ 634 02c8 01       		.byte	0x1
+ 635 02c9 0B01     		.2byte	0x10b
+ 636 02cb B8000000 		.4byte	0xb8
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 17
+
+
+ 637 02cf 01       		.uleb128 0x1
+ 638 02d0 51       		.byte	0x51
+ 639 02d1 16       		.uleb128 0x16
+ 640 02d2 706F7300 		.ascii	"pos\000"
+ 641 02d6 01       		.byte	0x1
+ 642 02d7 0B01     		.2byte	0x10b
+ 643 02d9 EB020000 		.4byte	0x2eb
+ 644 02dd 01       		.uleb128 0x1
+ 645 02de 52       		.byte	0x52
+ 646 02df 00       		.byte	0
+ 647 02e0 12       		.uleb128 0x12
+ 648 02e1 04       		.byte	0x4
+ 649 02e2 E6020000 		.4byte	0x2e6
+ 650 02e6 13       		.uleb128 0x13
+ 651 02e7 1B010000 		.4byte	0x11b
+ 652 02eb 12       		.uleb128 0x12
+ 653 02ec 04       		.byte	0x4
+ 654 02ed A2000000 		.4byte	0xa2
+ 655 02f1 17       		.uleb128 0x17
+ 656 02f2 B3030000 		.4byte	.LASF37
+ 657 02f6 B3030000 		.4byte	.LASF37
+ 658 02fa 04       		.byte	0x4
+ 659 02fb 9002     		.2byte	0x290
+ 660 02fd 17       		.uleb128 0x17
+ 661 02fe 98020000 		.4byte	.LASF38
+ 662 0302 98020000 		.4byte	.LASF38
+ 663 0306 04       		.byte	0x4
+ 664 0307 B502     		.2byte	0x2b5
+ 665 0309 17       		.uleb128 0x17
+ 666 030a EE020000 		.4byte	.LASF39
+ 667 030e EE020000 		.4byte	.LASF39
+ 668 0312 04       		.byte	0x4
+ 669 0313 BA02     		.2byte	0x2ba
+ 670 0315 00       		.byte	0
+ 671              		.section	.debug_abbrev,"",%progbits
+ 672              	.Ldebug_abbrev0:
+ 673 0000 01       		.uleb128 0x1
+ 674 0001 11       		.uleb128 0x11
+ 675 0002 01       		.byte	0x1
+ 676 0003 25       		.uleb128 0x25
+ 677 0004 0E       		.uleb128 0xe
+ 678 0005 13       		.uleb128 0x13
+ 679 0006 0B       		.uleb128 0xb
+ 680 0007 03       		.uleb128 0x3
+ 681 0008 0E       		.uleb128 0xe
+ 682 0009 1B       		.uleb128 0x1b
+ 683 000a 0E       		.uleb128 0xe
+ 684 000b 55       		.uleb128 0x55
+ 685 000c 17       		.uleb128 0x17
+ 686 000d 11       		.uleb128 0x11
+ 687 000e 01       		.uleb128 0x1
+ 688 000f 10       		.uleb128 0x10
+ 689 0010 17       		.uleb128 0x17
+ 690 0011 00       		.byte	0
+ 691 0012 00       		.byte	0
+ 692 0013 02       		.uleb128 0x2
+ 693 0014 24       		.uleb128 0x24
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 18
+
+
+ 694 0015 00       		.byte	0
+ 695 0016 0B       		.uleb128 0xb
+ 696 0017 0B       		.uleb128 0xb
+ 697 0018 3E       		.uleb128 0x3e
+ 698 0019 0B       		.uleb128 0xb
+ 699 001a 03       		.uleb128 0x3
+ 700 001b 0E       		.uleb128 0xe
+ 701 001c 00       		.byte	0
+ 702 001d 00       		.byte	0
+ 703 001e 03       		.uleb128 0x3
+ 704 001f 16       		.uleb128 0x16
+ 705 0020 00       		.byte	0
+ 706 0021 03       		.uleb128 0x3
+ 707 0022 0E       		.uleb128 0xe
+ 708 0023 3A       		.uleb128 0x3a
+ 709 0024 0B       		.uleb128 0xb
+ 710 0025 3B       		.uleb128 0x3b
+ 711 0026 0B       		.uleb128 0xb
+ 712 0027 49       		.uleb128 0x49
+ 713 0028 13       		.uleb128 0x13
+ 714 0029 00       		.byte	0
+ 715 002a 00       		.byte	0
+ 716 002b 04       		.uleb128 0x4
+ 717 002c 24       		.uleb128 0x24
+ 718 002d 00       		.byte	0
+ 719 002e 0B       		.uleb128 0xb
+ 720 002f 0B       		.uleb128 0xb
+ 721 0030 3E       		.uleb128 0x3e
+ 722 0031 0B       		.uleb128 0xb
+ 723 0032 03       		.uleb128 0x3
+ 724 0033 08       		.uleb128 0x8
+ 725 0034 00       		.byte	0
+ 726 0035 00       		.byte	0
+ 727 0036 05       		.uleb128 0x5
+ 728 0037 13       		.uleb128 0x13
+ 729 0038 01       		.byte	0x1
+ 730 0039 0B       		.uleb128 0xb
+ 731 003a 0B       		.uleb128 0xb
+ 732 003b 3A       		.uleb128 0x3a
+ 733 003c 0B       		.uleb128 0xb
+ 734 003d 3B       		.uleb128 0x3b
+ 735 003e 05       		.uleb128 0x5
+ 736 003f 01       		.uleb128 0x1
+ 737 0040 13       		.uleb128 0x13
+ 738 0041 00       		.byte	0
+ 739 0042 00       		.byte	0
+ 740 0043 06       		.uleb128 0x6
+ 741 0044 0D       		.uleb128 0xd
+ 742 0045 00       		.byte	0
+ 743 0046 03       		.uleb128 0x3
+ 744 0047 0E       		.uleb128 0xe
+ 745 0048 3A       		.uleb128 0x3a
+ 746 0049 0B       		.uleb128 0xb
+ 747 004a 3B       		.uleb128 0x3b
+ 748 004b 05       		.uleb128 0x5
+ 749 004c 49       		.uleb128 0x49
+ 750 004d 13       		.uleb128 0x13
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 19
+
+
+ 751 004e 38       		.uleb128 0x38
+ 752 004f 0B       		.uleb128 0xb
+ 753 0050 00       		.byte	0
+ 754 0051 00       		.byte	0
+ 755 0052 07       		.uleb128 0x7
+ 756 0053 16       		.uleb128 0x16
+ 757 0054 00       		.byte	0
+ 758 0055 03       		.uleb128 0x3
+ 759 0056 0E       		.uleb128 0xe
+ 760 0057 3A       		.uleb128 0x3a
+ 761 0058 0B       		.uleb128 0xb
+ 762 0059 3B       		.uleb128 0x3b
+ 763 005a 05       		.uleb128 0x5
+ 764 005b 49       		.uleb128 0x49
+ 765 005c 13       		.uleb128 0x13
+ 766 005d 00       		.byte	0
+ 767 005e 00       		.byte	0
+ 768 005f 08       		.uleb128 0x8
+ 769 0060 0D       		.uleb128 0xd
+ 770 0061 00       		.byte	0
+ 771 0062 03       		.uleb128 0x3
+ 772 0063 08       		.uleb128 0x8
+ 773 0064 3A       		.uleb128 0x3a
+ 774 0065 0B       		.uleb128 0xb
+ 775 0066 3B       		.uleb128 0x3b
+ 776 0067 05       		.uleb128 0x5
+ 777 0068 49       		.uleb128 0x49
+ 778 0069 13       		.uleb128 0x13
+ 779 006a 38       		.uleb128 0x38
+ 780 006b 0B       		.uleb128 0xb
+ 781 006c 00       		.byte	0
+ 782 006d 00       		.byte	0
+ 783 006e 09       		.uleb128 0x9
+ 784 006f 2E       		.uleb128 0x2e
+ 785 0070 01       		.byte	0x1
+ 786 0071 3F       		.uleb128 0x3f
+ 787 0072 19       		.uleb128 0x19
+ 788 0073 03       		.uleb128 0x3
+ 789 0074 0E       		.uleb128 0xe
+ 790 0075 3A       		.uleb128 0x3a
+ 791 0076 0B       		.uleb128 0xb
+ 792 0077 3B       		.uleb128 0x3b
+ 793 0078 0B       		.uleb128 0xb
+ 794 0079 27       		.uleb128 0x27
+ 795 007a 19       		.uleb128 0x19
+ 796 007b 49       		.uleb128 0x49
+ 797 007c 13       		.uleb128 0x13
+ 798 007d 11       		.uleb128 0x11
+ 799 007e 01       		.uleb128 0x1
+ 800 007f 12       		.uleb128 0x12
+ 801 0080 06       		.uleb128 0x6
+ 802 0081 40       		.uleb128 0x40
+ 803 0082 18       		.uleb128 0x18
+ 804 0083 9742     		.uleb128 0x2117
+ 805 0085 19       		.uleb128 0x19
+ 806 0086 01       		.uleb128 0x1
+ 807 0087 13       		.uleb128 0x13
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 20
+
+
+ 808 0088 00       		.byte	0
+ 809 0089 00       		.byte	0
+ 810 008a 0A       		.uleb128 0xa
+ 811 008b 05       		.uleb128 0x5
+ 812 008c 00       		.byte	0
+ 813 008d 03       		.uleb128 0x3
+ 814 008e 0E       		.uleb128 0xe
+ 815 008f 3A       		.uleb128 0x3a
+ 816 0090 0B       		.uleb128 0xb
+ 817 0091 3B       		.uleb128 0x3b
+ 818 0092 0B       		.uleb128 0xb
+ 819 0093 49       		.uleb128 0x49
+ 820 0094 13       		.uleb128 0x13
+ 821 0095 02       		.uleb128 0x2
+ 822 0096 17       		.uleb128 0x17
+ 823 0097 00       		.byte	0
+ 824 0098 00       		.byte	0
+ 825 0099 0B       		.uleb128 0xb
+ 826 009a 05       		.uleb128 0x5
+ 827 009b 00       		.byte	0
+ 828 009c 03       		.uleb128 0x3
+ 829 009d 08       		.uleb128 0x8
+ 830 009e 3A       		.uleb128 0x3a
+ 831 009f 0B       		.uleb128 0xb
+ 832 00a0 3B       		.uleb128 0x3b
+ 833 00a1 0B       		.uleb128 0xb
+ 834 00a2 49       		.uleb128 0x49
+ 835 00a3 13       		.uleb128 0x13
+ 836 00a4 02       		.uleb128 0x2
+ 837 00a5 17       		.uleb128 0x17
+ 838 00a6 00       		.byte	0
+ 839 00a7 00       		.byte	0
+ 840 00a8 0C       		.uleb128 0xc
+ 841 00a9 34       		.uleb128 0x34
+ 842 00aa 00       		.byte	0
+ 843 00ab 03       		.uleb128 0x3
+ 844 00ac 0E       		.uleb128 0xe
+ 845 00ad 3A       		.uleb128 0x3a
+ 846 00ae 0B       		.uleb128 0xb
+ 847 00af 3B       		.uleb128 0x3b
+ 848 00b0 0B       		.uleb128 0xb
+ 849 00b1 49       		.uleb128 0x49
+ 850 00b2 13       		.uleb128 0x13
+ 851 00b3 02       		.uleb128 0x2
+ 852 00b4 17       		.uleb128 0x17
+ 853 00b5 00       		.byte	0
+ 854 00b6 00       		.byte	0
+ 855 00b7 0D       		.uleb128 0xd
+ 856 00b8 34       		.uleb128 0x34
+ 857 00b9 00       		.byte	0
+ 858 00ba 03       		.uleb128 0x3
+ 859 00bb 0E       		.uleb128 0xe
+ 860 00bc 3A       		.uleb128 0x3a
+ 861 00bd 0B       		.uleb128 0xb
+ 862 00be 3B       		.uleb128 0x3b
+ 863 00bf 0B       		.uleb128 0xb
+ 864 00c0 49       		.uleb128 0x49
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 21
+
+
+ 865 00c1 13       		.uleb128 0x13
+ 866 00c2 1C       		.uleb128 0x1c
+ 867 00c3 0B       		.uleb128 0xb
+ 868 00c4 00       		.byte	0
+ 869 00c5 00       		.byte	0
+ 870 00c6 0E       		.uleb128 0xe
+ 871 00c7 34       		.uleb128 0x34
+ 872 00c8 00       		.byte	0
+ 873 00c9 03       		.uleb128 0x3
+ 874 00ca 0E       		.uleb128 0xe
+ 875 00cb 3A       		.uleb128 0x3a
+ 876 00cc 0B       		.uleb128 0xb
+ 877 00cd 3B       		.uleb128 0x3b
+ 878 00ce 0B       		.uleb128 0xb
+ 879 00cf 49       		.uleb128 0x49
+ 880 00d0 13       		.uleb128 0x13
+ 881 00d1 02       		.uleb128 0x2
+ 882 00d2 18       		.uleb128 0x18
+ 883 00d3 00       		.byte	0
+ 884 00d4 00       		.byte	0
+ 885 00d5 0F       		.uleb128 0xf
+ 886 00d6 898201   		.uleb128 0x4109
+ 887 00d9 01       		.byte	0x1
+ 888 00da 11       		.uleb128 0x11
+ 889 00db 01       		.uleb128 0x1
+ 890 00dc 31       		.uleb128 0x31
+ 891 00dd 13       		.uleb128 0x13
+ 892 00de 01       		.uleb128 0x1
+ 893 00df 13       		.uleb128 0x13
+ 894 00e0 00       		.byte	0
+ 895 00e1 00       		.byte	0
+ 896 00e2 10       		.uleb128 0x10
+ 897 00e3 8A8201   		.uleb128 0x410a
+ 898 00e6 00       		.byte	0
+ 899 00e7 02       		.uleb128 0x2
+ 900 00e8 18       		.uleb128 0x18
+ 901 00e9 9142     		.uleb128 0x2111
+ 902 00eb 18       		.uleb128 0x18
+ 903 00ec 00       		.byte	0
+ 904 00ed 00       		.byte	0
+ 905 00ee 11       		.uleb128 0x11
+ 906 00ef 898201   		.uleb128 0x4109
+ 907 00f2 01       		.byte	0x1
+ 908 00f3 11       		.uleb128 0x11
+ 909 00f4 01       		.uleb128 0x1
+ 910 00f5 31       		.uleb128 0x31
+ 911 00f6 13       		.uleb128 0x13
+ 912 00f7 00       		.byte	0
+ 913 00f8 00       		.byte	0
+ 914 00f9 12       		.uleb128 0x12
+ 915 00fa 0F       		.uleb128 0xf
+ 916 00fb 00       		.byte	0
+ 917 00fc 0B       		.uleb128 0xb
+ 918 00fd 0B       		.uleb128 0xb
+ 919 00fe 49       		.uleb128 0x49
+ 920 00ff 13       		.uleb128 0x13
+ 921 0100 00       		.byte	0
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 22
+
+
+ 922 0101 00       		.byte	0
+ 923 0102 13       		.uleb128 0x13
+ 924 0103 26       		.uleb128 0x26
+ 925 0104 00       		.byte	0
+ 926 0105 49       		.uleb128 0x49
+ 927 0106 13       		.uleb128 0x13
+ 928 0107 00       		.byte	0
+ 929 0108 00       		.byte	0
+ 930 0109 14       		.uleb128 0x14
+ 931 010a 2E       		.uleb128 0x2e
+ 932 010b 01       		.byte	0x1
+ 933 010c 3F       		.uleb128 0x3f
+ 934 010d 19       		.uleb128 0x19
+ 935 010e 03       		.uleb128 0x3
+ 936 010f 0E       		.uleb128 0xe
+ 937 0110 3A       		.uleb128 0x3a
+ 938 0111 0B       		.uleb128 0xb
+ 939 0112 3B       		.uleb128 0x3b
+ 940 0113 05       		.uleb128 0x5
+ 941 0114 27       		.uleb128 0x27
+ 942 0115 19       		.uleb128 0x19
+ 943 0116 11       		.uleb128 0x11
+ 944 0117 01       		.uleb128 0x1
+ 945 0118 12       		.uleb128 0x12
+ 946 0119 06       		.uleb128 0x6
+ 947 011a 40       		.uleb128 0x40
+ 948 011b 18       		.uleb128 0x18
+ 949 011c 9742     		.uleb128 0x2117
+ 950 011e 19       		.uleb128 0x19
+ 951 011f 01       		.uleb128 0x1
+ 952 0120 13       		.uleb128 0x13
+ 953 0121 00       		.byte	0
+ 954 0122 00       		.byte	0
+ 955 0123 15       		.uleb128 0x15
+ 956 0124 05       		.uleb128 0x5
+ 957 0125 00       		.byte	0
+ 958 0126 03       		.uleb128 0x3
+ 959 0127 0E       		.uleb128 0xe
+ 960 0128 3A       		.uleb128 0x3a
+ 961 0129 0B       		.uleb128 0xb
+ 962 012a 3B       		.uleb128 0x3b
+ 963 012b 05       		.uleb128 0x5
+ 964 012c 49       		.uleb128 0x49
+ 965 012d 13       		.uleb128 0x13
+ 966 012e 02       		.uleb128 0x2
+ 967 012f 18       		.uleb128 0x18
+ 968 0130 00       		.byte	0
+ 969 0131 00       		.byte	0
+ 970 0132 16       		.uleb128 0x16
+ 971 0133 05       		.uleb128 0x5
+ 972 0134 00       		.byte	0
+ 973 0135 03       		.uleb128 0x3
+ 974 0136 08       		.uleb128 0x8
+ 975 0137 3A       		.uleb128 0x3a
+ 976 0138 0B       		.uleb128 0xb
+ 977 0139 3B       		.uleb128 0x3b
+ 978 013a 05       		.uleb128 0x5
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 23
+
+
+ 979 013b 49       		.uleb128 0x49
+ 980 013c 13       		.uleb128 0x13
+ 981 013d 02       		.uleb128 0x2
+ 982 013e 18       		.uleb128 0x18
+ 983 013f 00       		.byte	0
+ 984 0140 00       		.byte	0
+ 985 0141 17       		.uleb128 0x17
+ 986 0142 2E       		.uleb128 0x2e
+ 987 0143 00       		.byte	0
+ 988 0144 3F       		.uleb128 0x3f
+ 989 0145 19       		.uleb128 0x19
+ 990 0146 3C       		.uleb128 0x3c
+ 991 0147 19       		.uleb128 0x19
+ 992 0148 6E       		.uleb128 0x6e
+ 993 0149 0E       		.uleb128 0xe
+ 994 014a 03       		.uleb128 0x3
+ 995 014b 0E       		.uleb128 0xe
+ 996 014c 3A       		.uleb128 0x3a
+ 997 014d 0B       		.uleb128 0xb
+ 998 014e 3B       		.uleb128 0x3b
+ 999 014f 05       		.uleb128 0x5
+ 1000 0150 00       		.byte	0
+ 1001 0151 00       		.byte	0
+ 1002 0152 00       		.byte	0
+ 1003              		.section	.debug_loc,"",%progbits
+ 1004              	.Ldebug_loc0:
+ 1005              	.LLST0:
+ 1006 0000 00000000 		.4byte	.LVL0
+ 1007 0004 0C000000 		.4byte	.LVL2
+ 1008 0008 0100     		.2byte	0x1
+ 1009 000a 50       		.byte	0x50
+ 1010 000b 0C000000 		.4byte	.LVL2
+ 1011 000f F0000000 		.4byte	.LFE0
+ 1012 0013 0400     		.2byte	0x4
+ 1013 0015 F3       		.byte	0xf3
+ 1014 0016 01       		.uleb128 0x1
+ 1015 0017 50       		.byte	0x50
+ 1016 0018 9F       		.byte	0x9f
+ 1017 0019 00000000 		.4byte	0
+ 1018 001d 00000000 		.4byte	0
+ 1019              	.LLST1:
+ 1020 0021 00000000 		.4byte	.LVL0
+ 1021 0025 0F000000 		.4byte	.LVL3-1
+ 1022 0029 0100     		.2byte	0x1
+ 1023 002b 51       		.byte	0x51
+ 1024 002c 0F000000 		.4byte	.LVL3-1
+ 1025 0030 C8000000 		.4byte	.LVL17
+ 1026 0034 0100     		.2byte	0x1
+ 1027 0036 54       		.byte	0x54
+ 1028 0037 C8000000 		.4byte	.LVL17
+ 1029 003b F0000000 		.4byte	.LFE0
+ 1030 003f 0400     		.2byte	0x4
+ 1031 0041 F3       		.byte	0xf3
+ 1032 0042 01       		.uleb128 0x1
+ 1033 0043 51       		.byte	0x51
+ 1034 0044 9F       		.byte	0x9f
+ 1035 0045 00000000 		.4byte	0
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 24
+
+
+ 1036 0049 00000000 		.4byte	0
+ 1037              	.LLST2:
+ 1038 004d 00000000 		.4byte	.LVL0
+ 1039 0051 0F000000 		.4byte	.LVL3-1
+ 1040 0055 0100     		.2byte	0x1
+ 1041 0057 52       		.byte	0x52
+ 1042 0058 0F000000 		.4byte	.LVL3-1
+ 1043 005c E6000000 		.4byte	.LVL20
+ 1044 0060 0200     		.2byte	0x2
+ 1045 0062 7D       		.byte	0x7d
+ 1046 0063 00       		.sleb128 0
+ 1047 0064 E6000000 		.4byte	.LVL20
+ 1048 0068 F0000000 		.4byte	.LFE0
+ 1049 006c 0200     		.2byte	0x2
+ 1050 006e 91       		.byte	0x91
+ 1051 006f 60       		.sleb128 -32
+ 1052 0070 00000000 		.4byte	0
+ 1053 0074 00000000 		.4byte	0
+ 1054              	.LLST3:
+ 1055 0078 08000000 		.4byte	.LVL1
+ 1056 007c 14000000 		.4byte	.LVL4
+ 1057 0080 0200     		.2byte	0x2
+ 1058 0082 30       		.byte	0x30
+ 1059 0083 9F       		.byte	0x9f
+ 1060 0084 14000000 		.4byte	.LVL4
+ 1061 0088 24000000 		.4byte	.LVL5
+ 1062 008c 0100     		.2byte	0x1
+ 1063 008e 50       		.byte	0x50
+ 1064 008f 24000000 		.4byte	.LVL5
+ 1065 0093 9C000000 		.4byte	.LVL16
+ 1066 0097 0100     		.2byte	0x1
+ 1067 0099 56       		.byte	0x56
+ 1068 009a 9C000000 		.4byte	.LVL16
+ 1069 009e E6000000 		.4byte	.LVL22
+ 1070 00a2 0100     		.2byte	0x1
+ 1071 00a4 57       		.byte	0x57
+ 1072 00a5 E6000000 		.4byte	.LVL22
+ 1073 00a9 F0000000 		.4byte	.LFE0
+ 1074 00ad 0100     		.2byte	0x1
+ 1075 00af 50       		.byte	0x50
+ 1076 00b0 00000000 		.4byte	0
+ 1077 00b4 00000000 		.4byte	0
+ 1078              	.LLST4:
+ 1079 00b8 08000000 		.4byte	.LVL1
+ 1080 00bc 14000000 		.4byte	.LVL4
+ 1081 00c0 0200     		.2byte	0x2
+ 1082 00c2 30       		.byte	0x30
+ 1083 00c3 9F       		.byte	0x9f
+ 1084 00c4 14000000 		.4byte	.LVL4
+ 1085 00c8 24000000 		.4byte	.LVL5
+ 1086 00cc 0100     		.2byte	0x1
+ 1087 00ce 50       		.byte	0x50
+ 1088 00cf 24000000 		.4byte	.LVL5
+ 1089 00d3 E6000000 		.4byte	.LVL21
+ 1090 00d7 0100     		.2byte	0x1
+ 1091 00d9 56       		.byte	0x56
+ 1092 00da E6000000 		.4byte	.LVL21
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 25
+
+
+ 1093 00de F0000000 		.4byte	.LFE0
+ 1094 00e2 0200     		.2byte	0x2
+ 1095 00e4 91       		.byte	0x91
+ 1096 00e5 64       		.sleb128 -28
+ 1097 00e6 00000000 		.4byte	0
+ 1098 00ea 00000000 		.4byte	0
+ 1099              	.LLST5:
+ 1100 00ee 08000000 		.4byte	.LVL1
+ 1101 00f2 2A000000 		.4byte	.LVL7
+ 1102 00f6 0200     		.2byte	0x2
+ 1103 00f8 30       		.byte	0x30
+ 1104 00f9 9F       		.byte	0x9f
+ 1105 00fa 2A000000 		.4byte	.LVL7
+ 1106 00fe 42000000 		.4byte	.LVL8
+ 1107 0102 0100     		.2byte	0x1
+ 1108 0104 50       		.byte	0x50
+ 1109 0105 42000000 		.4byte	.LVL8
+ 1110 0109 7E000000 		.4byte	.LVL10
+ 1111 010d 0100     		.2byte	0x1
+ 1112 010f 57       		.byte	0x57
+ 1113 0110 7E000000 		.4byte	.LVL10
+ 1114 0114 86000000 		.4byte	.LVL11
+ 1115 0118 0100     		.2byte	0x1
+ 1116 011a 50       		.byte	0x50
+ 1117 011b 86000000 		.4byte	.LVL11
+ 1118 011f 94000000 		.4byte	.LVL12
+ 1119 0123 0100     		.2byte	0x1
+ 1120 0125 57       		.byte	0x57
+ 1121 0126 96000000 		.4byte	.LVL13
+ 1122 012a 98000000 		.4byte	.LVL14
+ 1123 012e 0100     		.2byte	0x1
+ 1124 0130 57       		.byte	0x57
+ 1125 0131 9A000000 		.4byte	.LVL15
+ 1126 0135 9C000000 		.4byte	.LVL16
+ 1127 0139 0100     		.2byte	0x1
+ 1128 013b 57       		.byte	0x57
+ 1129 013c 00000000 		.4byte	0
+ 1130 0140 00000000 		.4byte	0
+ 1131              	.LLST6:
+ 1132 0144 08000000 		.4byte	.LVL1
+ 1133 0148 C8000000 		.4byte	.LVL17
+ 1134 014c 0200     		.2byte	0x2
+ 1135 014e 30       		.byte	0x30
+ 1136 014f 9F       		.byte	0x9f
+ 1137 0150 C8000000 		.4byte	.LVL17
+ 1138 0154 E2000000 		.4byte	.LVL18
+ 1139 0158 0100     		.2byte	0x1
+ 1140 015a 54       		.byte	0x54
+ 1141 015b 00000000 		.4byte	0
+ 1142 015f 00000000 		.4byte	0
+ 1143              	.LLST7:
+ 1144 0163 08000000 		.4byte	.LVL1
+ 1145 0167 6A000000 		.4byte	.LVL9
+ 1146 016b 0200     		.2byte	0x2
+ 1147 016d 30       		.byte	0x30
+ 1148 016e 9F       		.byte	0x9f
+ 1149 016f 6A000000 		.4byte	.LVL9
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 26
+
+
+ 1150 0173 E4000000 		.4byte	.LVL19
+ 1151 0177 0100     		.2byte	0x1
+ 1152 0179 50       		.byte	0x50
+ 1153 017a 00000000 		.4byte	0
+ 1154 017e 00000000 		.4byte	0
+ 1155              		.section	.debug_aranges,"",%progbits
+ 1156 0000 24000000 		.4byte	0x24
+ 1157 0004 0200     		.2byte	0x2
+ 1158 0006 00000000 		.4byte	.Ldebug_info0
+ 1159 000a 04       		.byte	0x4
+ 1160 000b 00       		.byte	0
+ 1161 000c 0000     		.2byte	0
+ 1162 000e 0000     		.2byte	0
+ 1163 0010 00000000 		.4byte	.LFB0
+ 1164 0014 F0000000 		.4byte	.LFE0-.LFB0
+ 1165 0018 00000000 		.4byte	.LFB1
+ 1166 001c 02000000 		.4byte	.LFE1-.LFB1
+ 1167 0020 00000000 		.4byte	0
+ 1168 0024 00000000 		.4byte	0
+ 1169              		.section	.debug_ranges,"",%progbits
+ 1170              	.Ldebug_ranges0:
+ 1171 0000 00000000 		.4byte	.LFB0
+ 1172 0004 F0000000 		.4byte	.LFE0
+ 1173 0008 00000000 		.4byte	.LFB1
+ 1174 000c 02000000 		.4byte	.LFE1
+ 1175 0010 00000000 		.4byte	0
+ 1176 0014 00000000 		.4byte	0
+ 1177              		.section	.debug_line,"",%progbits
+ 1178              	.Ldebug_line0:
+ 1179 0000 C3010000 		.section	.debug_str,"MS",%progbits,1
+ 1179      02004B01 
+ 1179      00000201 
+ 1179      FB0E0D00 
+ 1179      01010101 
+ 1180              	.LASF4:
+ 1181 0000 73686F72 		.ascii	"short int\000"
+ 1181      7420696E 
+ 1181      7400
+ 1182              	.LASF29:
+ 1183 000a 64744765 		.ascii	"dtGesture\000"
+ 1183      73747572 
+ 1183      6500
+ 1184              	.LASF31:
+ 1185 0014 65646765 		.ascii	"edgeTimeoutStamp\000"
+ 1185      54696D65 
+ 1185      6F757453 
+ 1185      74616D70 
+ 1185      00
+ 1186              	.LASF40:
+ 1187 0025 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1187      43313120 
+ 1187      352E342E 
+ 1187      31203230 
+ 1187      31363036 
+ 1188 0058 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 1188      20726576 
+ 1188      6973696F 
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 27
+
+
+ 1188      6E203233 
+ 1188      37373135 
+ 1189 008b 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 1189      67202D66 
+ 1189      66756E63 
+ 1189      74696F6E 
+ 1189      2D736563 
+ 1190              	.LASF20:
+ 1191 00b7 64697669 		.ascii	"divisorValue\000"
+ 1191      736F7256 
+ 1191      616C7565 
+ 1191      00
+ 1192              	.LASF8:
+ 1193 00c4 5F5F7569 		.ascii	"__uint32_t\000"
+ 1193      6E743332 
+ 1193      5F7400
+ 1194              	.LASF5:
+ 1195 00cf 5F5F7569 		.ascii	"__uint16_t\000"
+ 1195      6E743136 
+ 1195      5F7400
+ 1196              	.LASF13:
+ 1197 00da 75696E74 		.ascii	"uint8_t\000"
+ 1197      385F7400 
+ 1198              	.LASF33:
+ 1199 00e2 65646765 		.ascii	"edgeSwipeActive\000"
+ 1199      53776970 
+ 1199      65416374 
+ 1199      69766500 
+ 1200              	.LASF10:
+ 1201 00f2 6C6F6E67 		.ascii	"long long int\000"
+ 1201      206C6F6E 
+ 1201      6720696E 
+ 1201      7400
+ 1202              	.LASF7:
+ 1203 0100 6C6F6E67 		.ascii	"long int\000"
+ 1203      20696E74 
+ 1203      00
+ 1204              	.LASF43:
+ 1205 0109 43617053 		.ascii	"CapSense_TMG_DecodeAllGestures\000"
+ 1205      656E7365 
+ 1205      5F544D47 
+ 1205      5F446563 
+ 1205      6F646541 
+ 1206              	.LASF2:
+ 1207 0128 5F5F7569 		.ascii	"__uint8_t\000"
+ 1207      6E74385F 
+ 1207      7400
+ 1208              	.LASF42:
+ 1209 0132 433A5C55 		.ascii	"C:\\Users\\inspiron\\Documents\\PSoC Creator\\Proje"
+ 1209      73657273 
+ 1209      5C696E73 
+ 1209      7069726F 
+ 1209      6E5C446F 
+ 1210 0160 6374735C 		.ascii	"cts\\CE224821_PSoC4_Capsense_Touchpad_Gestures_CSD0"
+ 1210      43453232 
+ 1210      34383231 
+ 1210      5F50536F 
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 28
+
+
+ 1210      43345F43 
+ 1211 0192 315C4345 		.ascii	"1\\CE224821_PSoC4_Capsense_Touchpad_Gestures_CSD01."
+ 1211      32323438 
+ 1211      32315F50 
+ 1211      536F4334 
+ 1211      5F436170 
+ 1212 01c4 63796473 		.ascii	"cydsn\000"
+ 1212      6E00
+ 1213              	.LASF23:
+ 1214 01ca 43617053 		.ascii	"CapSense_TMG_BALLISTIC_MULT\000"
+ 1214      656E7365 
+ 1214      5F544D47 
+ 1214      5F42414C 
+ 1214      4C495354 
+ 1215              	.LASF30:
+ 1216 01e6 726F7461 		.ascii	"rotationActive\000"
+ 1216      74696F6E 
+ 1216      41637469 
+ 1216      766500
+ 1217              	.LASF1:
+ 1218 01f5 756E7369 		.ascii	"unsigned char\000"
+ 1218      676E6564 
+ 1218      20636861 
+ 1218      7200
+ 1219              	.LASF0:
+ 1220 0203 7369676E 		.ascii	"signed char\000"
+ 1220      65642063 
+ 1220      68617200 
+ 1221              	.LASF11:
+ 1222 020f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1222      206C6F6E 
+ 1222      6720756E 
+ 1222      7369676E 
+ 1222      65642069 
+ 1223              	.LASF16:
+ 1224 0226 75696E74 		.ascii	"uint32_t\000"
+ 1224      33325F74 
+ 1224      00
+ 1225              	.LASF18:
+ 1226 022f 61636365 		.ascii	"accelCoeff\000"
+ 1226      6C436F65 
+ 1226      666600
+ 1227              	.LASF12:
+ 1228 023a 756E7369 		.ascii	"unsigned int\000"
+ 1228      676E6564 
+ 1228      20696E74 
+ 1228      00
+ 1229              	.LASF15:
+ 1230 0247 75696E74 		.ascii	"uint16_t\000"
+ 1230      31365F74 
+ 1230      00
+ 1231              	.LASF41:
+ 1232 0250 47656E65 		.ascii	"Generated_Source\\PSoC4\\CapSense_TMG.c\000"
+ 1232      72617465 
+ 1232      645F536F 
+ 1232      75726365 
+ 1232      5C50536F 
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 29
+
+
+ 1233              	.LASF44:
+ 1234 0276 43617053 		.ascii	"CapSense_TMG_BallisticsMultiplier\000"
+ 1234      656E7365 
+ 1234      5F544D47 
+ 1234      5F42616C 
+ 1234      6C697374 
+ 1235              	.LASF38:
+ 1236 0298 47657374 		.ascii	"Gesture_DecodeSTRotateGestures\000"
+ 1236      7572655F 
+ 1236      4465636F 
+ 1236      64655354 
+ 1236      526F7461 
+ 1237              	.LASF6:
+ 1238 02b7 73686F72 		.ascii	"short unsigned int\000"
+ 1238      7420756E 
+ 1238      7369676E 
+ 1238      65642069 
+ 1238      6E7400
+ 1239              	.LASF32:
+ 1240 02ca 64656C74 		.ascii	"deltaTimeoutStamp\000"
+ 1240      6154696D 
+ 1240      656F7574 
+ 1240      5374616D 
+ 1240      7000
+ 1241              	.LASF28:
+ 1242 02dc 73744765 		.ascii	"stGesture\000"
+ 1242      73747572 
+ 1242      6500
+ 1243              	.LASF14:
+ 1244 02e6 696E7431 		.ascii	"int16_t\000"
+ 1244      365F7400 
+ 1245              	.LASF39:
+ 1246 02ee 47657374 		.ascii	"Gesture_DecodeEdgeSwipeGestures\000"
+ 1246      7572655F 
+ 1246      4465636F 
+ 1246      64654564 
+ 1246      67655377 
+ 1247              	.LASF24:
+ 1248 030e 43617053 		.ascii	"CapSense_TMG_POSITION_STRUCT\000"
+ 1248      656E7365 
+ 1248      5F544D47 
+ 1248      5F504F53 
+ 1248      4954494F 
+ 1249              	.LASF9:
+ 1250 032b 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1250      20756E73 
+ 1250      69676E65 
+ 1250      6420696E 
+ 1250      7400
+ 1251              	.LASF27:
+ 1252 033d 636C6963 		.ascii	"clickGesture\000"
+ 1252      6B476573 
+ 1252      74757265 
+ 1252      00
+ 1253              	.LASF26:
+ 1254 034a 67657374 		.ascii	"gestureID\000"
+ 1254      75726549 
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccrovA3f.s 			page 30
+
+
+ 1254      4400
+ 1255              	.LASF17:
+ 1256 0354 746F7563 		.ascii	"touchNumber\000"
+ 1256      684E756D 
+ 1256      62657200 
+ 1257              	.LASF25:
+ 1258 0360 63757272 		.ascii	"currentTimestamp\000"
+ 1258      656E7454 
+ 1258      696D6573 
+ 1258      74616D70 
+ 1258      00
+ 1259              	.LASF3:
+ 1260 0371 5F5F696E 		.ascii	"__int16_t\000"
+ 1260      7431365F 
+ 1260      7400
+ 1261              	.LASF34:
+ 1262 037b 636C6963 		.ascii	"clickAndDragActive\000"
+ 1262      6B416E64 
+ 1262      44726167 
+ 1262      41637469 
+ 1262      766500
+ 1263              	.LASF36:
+ 1264 038e 62616C6C 		.ascii	"ballisticMultiplier\000"
+ 1264      69737469 
+ 1264      634D756C 
+ 1264      7469706C 
+ 1264      69657200 
+ 1265              	.LASF35:
+ 1266 03a2 65646765 		.ascii	"edgeSwipeGesture\000"
+ 1266      53776970 
+ 1266      65476573 
+ 1266      74757265 
+ 1266      00
+ 1267              	.LASF37:
+ 1268 03b3 47657374 		.ascii	"Gesture_DecodeAllClickGestures\000"
+ 1268      7572655F 
+ 1268      4465636F 
+ 1268      6465416C 
+ 1268      6C436C69 
+ 1269              	.LASF19:
+ 1270 03d2 73706565 		.ascii	"speedCoeff\000"
+ 1270      64436F65 
+ 1270      666600
+ 1271              	.LASF21:
+ 1272 03dd 73706565 		.ascii	"speedThresholdX\000"
+ 1272      64546872 
+ 1272      6573686F 
+ 1272      6C645800 
+ 1273              	.LASF22:
+ 1274 03ed 73706565 		.ascii	"speedThresholdY\000"
+ 1274      64546872 
+ 1274      6573686F 
+ 1274      6C645900 
+ 1275              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

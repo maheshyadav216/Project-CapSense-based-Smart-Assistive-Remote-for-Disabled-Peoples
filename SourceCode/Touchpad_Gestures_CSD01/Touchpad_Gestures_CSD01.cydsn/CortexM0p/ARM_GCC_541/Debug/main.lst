@@ -1,0 +1,3059 @@
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0plus
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.main,"ax",%progbits
+  20              		.align	2
+  21              		.global	main
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	main, %function
+  25              	main:
+  26              	.LFB33:
+  27              		.file 1 "main.c"
+   1:main.c        **** /*******************************************************************************
+   2:main.c        **** * File Name: main.c
+   3:main.c        **** *
+   4:main.c        **** * Version: 1.10
+   5:main.c        **** *
+   6:main.c        **** * Description:
+   7:main.c        **** * This code example demonstrates the PSoC 4 CSD CapSense Component with a touchpad widget
+   8:main.c        **** * and the use of both gestures and the CapSense tuner. LEDs are also used to show when 
+   9:main.c        **** * specific gestures are detected.
+  10:main.c        **** *
+  11:main.c        **** ******************************************************************************
+  12:main.c        **** * Copyright (2019-2020), Cypress Semiconductor Corporation.
+  13:main.c        **** ******************************************************************************
+  14:main.c        **** * This software, including source code, documentation and related materials
+  15:main.c        **** * ("Software") is owned by Cypress Semiconductor Corporation (Cypress) and is
+  16:main.c        **** * protected by and subject to worldwide patent protection (United States and 
+  17:main.c        **** * foreign), United States copyright laws and international treaty provisions. 
+  18:main.c        **** * Cypress hereby grants to licensee a personal, non-exclusive, non-transferable
+  19:main.c        **** * license to copy, use, modify, create derivative works of, and compile the 
+  20:main.c        **** * Cypress source code and derivative works for the sole purpose of creating 
+  21:main.c        **** * custom software in support of licensee product, such licensee product to be
+  22:main.c        **** * used only in conjunction with Cypress's integrated circuit as specified in the
+  23:main.c        **** * applicable agreement. Any reproduction, modification, translation, compilation,
+  24:main.c        **** * or representation of this Software except as specified above is prohibited 
+  25:main.c        **** * without the express written permission of Cypress.
+  26:main.c        **** * 
+  27:main.c        **** * Disclaimer: THIS SOFTWARE IS PROVIDED AS-IS, WITH NO WARRANTY OF ANY KIND, 
+  28:main.c        **** * EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, NONINFRINGEMENT, IMPLIED 
+  29:main.c        **** * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  30:main.c        **** * Cypress reserves the right to make changes to the Software without notice. 
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 2
+
+
+  31:main.c        **** * Cypress does not assume any liability arising out of the application or use
+  32:main.c        **** * of Software or any product or circuit described in the Software. Cypress does
+  33:main.c        **** * not authorize its products for use as critical components in any products 
+  34:main.c        **** * where a malfunction or failure may reasonably be expected to result in 
+  35:main.c        **** * significant injury or death ("ACTIVE Risk Product"). By including Cypress's 
+  36:main.c        **** * product in a ACTIVE Risk Product, the manufacturer of such system or application
+  37:main.c        **** * assumes all risk of such use and in doing so indemnifies Cypress against all
+  38:main.c        **** * liability. Use of this Software may be limited by and subject to the applicable
+  39:main.c        **** * Cypress software license agreement.
+  40:main.c        **** *******************************************************************************/
+  41:main.c        **** 
+  42:main.c        **** #include "project.h"
+  43:main.c        **** 
+  44:main.c        **** /* PWM duty cycles for zero and fifty percent */
+  45:main.c        **** #define PWM_LED_OFF         10001
+  46:main.c        **** #define PWM_LED_HALF_POWER  5000
+  47:main.c        **** 
+  48:main.c        **** /* Scales x and y value of the touchpad to PWM compare value */
+  49:main.c        **** #define PWM_SCALAR          100
+  50:main.c        **** 
+  51:main.c        **** /*  */
+  52:main.c        **** #define LED_OFF             1
+  53:main.c        **** #define LED_ON              0
+  54:main.c        **** 
+  55:main.c        **** /*******************************************************************************
+  56:main.c        **** * Function Name: main
+  57:main.c        **** ********************************************************************************
+  58:main.c        **** * Summary:
+  59:main.c        **** *  The main function performs the following actions:
+  60:main.c        **** *   1. Starts all hardware Components
+  61:main.c        **** *   2. Starts the timestamp
+  62:main.c        **** *   3. Initial scan of all CapSense widgets
+  63:main.c        **** *   4. Checks if scan is complete
+  64:main.c        **** *   4. Process all data and update time stamp
+  65:main.c        **** *   5. Checks if there was a gesture or if the touchpad was touched
+  66:main.c        **** *   6. Sends all data to the CapSense Tuner
+  67:main.c        **** *   7. Scans all CapSense widgets and returns to step four
+  68:main.c        **** *
+  69:main.c        **** * Parameters:
+  70:main.c        **** *  None
+  71:main.c        **** *
+  72:main.c        **** * Return:
+  73:main.c        **** *  None
+  74:main.c        **** *
+  75:main.c        **** *******************************************************************************/
+  76:main.c        **** int main(void)
+  77:main.c        **** {
+  28              		.loc 1 77 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 70B5     		push	{r4, r5, r6, lr}
+  33              		.cfi_def_cfa_offset 16
+  34              		.cfi_offset 4, -16
+  35              		.cfi_offset 5, -12
+  36              		.cfi_offset 6, -8
+  37              		.cfi_offset 14, -4
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 3
+
+
+  78:main.c        ****     /* Stores the current touchpad X and Y values */
+  79:main.c        ****     uint32 Xcord;
+  80:main.c        ****     uint16 Ycord;
+  81:main.c        ****     
+  82:main.c        ****     /* Stores the current gesture */
+  83:main.c        ****     uint32 gesture;
+  84:main.c        ****     
+  85:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  38              		.loc 1 85 0
+  39              		.syntax divided
+  40              	@ 85 "main.c" 1
+  41 0002 62B6     		CPSIE   i
+  42              	@ 0 "" 2
+  86:main.c        ****     
+  87:main.c        ****     /* Starts all Componenets */
+  88:main.c        ****     EZI2C_Start();
+  43              		.loc 1 88 0
+  44              		.thumb
+  45              		.syntax unified
+  46 0004 FFF7FEFF 		bl	EZI2C_Start
+  47              	.LVL0:
+  89:main.c        ****     CapSense_Start();
+  48              		.loc 1 89 0
+  49 0008 FFF7FEFF 		bl	CapSense_Start
+  50              	.LVL1:
+  90:main.c        ****     PWM_Blue_Start();
+  51              		.loc 1 90 0
+  52 000c FFF7FEFF 		bl	PWM_Blue_Start
+  53              	.LVL2:
+  91:main.c        ****     PWM_Green_Start();
+  54              		.loc 1 91 0
+  55 0010 FFF7FEFF 		bl	PWM_Green_Start
+  56              	.LVL3:
+  92:main.c        ****     
+  93:main.c        ****     /* Set up communication data buffer to CapSense data structure to be exposed to
+  94:main.c        ****        I2C master */
+  95:main.c        ****     EZI2C_EzI2CSetBuffer1(sizeof(CapSense_dsRam), sizeof(CapSense_dsRam), (uint8 *)&CapSense_dsRam)
+  57              		.loc 1 95 0
+  58 0014 384C     		ldr	r4, .L18
+  59 0016 9420     		movs	r0, #148
+  60 0018 4000     		lsls	r0, r0, #1
+  61 001a 2200     		movs	r2, r4
+  62 001c 0100     		movs	r1, r0
+  63 001e FFF7FEFF 		bl	EZI2C_EzI2CSetBuffer1
+  64              	.LVL4:
+  96:main.c        ****     
+  97:main.c        ****     /* Sets up a callback function using sysTick timer isr, the callback function
+  98:main.c        ****        is part of the CySysTickSetCallback API */
+  99:main.c        ****     CapSense_dsRam.timestampInterval = 2u;
+  65              		.loc 1 99 0
+  66 0022 0222     		movs	r2, #2
+  67 0024 8C23     		movs	r3, #140
+  68 0026 5B00     		lsls	r3, r3, #1
+  69 0028 E250     		str	r2, [r4, r3]
+ 100:main.c        ****     CySysTickStart();
+  70              		.loc 1 100 0
+  71 002a FFF7FEFF 		bl	CySysTickStart
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 4
+
+
+  72              	.LVL5:
+ 101:main.c        ****     CySysTickSetCallback(0u, CapSense_IncrementGestureTimestamp);
+  73              		.loc 1 101 0
+  74 002e 3349     		ldr	r1, .L18+4
+  75 0030 0020     		movs	r0, #0
+  76 0032 FFF7FEFF 		bl	CySysTickSetCallback
+  77              	.LVL6:
+ 102:main.c        ****     
+ 103:main.c        ****     CapSense_ScanAllWidgets();
+  78              		.loc 1 103 0
+  79 0036 FFF7FEFF 		bl	CapSense_ScanAllWidgets
+  80              	.LVL7:
+  81              	.L2:
+ 104:main.c        ****     
+ 105:main.c        ****     for(;;)
+ 106:main.c        ****     {
+ 107:main.c        ****         /* Checks if the scan was completed before trying to process data */
+ 108:main.c        ****         if(CapSense_NOT_BUSY == CapSense_IsBusy())
+  82              		.loc 1 108 0
+  83 003a FFF7FEFF 		bl	CapSense_IsBusy
+  84              	.LVL8:
+  85 003e 0028     		cmp	r0, #0
+  86 0040 FBD1     		bne	.L2
+ 109:main.c        ****         {
+ 110:main.c        ****             CapSense_ProcessAllWidgets();
+  87              		.loc 1 110 0
+  88 0042 FFF7FEFF 		bl	CapSense_ProcessAllWidgets
+  89              	.LVL9:
+ 111:main.c        ****             
+ 112:main.c        ****             /* Stores the current detected gesture */
+ 113:main.c        ****             gesture = CapSense_DecodeWidgetGestures(CapSense_TOUCHPAD0_WDGT_ID);
+  90              		.loc 1 113 0
+  91 0046 0020     		movs	r0, #0
+  92 0048 FFF7FEFF 		bl	CapSense_DecodeWidgetGestures
+  93              	.LVL10:
+  94 004c 0500     		movs	r5, r0
+  95              	.LVL11:
+ 114:main.c        ****             
+ 115:main.c        ****             /* Stores current finger position on the touchpad */            
+ 116:main.c        ****             Xcord = CapSense_GetXYCoordinates(CapSense_TOUCHPAD0_WDGT_ID);
+  96              		.loc 1 116 0
+  97 004e 0020     		movs	r0, #0
+  98              	.LVL12:
+  99 0050 FFF7FEFF 		bl	CapSense_GetXYCoordinates
+ 100              	.LVL13:
+ 117:main.c        ****             Ycord = Xcord >> 16;
+ 101              		.loc 1 117 0
+ 102 0054 060C     		lsrs	r6, r0, #16
+ 103              	.LVL14:
+ 118:main.c        ****             Xcord = (uint16)Xcord;
+ 104              		.loc 1 118 0
+ 105 0056 0004     		lsls	r0, r0, #16
+ 106              	.LVL15:
+ 107 0058 040C     		lsrs	r4, r0, #16
+ 108              	.LVL16:
+ 119:main.c        ****             
+ 120:main.c        ****             
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 5
+
+
+ 121:main.c        ****             /* Controls specific LEDs based on the gesture that was captured */
+ 122:main.c        ****             switch(gesture)
+ 109              		.loc 1 122 0
+ 110 005a 292D     		cmp	r5, #41
+ 111 005c 2CD0     		beq	.L4
+ 112 005e 04D8     		bhi	.L5
+ 113 0060 202D     		cmp	r5, #32
+ 114 0062 07D0     		beq	.L6
+ 115 0064 282D     		cmp	r5, #40
+ 116 0066 23D0     		beq	.L7
+ 117 0068 2AE0     		b	.L3
+ 118              	.L5:
+ 119 006a A02D     		cmp	r5, #160
+ 120 006c 0AD0     		beq	.L8
+ 121 006e A22D     		cmp	r5, #162
+ 122 0070 13D0     		beq	.L9
+ 123 0072 25E0     		b	.L3
+ 124              	.L6:
+ 123:main.c        ****             {
+ 124:main.c        ****             case CapSense_ONE_FINGER_SINGLE_CLICK:
+ 125:main.c        ****                 PWM_Blue_WriteCompare(PWM_LED_HALF_POWER);
+ 125              		.loc 1 125 0
+ 126 0074 224C     		ldr	r4, .L18+8
+ 127              	.LVL17:
+ 128 0076 2000     		movs	r0, r4
+ 129              	.LVL18:
+ 130 0078 FFF7FEFF 		bl	PWM_Blue_WriteCompare
+ 131              	.LVL19:
+ 126:main.c        ****                 PWM_Green_WriteCompare(PWM_LED_HALF_POWER);
+ 132              		.loc 1 126 0
+ 133 007c 2000     		movs	r0, r4
+ 134 007e FFF7FEFF 		bl	PWM_Green_WriteCompare
+ 135              	.LVL20:
+ 127:main.c        ****                 break;
+ 136              		.loc 1 127 0
+ 137 0082 34E0     		b	.L10
+ 138              	.LVL21:
+ 139              	.L8:
+ 128:main.c        ****             case CapSense_ONE_FINGER_EDGE_SWIPE_LEFT:
+ 129:main.c        ****                 /* If Led was off turn it to half power, if on turn it off */
+ 130:main.c        ****                 PWM_Blue_WriteCompare(PWM_Blue_ReadCompare() == PWM_LED_OFF ? PWM_LED_HALF_POWER: P
+ 140              		.loc 1 130 0
+ 141 0084 FFF7FEFF 		bl	PWM_Blue_ReadCompare
+ 142              	.LVL22:
+ 143 0088 1E4B     		ldr	r3, .L18+12
+ 144 008a 9842     		cmp	r0, r3
+ 145 008c 01D1     		bne	.L16
+ 146 008e 1C48     		ldr	r0, .L18+8
+ 147 0090 00E0     		b	.L11
+ 148              	.L16:
+ 149 0092 1C48     		ldr	r0, .L18+12
+ 150              	.L11:
+ 151              		.loc 1 130 0 is_stmt 0 discriminator 4
+ 152 0094 FFF7FEFF 		bl	PWM_Blue_WriteCompare
+ 153              	.LVL23:
+ 131:main.c        ****                 break;
+ 154              		.loc 1 131 0 is_stmt 1 discriminator 4
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 6
+
+
+ 155 0098 29E0     		b	.L10
+ 156              	.L9:
+ 132:main.c        ****             case CapSense_ONE_FINGER_EDGE_SWIPE_RIGTH:
+ 133:main.c        ****                 /* If Led was off turn it to half power, if on turn it off */
+ 134:main.c        ****                 PWM_Green_WriteCompare(PWM_Green_ReadCompare() == PWM_LED_OFF ? PWM_LED_HALF_POWER:
+ 157              		.loc 1 134 0
+ 158 009a FFF7FEFF 		bl	PWM_Green_ReadCompare
+ 159              	.LVL24:
+ 160 009e 194B     		ldr	r3, .L18+12
+ 161 00a0 9842     		cmp	r0, r3
+ 162 00a2 01D1     		bne	.L17
+ 163 00a4 1648     		ldr	r0, .L18+8
+ 164 00a6 00E0     		b	.L12
+ 165              	.L17:
+ 166 00a8 1648     		ldr	r0, .L18+12
+ 167              	.L12:
+ 168              		.loc 1 134 0 is_stmt 0 discriminator 4
+ 169 00aa FFF7FEFF 		bl	PWM_Green_WriteCompare
+ 170              	.LVL25:
+ 135:main.c        ****                 break;
+ 171              		.loc 1 135 0 is_stmt 1 discriminator 4
+ 172 00ae 1EE0     		b	.L10
+ 173              	.L7:
+ 136:main.c        ****             case CapSense_ONE_FINGER_ROTATE_CW:
+ 137:main.c        ****                 /* Turns off the red LED */
+ 138:main.c        ****                 Red_LED_Write(LED_OFF);
+ 174              		.loc 1 138 0
+ 175 00b0 0120     		movs	r0, #1
+ 176 00b2 FFF7FEFF 		bl	Red_LED_Write
+ 177              	.LVL26:
+ 139:main.c        ****                 break;
+ 178              		.loc 1 139 0
+ 179 00b6 1AE0     		b	.L10
+ 180              	.L4:
+ 140:main.c        ****             case CapSense_ONE_FINGER_ROTATE_CCW:
+ 141:main.c        ****                 /* Turns on the red LED */
+ 142:main.c        ****                 Red_LED_Write(LED_ON);
+ 181              		.loc 1 142 0
+ 182 00b8 0020     		movs	r0, #0
+ 183 00ba FFF7FEFF 		bl	Red_LED_Write
+ 184              	.LVL27:
+ 143:main.c        ****                 break;
+ 185              		.loc 1 143 0
+ 186 00be 16E0     		b	.L10
+ 187              	.L3:
+ 144:main.c        ****             default:
+ 145:main.c        ****                 /* Check if the touchpad was touched */
+ 146:main.c        ****                 if(CapSense_GetXYCoordinates(CapSense_TOUCHPAD0_WDGT_ID) != CapSense_TOUCHPAD_NO_TO
+ 188              		.loc 1 146 0
+ 189 00c0 0020     		movs	r0, #0
+ 190 00c2 FFF7FEFF 		bl	CapSense_GetXYCoordinates
+ 191              	.LVL28:
+ 192 00c6 431C     		adds	r3, r0, #1
+ 193 00c8 11D0     		beq	.L10
+ 147:main.c        ****                 {
+ 148:main.c        ****                     /* Change the PWM compare value based on finger position as long as the light w
+ 149:main.c        ****                     PWM_Blue_WriteCompare(PWM_Blue_ReadCompare() == PWM_LED_OFF ? PWM_LED_OFF : (Xc
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 7
+
+
+ 194              		.loc 1 149 0
+ 195 00ca FFF7FEFF 		bl	PWM_Blue_ReadCompare
+ 196              	.LVL29:
+ 197 00ce 0D4B     		ldr	r3, .L18+12
+ 198 00d0 9842     		cmp	r0, r3
+ 199 00d2 01D0     		beq	.L13
+ 200              		.loc 1 149 0 is_stmt 0 discriminator 1
+ 201 00d4 6420     		movs	r0, #100
+ 202 00d6 6043     		muls	r0, r4
+ 203              	.L13:
+ 204              		.loc 1 149 0 discriminator 4
+ 205 00d8 FFF7FEFF 		bl	PWM_Blue_WriteCompare
+ 206              	.LVL30:
+ 150:main.c        ****                     PWM_Green_WriteCompare(PWM_Green_ReadCompare() == PWM_LED_OFF ? PWM_LED_OFF : (
+ 207              		.loc 1 150 0 is_stmt 1 discriminator 4
+ 208 00dc FFF7FEFF 		bl	PWM_Green_ReadCompare
+ 209              	.LVL31:
+ 210 00e0 084B     		ldr	r3, .L18+12
+ 211 00e2 9842     		cmp	r0, r3
+ 212 00e4 01D0     		beq	.L14
+ 213              		.loc 1 150 0 is_stmt 0 discriminator 1
+ 214 00e6 6420     		movs	r0, #100
+ 215 00e8 7043     		muls	r0, r6
+ 216              	.L14:
+ 217              		.loc 1 150 0 discriminator 4
+ 218 00ea FFF7FEFF 		bl	PWM_Green_WriteCompare
+ 219              	.LVL32:
+ 220              	.L10:
+ 151:main.c        ****                 }
+ 152:main.c        ****                 break;
+ 153:main.c        ****             }
+ 154:main.c        ****             
+ 155:main.c        ****             /* Required to maintain sychronization with tuner interface */
+ 156:main.c        ****             CapSense_RunTuner();
+ 221              		.loc 1 156 0 is_stmt 1
+ 222 00ee FFF7FEFF 		bl	CapSense_RunTuner
+ 223              	.LVL33:
+ 157:main.c        ****             
+ 158:main.c        ****             /* Initiates the next scan of all widgets */
+ 159:main.c        ****             CapSense_ScanAllWidgets();
+ 224              		.loc 1 159 0
+ 225 00f2 FFF7FEFF 		bl	CapSense_ScanAllWidgets
+ 226              	.LVL34:
+ 227 00f6 A0E7     		b	.L2
+ 228              	.L19:
+ 229              		.align	2
+ 230              	.L18:
+ 231 00f8 00000000 		.word	CapSense_dsRam
+ 232 00fc 00000000 		.word	CapSense_IncrementGestureTimestamp
+ 233 0100 88130000 		.word	5000
+ 234 0104 11270000 		.word	10001
+ 235              		.cfi_endproc
+ 236              	.LFE33:
+ 237              		.size	main, .-main
+ 238              		.text
+ 239              	.Letext0:
+ 240              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 8
+
+
+ 241              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 242              		.file 4 "Generated_Source\\PSoC4/cytypes.h"
+ 243              		.file 5 "Generated_Source\\PSoC4/CapSense_Configuration.h"
+ 244              		.file 6 "Generated_Source\\PSoC4/CapSense_TMG.h"
+ 245              		.file 7 "Generated_Source\\PSoC4/CapSense_Structure.h"
+ 246              		.file 8 "Generated_Source\\PSoC4/EZI2C.h"
+ 247              		.file 9 "Generated_Source\\PSoC4/CapSense_Control.h"
+ 248              		.file 10 "Generated_Source\\PSoC4/PWM_Blue.h"
+ 249              		.file 11 "Generated_Source\\PSoC4/PWM_Green.h"
+ 250              		.file 12 "Generated_Source\\PSoC4/EZI2C_EZI2C.h"
+ 251              		.file 13 "Generated_Source\\PSoC4/CyLib.h"
+ 252              		.file 14 "Generated_Source\\PSoC4/CapSense_Sensing.h"
+ 253              		.file 15 "Generated_Source\\PSoC4/CapSense_Gesture.h"
+ 254              		.file 16 "Generated_Source\\PSoC4/Red_LED.h"
+ 255              		.file 17 "Generated_Source\\PSoC4/CapSense_Tuner.h"
+ 256              		.section	.debug_info,"",%progbits
+ 257              	.Ldebug_info0:
+ 258 0000 530A0000 		.4byte	0xa53
+ 259 0004 0400     		.2byte	0x4
+ 260 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 261 000a 04       		.byte	0x4
+ 262 000b 01       		.uleb128 0x1
+ 263 000c C2020000 		.4byte	.LASF168
+ 264 0010 0C       		.byte	0xc
+ 265 0011 75000000 		.4byte	.LASF169
+ 266 0015 33060000 		.4byte	.LASF170
+ 267 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 268 001d 00000000 		.4byte	0
+ 269 0021 00000000 		.4byte	.Ldebug_line0
+ 270 0025 02       		.uleb128 0x2
+ 271 0026 01       		.byte	0x1
+ 272 0027 06       		.byte	0x6
+ 273 0028 430A0000 		.4byte	.LASF0
+ 274 002c 03       		.uleb128 0x3
+ 275 002d CA080000 		.4byte	.LASF3
+ 276 0031 02       		.byte	0x2
+ 277 0032 1D       		.byte	0x1d
+ 278 0033 37000000 		.4byte	0x37
+ 279 0037 02       		.uleb128 0x2
+ 280 0038 01       		.byte	0x1
+ 281 0039 08       		.byte	0x8
+ 282 003a 7A090000 		.4byte	.LASF1
+ 283 003e 02       		.uleb128 0x2
+ 284 003f 02       		.byte	0x2
+ 285 0040 05       		.byte	0x5
+ 286 0041 47080000 		.4byte	.LASF2
+ 287 0045 03       		.uleb128 0x3
+ 288 0046 F4030000 		.4byte	.LASF4
+ 289 004a 02       		.byte	0x2
+ 290 004b 2B       		.byte	0x2b
+ 291 004c 50000000 		.4byte	0x50
+ 292 0050 02       		.uleb128 0x2
+ 293 0051 02       		.byte	0x2
+ 294 0052 07       		.byte	0x7
+ 295 0053 790A0000 		.4byte	.LASF5
+ 296 0057 02       		.uleb128 0x2
+ 297 0058 04       		.byte	0x4
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 9
+
+
+ 298 0059 05       		.byte	0x5
+ 299 005a 65080000 		.4byte	.LASF6
+ 300 005e 02       		.uleb128 0x2
+ 301 005f 04       		.byte	0x4
+ 302 0060 07       		.byte	0x7
+ 303 0061 1A090000 		.4byte	.LASF7
+ 304 0065 02       		.uleb128 0x2
+ 305 0066 08       		.byte	0x8
+ 306 0067 05       		.byte	0x5
+ 307 0068 16060000 		.4byte	.LASF8
+ 308 006c 02       		.uleb128 0x2
+ 309 006d 08       		.byte	0x8
+ 310 006e 07       		.byte	0x7
+ 311 006f 84030000 		.4byte	.LASF9
+ 312 0073 04       		.uleb128 0x4
+ 313 0074 04       		.byte	0x4
+ 314 0075 05       		.byte	0x5
+ 315 0076 696E7400 		.ascii	"int\000"
+ 316 007a 02       		.uleb128 0x2
+ 317 007b 04       		.byte	0x4
+ 318 007c 07       		.byte	0x7
+ 319 007d 04010000 		.4byte	.LASF10
+ 320 0081 03       		.uleb128 0x3
+ 321 0082 A7050000 		.4byte	.LASF11
+ 322 0086 03       		.byte	0x3
+ 323 0087 18       		.byte	0x18
+ 324 0088 2C000000 		.4byte	0x2c
+ 325 008c 03       		.uleb128 0x3
+ 326 008d B3070000 		.4byte	.LASF12
+ 327 0091 03       		.byte	0x3
+ 328 0092 24       		.byte	0x24
+ 329 0093 45000000 		.4byte	0x45
+ 330 0097 05       		.uleb128 0x5
+ 331 0098 C80A0000 		.4byte	.LASF13
+ 332 009c 04       		.byte	0x4
+ 333 009d F701     		.2byte	0x1f7
+ 334 009f 37000000 		.4byte	0x37
+ 335 00a3 05       		.uleb128 0x5
+ 336 00a4 8B050000 		.4byte	.LASF14
+ 337 00a8 04       		.byte	0x4
+ 338 00a9 F801     		.2byte	0x1f8
+ 339 00ab 50000000 		.4byte	0x50
+ 340 00af 05       		.uleb128 0x5
+ 341 00b0 40070000 		.4byte	.LASF15
+ 342 00b4 04       		.byte	0x4
+ 343 00b5 F901     		.2byte	0x1f9
+ 344 00b7 5E000000 		.4byte	0x5e
+ 345 00bb 02       		.uleb128 0x2
+ 346 00bc 04       		.byte	0x4
+ 347 00bd 04       		.byte	0x4
+ 348 00be BC020000 		.4byte	.LASF16
+ 349 00c2 02       		.uleb128 0x2
+ 350 00c3 08       		.byte	0x8
+ 351 00c4 04       		.byte	0x4
+ 352 00c5 CE0A0000 		.4byte	.LASF17
+ 353 00c9 02       		.uleb128 0x2
+ 354 00ca 01       		.byte	0x1
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 10
+
+
+ 355 00cb 08       		.byte	0x8
+ 356 00cc 6A050000 		.4byte	.LASF18
+ 357 00d0 06       		.uleb128 0x6
+ 358 00d1 AF000000 		.4byte	0xaf
+ 359 00d5 05       		.uleb128 0x5
+ 360 00d6 C2090000 		.4byte	.LASF19
+ 361 00da 05       		.byte	0x5
+ 362 00db 3B01     		.2byte	0x13b
+ 363 00dd A3000000 		.4byte	0xa3
+ 364 00e1 05       		.uleb128 0x5
+ 365 00e2 B6050000 		.4byte	.LASF20
+ 366 00e6 05       		.byte	0x5
+ 367 00e7 3F01     		.2byte	0x13f
+ 368 00e9 97000000 		.4byte	0x97
+ 369 00ed 02       		.uleb128 0x2
+ 370 00ee 08       		.byte	0x8
+ 371 00ef 04       		.byte	0x4
+ 372 00f0 A7070000 		.4byte	.LASF21
+ 373 00f4 02       		.uleb128 0x2
+ 374 00f5 04       		.byte	0x4
+ 375 00f6 07       		.byte	0x7
+ 376 00f7 11090000 		.4byte	.LASF22
+ 377 00fb 07       		.uleb128 0x7
+ 378 00fc 56       		.byte	0x56
+ 379 00fd 06       		.byte	0x6
+ 380 00fe 21       		.byte	0x21
+ 381 00ff 98040000 		.4byte	0x498
+ 382 0103 08       		.uleb128 0x8
+ 383 0104 31070000 		.4byte	.LASF23
+ 384 0108 06       		.byte	0x6
+ 385 0109 26       		.byte	0x26
+ 386 010a 98040000 		.4byte	0x498
+ 387 010e 00       		.byte	0
+ 388 010f 08       		.uleb128 0x8
+ 389 0110 41000000 		.4byte	.LASF24
+ 390 0114 06       		.byte	0x6
+ 391 0115 2D       		.byte	0x2d
+ 392 0116 98040000 		.4byte	0x498
+ 393 011a 01       		.byte	0x1
+ 394 011b 08       		.uleb128 0x8
+ 395 011c 54000000 		.4byte	.LASF25
+ 396 0120 06       		.byte	0x6
+ 397 0121 33       		.byte	0x33
+ 398 0122 98040000 		.4byte	0x498
+ 399 0126 02       		.byte	0x2
+ 400 0127 08       		.uleb128 0x8
+ 401 0128 5E020000 		.4byte	.LASF26
+ 402 012c 06       		.byte	0x6
+ 403 012d 39       		.byte	0x39
+ 404 012e 98040000 		.4byte	0x498
+ 405 0132 03       		.byte	0x3
+ 406 0133 08       		.uleb128 0x8
+ 407 0134 72020000 		.4byte	.LASF27
+ 408 0138 06       		.byte	0x6
+ 409 0139 3F       		.byte	0x3f
+ 410 013a 98040000 		.4byte	0x498
+ 411 013e 04       		.byte	0x4
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 11
+
+
+ 412 013f 08       		.uleb128 0x8
+ 413 0140 17000000 		.4byte	.LASF28
+ 414 0144 06       		.byte	0x6
+ 415 0145 45       		.byte	0x45
+ 416 0146 98040000 		.4byte	0x498
+ 417 014a 05       		.byte	0x5
+ 418 014b 08       		.uleb128 0x8
+ 419 014c 2C000000 		.4byte	.LASF29
+ 420 0150 06       		.byte	0x6
+ 421 0151 4B       		.byte	0x4b
+ 422 0152 98040000 		.4byte	0x498
+ 423 0156 06       		.byte	0x6
+ 424 0157 08       		.uleb128 0x8
+ 425 0158 A00A0000 		.4byte	.LASF30
+ 426 015c 06       		.byte	0x6
+ 427 015d 51       		.byte	0x51
+ 428 015e 98040000 		.4byte	0x498
+ 429 0162 07       		.byte	0x7
+ 430 0163 08       		.uleb128 0x8
+ 431 0164 180B0000 		.4byte	.LASF31
+ 432 0168 06       		.byte	0x6
+ 433 0169 57       		.byte	0x57
+ 434 016a 98040000 		.4byte	0x498
+ 435 016e 08       		.byte	0x8
+ 436 016f 08       		.uleb128 0x8
+ 437 0170 CC000000 		.4byte	.LASF32
+ 438 0174 06       		.byte	0x6
+ 439 0175 5D       		.byte	0x5d
+ 440 0176 98040000 		.4byte	0x498
+ 441 017a 09       		.byte	0x9
+ 442 017b 08       		.uleb128 0x8
+ 443 017c B5010000 		.4byte	.LASF33
+ 444 0180 06       		.byte	0x6
+ 445 0181 63       		.byte	0x63
+ 446 0182 98040000 		.4byte	0x498
+ 447 0186 0A       		.byte	0xa
+ 448 0187 08       		.uleb128 0x8
+ 449 0188 B40A0000 		.4byte	.LASF34
+ 450 018c 06       		.byte	0x6
+ 451 018d 69       		.byte	0x69
+ 452 018e 98040000 		.4byte	0x498
+ 453 0192 0B       		.byte	0xb
+ 454 0193 08       		.uleb128 0x8
+ 455 0194 2C0B0000 		.4byte	.LASF35
+ 456 0198 06       		.byte	0x6
+ 457 0199 6F       		.byte	0x6f
+ 458 019a 98040000 		.4byte	0x498
+ 459 019e 0C       		.byte	0xc
+ 460 019f 08       		.uleb128 0x8
+ 461 01a0 E0000000 		.4byte	.LASF36
+ 462 01a4 06       		.byte	0x6
+ 463 01a5 75       		.byte	0x75
+ 464 01a6 98040000 		.4byte	0x498
+ 465 01aa 0D       		.byte	0xd
+ 466 01ab 08       		.uleb128 0x8
+ 467 01ac C9010000 		.4byte	.LASF37
+ 468 01b0 06       		.byte	0x6
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 12
+
+
+ 469 01b1 7B       		.byte	0x7b
+ 470 01b2 98040000 		.4byte	0x498
+ 471 01b6 0E       		.byte	0xe
+ 472 01b7 08       		.uleb128 0x8
+ 473 01b8 25010000 		.4byte	.LASF38
+ 474 01bc 06       		.byte	0x6
+ 475 01bd 83       		.byte	0x83
+ 476 01be 98040000 		.4byte	0x498
+ 477 01c2 0F       		.byte	0xf
+ 478 01c3 08       		.uleb128 0x8
+ 479 01c4 33010000 		.4byte	.LASF39
+ 480 01c8 06       		.byte	0x6
+ 481 01c9 8B       		.byte	0x8b
+ 482 01ca 98040000 		.4byte	0x498
+ 483 01ce 10       		.byte	0x10
+ 484 01cf 08       		.uleb128 0x8
+ 485 01d0 41010000 		.4byte	.LASF40
+ 486 01d4 06       		.byte	0x6
+ 487 01d5 93       		.byte	0x93
+ 488 01d6 98040000 		.4byte	0x498
+ 489 01da 11       		.byte	0x11
+ 490 01db 08       		.uleb128 0x8
+ 491 01dc 4F010000 		.4byte	.LASF41
+ 492 01e0 06       		.byte	0x6
+ 493 01e1 9B       		.byte	0x9b
+ 494 01e2 98040000 		.4byte	0x498
+ 495 01e6 12       		.byte	0x12
+ 496 01e7 08       		.uleb128 0x8
+ 497 01e8 E6050000 		.4byte	.LASF42
+ 498 01ec 06       		.byte	0x6
+ 499 01ed A2       		.byte	0xa2
+ 500 01ee 98040000 		.4byte	0x498
+ 501 01f2 13       		.byte	0x13
+ 502 01f3 08       		.uleb128 0x8
+ 503 01f4 5D010000 		.4byte	.LASF43
+ 504 01f8 06       		.byte	0x6
+ 505 01f9 A8       		.byte	0xa8
+ 506 01fa 98040000 		.4byte	0x498
+ 507 01fe 14       		.byte	0x14
+ 508 01ff 08       		.uleb128 0x8
+ 509 0200 10020000 		.4byte	.LASF44
+ 510 0204 06       		.byte	0x6
+ 511 0205 AE       		.byte	0xae
+ 512 0206 98040000 		.4byte	0x498
+ 513 020a 15       		.byte	0x15
+ 514 020b 08       		.uleb128 0x8
+ 515 020c 54030000 		.4byte	.LASF45
+ 516 0210 06       		.byte	0x6
+ 517 0211 B4       		.byte	0xb4
+ 518 0212 98040000 		.4byte	0x498
+ 519 0216 16       		.byte	0x16
+ 520 0217 08       		.uleb128 0x8
+ 521 0218 15040000 		.4byte	.LASF46
+ 522 021c 06       		.byte	0x6
+ 523 021d BA       		.byte	0xba
+ 524 021e 98040000 		.4byte	0x498
+ 525 0222 17       		.byte	0x17
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 13
+
+
+ 526 0223 08       		.uleb128 0x8
+ 527 0224 71010000 		.4byte	.LASF47
+ 528 0228 06       		.byte	0x6
+ 529 0229 C0       		.byte	0xc0
+ 530 022a 98040000 		.4byte	0x498
+ 531 022e 18       		.byte	0x18
+ 532 022f 08       		.uleb128 0x8
+ 533 0230 24020000 		.4byte	.LASF48
+ 534 0234 06       		.byte	0x6
+ 535 0235 C6       		.byte	0xc6
+ 536 0236 98040000 		.4byte	0x498
+ 537 023a 19       		.byte	0x19
+ 538 023b 08       		.uleb128 0x8
+ 539 023c 68030000 		.4byte	.LASF49
+ 540 0240 06       		.byte	0x6
+ 541 0241 CC       		.byte	0xcc
+ 542 0242 98040000 		.4byte	0x498
+ 543 0246 1A       		.byte	0x1a
+ 544 0247 08       		.uleb128 0x8
+ 545 0248 29040000 		.4byte	.LASF50
+ 546 024c 06       		.byte	0x6
+ 547 024d D2       		.byte	0xd2
+ 548 024e 98040000 		.4byte	0x498
+ 549 0252 1B       		.byte	0x1b
+ 550 0253 08       		.uleb128 0x8
+ 551 0254 0F080000 		.4byte	.LASF51
+ 552 0258 06       		.byte	0x6
+ 553 0259 DA       		.byte	0xda
+ 554 025a 98040000 		.4byte	0x498
+ 555 025e 1C       		.byte	0x1c
+ 556 025f 08       		.uleb128 0x8
+ 557 0260 1D080000 		.4byte	.LASF52
+ 558 0264 06       		.byte	0x6
+ 559 0265 E2       		.byte	0xe2
+ 560 0266 98040000 		.4byte	0x498
+ 561 026a 1D       		.byte	0x1d
+ 562 026b 08       		.uleb128 0x8
+ 563 026c 2B080000 		.4byte	.LASF53
+ 564 0270 06       		.byte	0x6
+ 565 0271 EA       		.byte	0xea
+ 566 0272 98040000 		.4byte	0x498
+ 567 0276 1E       		.byte	0x1e
+ 568 0277 08       		.uleb128 0x8
+ 569 0278 39080000 		.4byte	.LASF54
+ 570 027c 06       		.byte	0x6
+ 571 027d F2       		.byte	0xf2
+ 572 027e 98040000 		.4byte	0x498
+ 573 0282 1F       		.byte	0x1f
+ 574 0283 08       		.uleb128 0x8
+ 575 0284 FF010000 		.4byte	.LASF55
+ 576 0288 06       		.byte	0x6
+ 577 0289 F9       		.byte	0xf9
+ 578 028a 98040000 		.4byte	0x498
+ 579 028e 20       		.byte	0x20
+ 580 028f 09       		.uleb128 0x9
+ 581 0290 1D050000 		.4byte	.LASF56
+ 582 0294 06       		.byte	0x6
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 14
+
+
+ 583 0295 0001     		.2byte	0x100
+ 584 0297 98040000 		.4byte	0x498
+ 585 029b 21       		.byte	0x21
+ 586 029c 09       		.uleb128 0x9
+ 587 029d 34050000 		.4byte	.LASF57
+ 588 02a1 06       		.byte	0x6
+ 589 02a2 0701     		.2byte	0x107
+ 590 02a4 98040000 		.4byte	0x498
+ 591 02a8 22       		.byte	0x22
+ 592 02a9 09       		.uleb128 0x9
+ 593 02aa 4B050000 		.4byte	.LASF58
+ 594 02ae 06       		.byte	0x6
+ 595 02af 0E01     		.2byte	0x10e
+ 596 02b1 98040000 		.4byte	0x498
+ 597 02b5 23       		.byte	0x23
+ 598 02b6 09       		.uleb128 0x9
+ 599 02b7 7C000000 		.4byte	.LASF59
+ 600 02bb 06       		.byte	0x6
+ 601 02bc 1501     		.2byte	0x115
+ 602 02be 98040000 		.4byte	0x498
+ 603 02c2 24       		.byte	0x24
+ 604 02c3 09       		.uleb128 0x9
+ 605 02c4 9E000000 		.4byte	.LASF60
+ 606 02c8 06       		.byte	0x6
+ 607 02c9 1C01     		.2byte	0x11c
+ 608 02cb 98040000 		.4byte	0x498
+ 609 02cf 25       		.byte	0x25
+ 610 02d0 09       		.uleb128 0x9
+ 611 02d1 B5000000 		.4byte	.LASF61
+ 612 02d5 06       		.byte	0x6
+ 613 02d6 2301     		.2byte	0x123
+ 614 02d8 98040000 		.4byte	0x498
+ 615 02dc 26       		.byte	0x26
+ 616 02dd 09       		.uleb128 0x9
+ 617 02de 9B030000 		.4byte	.LASF62
+ 618 02e2 06       		.byte	0x6
+ 619 02e3 2A01     		.2byte	0x12a
+ 620 02e5 98040000 		.4byte	0x498
+ 621 02e9 27       		.byte	0x27
+ 622 02ea 09       		.uleb128 0x9
+ 623 02eb 4F0A0000 		.4byte	.LASF63
+ 624 02ef 06       		.byte	0x6
+ 625 02f0 3101     		.2byte	0x131
+ 626 02f2 98040000 		.4byte	0x498
+ 627 02f6 28       		.byte	0x28
+ 628 02f7 09       		.uleb128 0x9
+ 629 02f8 670A0000 		.4byte	.LASF64
+ 630 02fc 06       		.byte	0x6
+ 631 02fd 3701     		.2byte	0x137
+ 632 02ff 98040000 		.4byte	0x498
+ 633 0303 29       		.byte	0x29
+ 634 0304 09       		.uleb128 0x9
+ 635 0305 D1050000 		.4byte	.LASF65
+ 636 0309 06       		.byte	0x6
+ 637 030a 3D01     		.2byte	0x13d
+ 638 030c 98040000 		.4byte	0x498
+ 639 0310 2A       		.byte	0x2a
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 15
+
+
+ 640 0311 09       		.uleb128 0x9
+ 641 0312 00060000 		.4byte	.LASF66
+ 642 0316 06       		.byte	0x6
+ 643 0317 4401     		.2byte	0x144
+ 644 0319 98040000 		.4byte	0x498
+ 645 031d 2B       		.byte	0x2b
+ 646 031e 09       		.uleb128 0x9
+ 647 031f 67000000 		.4byte	.LASF67
+ 648 0323 06       		.byte	0x6
+ 649 0324 4A01     		.2byte	0x14a
+ 650 0326 98040000 		.4byte	0x498
+ 651 032a 2C       		.byte	0x2c
+ 652 032b 09       		.uleb128 0x9
+ 653 032c 87070000 		.4byte	.LASF68
+ 654 0330 06       		.byte	0x6
+ 655 0331 5001     		.2byte	0x150
+ 656 0333 98040000 		.4byte	0x498
+ 657 0337 2D       		.byte	0x2d
+ 658 0338 09       		.uleb128 0x9
+ 659 0339 8C0A0000 		.4byte	.LASF69
+ 660 033d 06       		.byte	0x6
+ 661 033e 5701     		.2byte	0x157
+ 662 0340 98040000 		.4byte	0x498
+ 663 0344 2E       		.byte	0x2e
+ 664 0345 09       		.uleb128 0x9
+ 665 0346 A8020000 		.4byte	.LASF70
+ 666 034a 06       		.byte	0x6
+ 667 034b 5F01     		.2byte	0x15f
+ 668 034d 98040000 		.4byte	0x498
+ 669 0351 2F       		.byte	0x2f
+ 670 0352 09       		.uleb128 0x9
+ 671 0353 D50A0000 		.4byte	.LASF71
+ 672 0357 06       		.byte	0x6
+ 673 0358 6801     		.2byte	0x168
+ 674 035a 98040000 		.4byte	0x498
+ 675 035e 30       		.byte	0x30
+ 676 035f 09       		.uleb128 0x9
+ 677 0360 D3040000 		.4byte	.LASF72
+ 678 0364 06       		.byte	0x6
+ 679 0365 6E01     		.2byte	0x16e
+ 680 0367 98040000 		.4byte	0x498
+ 681 036b 31       		.byte	0x31
+ 682 036c 09       		.uleb128 0x9
+ 683 036d 42020000 		.4byte	.LASF73
+ 684 0371 06       		.byte	0x6
+ 685 0372 7401     		.2byte	0x174
+ 686 0374 98040000 		.4byte	0x498
+ 687 0378 32       		.byte	0x32
+ 688 0379 09       		.uleb128 0x9
+ 689 037a 12070000 		.4byte	.LASF74
+ 690 037e 06       		.byte	0x6
+ 691 037f 7A01     		.2byte	0x17a
+ 692 0381 98040000 		.4byte	0x498
+ 693 0385 33       		.byte	0x33
+ 694 0386 09       		.uleb128 0x9
+ 695 0387 1F070000 		.4byte	.LASF75
+ 696 038b 06       		.byte	0x6
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 16
+
+
+ 697 038c 8001     		.2byte	0x180
+ 698 038e 98040000 		.4byte	0x498
+ 699 0392 34       		.byte	0x34
+ 700 0393 09       		.uleb128 0x9
+ 701 0394 F4000000 		.4byte	.LASF76
+ 702 0398 06       		.byte	0x6
+ 703 0399 8601     		.2byte	0x186
+ 704 039b 9D040000 		.4byte	0x49d
+ 705 039f 36       		.byte	0x36
+ 706 03a0 09       		.uleb128 0x9
+ 707 03a1 34090000 		.4byte	.LASF77
+ 708 03a5 06       		.byte	0x6
+ 709 03a6 8B01     		.2byte	0x18b
+ 710 03a8 9D040000 		.4byte	0x49d
+ 711 03ac 38       		.byte	0x38
+ 712 03ad 09       		.uleb128 0x9
+ 713 03ae 40090000 		.4byte	.LASF78
+ 714 03b2 06       		.byte	0x6
+ 715 03b3 9001     		.2byte	0x190
+ 716 03b5 9D040000 		.4byte	0x49d
+ 717 03b9 3A       		.byte	0x3a
+ 718 03ba 09       		.uleb128 0x9
+ 719 03bb 98020000 		.4byte	.LASF79
+ 720 03bf 06       		.byte	0x6
+ 721 03c0 9501     		.2byte	0x195
+ 722 03c2 9D040000 		.4byte	0x49d
+ 723 03c6 3C       		.byte	0x3c
+ 724 03c7 09       		.uleb128 0x9
+ 725 03c8 00000000 		.4byte	.LASF80
+ 726 03cc 06       		.byte	0x6
+ 727 03cd 9A01     		.2byte	0x19a
+ 728 03cf 9D040000 		.4byte	0x49d
+ 729 03d3 3E       		.byte	0x3e
+ 730 03d4 09       		.uleb128 0x9
+ 731 03d5 DD010000 		.4byte	.LASF81
+ 732 03d9 06       		.byte	0x6
+ 733 03da A001     		.2byte	0x1a0
+ 734 03dc 9D040000 		.4byte	0x49d
+ 735 03e0 40       		.byte	0x40
+ 736 03e1 09       		.uleb128 0x9
+ 737 03e2 D8070000 		.4byte	.LASF82
+ 738 03e6 06       		.byte	0x6
+ 739 03e7 A801     		.2byte	0x1a8
+ 740 03e9 9D040000 		.4byte	0x49d
+ 741 03ed 42       		.byte	0x42
+ 742 03ee 09       		.uleb128 0x9
+ 743 03ef 68090000 		.4byte	.LASF83
+ 744 03f3 06       		.byte	0x6
+ 745 03f4 AF01     		.2byte	0x1af
+ 746 03f6 9D040000 		.4byte	0x49d
+ 747 03fa 44       		.byte	0x44
+ 748 03fb 09       		.uleb128 0x9
+ 749 03fc 83040000 		.4byte	.LASF84
+ 750 0400 06       		.byte	0x6
+ 751 0401 B701     		.2byte	0x1b7
+ 752 0403 9D040000 		.4byte	0x49d
+ 753 0407 46       		.byte	0x46
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 17
+
+
+ 754 0408 09       		.uleb128 0x9
+ 755 0409 9B090000 		.4byte	.LASF85
+ 756 040d 06       		.byte	0x6
+ 757 040e BD01     		.2byte	0x1bd
+ 758 0410 9D040000 		.4byte	0x49d
+ 759 0414 48       		.byte	0x48
+ 760 0415 09       		.uleb128 0x9
+ 761 0416 B0040000 		.4byte	.LASF86
+ 762 041a 06       		.byte	0x6
+ 763 041b C301     		.2byte	0x1c3
+ 764 041d 9D040000 		.4byte	0x49d
+ 765 0421 4A       		.byte	0x4a
+ 766 0422 09       		.uleb128 0x9
+ 767 0423 54020000 		.4byte	.LASF87
+ 768 0427 06       		.byte	0x6
+ 769 0428 CC01     		.2byte	0x1cc
+ 770 042a 98040000 		.4byte	0x498
+ 771 042e 4C       		.byte	0x4c
+ 772 042f 09       		.uleb128 0x9
+ 773 0430 71070000 		.4byte	.LASF88
+ 774 0434 06       		.byte	0x6
+ 775 0435 D101     		.2byte	0x1d1
+ 776 0437 98040000 		.4byte	0x498
+ 777 043b 4D       		.byte	0x4d
+ 778 043c 09       		.uleb128 0x9
+ 779 043d 7D070000 		.4byte	.LASF89
+ 780 0441 06       		.byte	0x6
+ 781 0442 D601     		.2byte	0x1d6
+ 782 0444 98040000 		.4byte	0x498
+ 783 0448 4E       		.byte	0x4e
+ 784 0449 09       		.uleb128 0x9
+ 785 044a A9010000 		.4byte	.LASF90
+ 786 044e 06       		.byte	0x6
+ 787 044f DB01     		.2byte	0x1db
+ 788 0451 98040000 		.4byte	0x498
+ 789 0455 4F       		.byte	0x4f
+ 790 0456 09       		.uleb128 0x9
+ 791 0457 38020000 		.4byte	.LASF91
+ 792 045b 06       		.byte	0x6
+ 793 045c E001     		.2byte	0x1e0
+ 794 045e 98040000 		.4byte	0x498
+ 795 0462 50       		.byte	0x50
+ 796 0463 09       		.uleb128 0x9
+ 797 0464 DF080000 		.4byte	.LASF92
+ 798 0468 06       		.byte	0x6
+ 799 0469 E501     		.2byte	0x1e5
+ 800 046b 98040000 		.4byte	0x498
+ 801 046f 51       		.byte	0x51
+ 802 0470 09       		.uleb128 0x9
+ 803 0471 C0080000 		.4byte	.LASF93
+ 804 0475 06       		.byte	0x6
+ 805 0476 EA01     		.2byte	0x1ea
+ 806 0478 98040000 		.4byte	0x498
+ 807 047c 52       		.byte	0x52
+ 808 047d 09       		.uleb128 0x9
+ 809 047e 7F050000 		.4byte	.LASF94
+ 810 0482 06       		.byte	0x6
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 18
+
+
+ 811 0483 EF01     		.2byte	0x1ef
+ 812 0485 98040000 		.4byte	0x498
+ 813 0489 53       		.byte	0x53
+ 814 048a 09       		.uleb128 0x9
+ 815 048b 79040000 		.4byte	.LASF95
+ 816 048f 06       		.byte	0x6
+ 817 0490 F401     		.2byte	0x1f4
+ 818 0492 98040000 		.4byte	0x498
+ 819 0496 54       		.byte	0x54
+ 820 0497 00       		.byte	0
+ 821 0498 06       		.uleb128 0x6
+ 822 0499 81000000 		.4byte	0x81
+ 823 049d 06       		.uleb128 0x6
+ 824 049e 8C000000 		.4byte	0x8c
+ 825 04a2 05       		.uleb128 0x5
+ 826 04a3 F6080000 		.4byte	.LASF96
+ 827 04a7 06       		.byte	0x6
+ 828 04a8 F501     		.2byte	0x1f5
+ 829 04aa FB000000 		.4byte	0xfb
+ 830 04ae 0A       		.uleb128 0xa
+ 831 04af 97000000 		.4byte	0x97
+ 832 04b3 BE040000 		.4byte	0x4be
+ 833 04b7 0B       		.uleb128 0xb
+ 834 04b8 F4000000 		.4byte	0xf4
+ 835 04bc 00       		.byte	0
+ 836 04bd 00       		.byte	0
+ 837 04be 0C       		.uleb128 0xc
+ 838 04bf 18       		.byte	0x18
+ 839 04c0 07       		.byte	0x7
+ 840 04c1 0C01     		.2byte	0x10c
+ 841 04c3 A5050000 		.4byte	0x5a5
+ 842 04c7 09       		.uleb128 0x9
+ 843 04c8 9C050000 		.4byte	.LASF97
+ 844 04cc 07       		.byte	0x7
+ 845 04cd 1101     		.2byte	0x111
+ 846 04cf A3000000 		.4byte	0xa3
+ 847 04d3 00       		.byte	0
+ 848 04d4 09       		.uleb128 0x9
+ 849 04d5 4C090000 		.4byte	.LASF98
+ 850 04d9 07       		.byte	0x7
+ 851 04da 1601     		.2byte	0x116
+ 852 04dc D5000000 		.4byte	0xd5
+ 853 04e0 02       		.byte	0x2
+ 854 04e1 09       		.uleb128 0x9
+ 855 04e2 62050000 		.4byte	.LASF99
+ 856 04e6 07       		.byte	0x7
+ 857 04e7 1B01     		.2byte	0x11b
+ 858 04e9 97000000 		.4byte	0x97
+ 859 04ed 04       		.byte	0x4
+ 860 04ee 09       		.uleb128 0x9
+ 861 04ef FE060000 		.4byte	.LASF100
+ 862 04f3 07       		.byte	0x7
+ 863 04f4 2001     		.2byte	0x120
+ 864 04f6 97000000 		.4byte	0x97
+ 865 04fa 05       		.byte	0x5
+ 866 04fb 09       		.uleb128 0x9
+ 867 04fc A5040000 		.4byte	.LASF101
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 19
+
+
+ 868 0500 07       		.byte	0x7
+ 869 0501 2601     		.2byte	0x126
+ 870 0503 97000000 		.4byte	0x97
+ 871 0507 06       		.byte	0x6
+ 872 0508 09       		.uleb128 0x9
+ 873 0509 CB060000 		.4byte	.LASF102
+ 874 050d 07       		.byte	0x7
+ 875 050e 2C01     		.2byte	0x12c
+ 876 0510 97000000 		.4byte	0x97
+ 877 0514 07       		.byte	0x7
+ 878 0515 09       		.uleb128 0x9
+ 879 0516 C8040000 		.4byte	.LASF103
+ 880 051a 07       		.byte	0x7
+ 881 051b 3301     		.2byte	0x133
+ 882 051d E1000000 		.4byte	0xe1
+ 883 0521 08       		.byte	0x8
+ 884 0522 09       		.uleb128 0x9
+ 885 0523 2C090000 		.4byte	.LASF104
+ 886 0527 07       		.byte	0x7
+ 887 0528 3A01     		.2byte	0x13a
+ 888 052a AE040000 		.4byte	0x4ae
+ 889 052e 09       		.byte	0x9
+ 890 052f 09       		.uleb128 0x9
+ 891 0530 D4080000 		.4byte	.LASF105
+ 892 0534 07       		.byte	0x7
+ 893 0535 4101     		.2byte	0x141
+ 894 0537 AE040000 		.4byte	0x4ae
+ 895 053b 0A       		.byte	0xa
+ 896 053c 09       		.uleb128 0x9
+ 897 053d 03050000 		.4byte	.LASF106
+ 898 0541 07       		.byte	0x7
+ 899 0542 4601     		.2byte	0x146
+ 900 0544 97000000 		.4byte	0x97
+ 901 0548 0B       		.byte	0xb
+ 902 0549 09       		.uleb128 0x9
+ 903 054a 340A0000 		.4byte	.LASF107
+ 904 054e 07       		.byte	0x7
+ 905 054f 4E01     		.2byte	0x14e
+ 906 0551 A3000000 		.4byte	0xa3
+ 907 0555 0C       		.byte	0xc
+ 908 0556 09       		.uleb128 0x9
+ 909 0557 92050000 		.4byte	.LASF108
+ 910 055b 07       		.byte	0x7
+ 911 055c 5501     		.2byte	0x155
+ 912 055e A3000000 		.4byte	0xa3
+ 913 0562 0E       		.byte	0xe
+ 914 0563 09       		.uleb128 0x9
+ 915 0564 F4070000 		.4byte	.LASF109
+ 916 0568 07       		.byte	0x7
+ 917 0569 5A01     		.2byte	0x15a
+ 918 056b 97000000 		.4byte	0x97
+ 919 056f 10       		.byte	0x10
+ 920 0570 09       		.uleb128 0x9
+ 921 0571 6F050000 		.4byte	.LASF110
+ 922 0575 07       		.byte	0x7
+ 923 0576 5F01     		.2byte	0x15f
+ 924 0578 97000000 		.4byte	0x97
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 20
+
+
+ 925 057c 11       		.byte	0x11
+ 926 057d 09       		.uleb128 0x9
+ 927 057e 36070000 		.4byte	.LASF111
+ 928 0582 07       		.byte	0x7
+ 929 0583 6501     		.2byte	0x165
+ 930 0585 97000000 		.4byte	0x97
+ 931 0589 12       		.byte	0x12
+ 932 058a 09       		.uleb128 0x9
+ 933 058b 91090000 		.4byte	.LASF112
+ 934 058f 07       		.byte	0x7
+ 935 0590 6A01     		.2byte	0x16a
+ 936 0592 A3000000 		.4byte	0xa3
+ 937 0596 14       		.byte	0x14
+ 938 0597 09       		.uleb128 0x9
+ 939 0598 96090000 		.4byte	.LASF113
+ 940 059c 07       		.byte	0x7
+ 941 059d 6F01     		.2byte	0x16f
+ 942 059f A3000000 		.4byte	0xa3
+ 943 05a3 16       		.byte	0x16
+ 944 05a4 00       		.byte	0
+ 945 05a5 05       		.uleb128 0x5
+ 946 05a6 93080000 		.4byte	.LASF114
+ 947 05aa 07       		.byte	0x7
+ 948 05ab 7001     		.2byte	0x170
+ 949 05ad BE040000 		.4byte	0x4be
+ 950 05b1 0C       		.uleb128 0xc
+ 951 05b2 18       		.byte	0x18
+ 952 05b3 07       		.byte	0x7
+ 953 05b4 7601     		.2byte	0x176
+ 954 05b6 C8050000 		.4byte	0x5c8
+ 955 05ba 09       		.uleb128 0x9
+ 956 05bb C3030000 		.4byte	.LASF115
+ 957 05bf 07       		.byte	0x7
+ 958 05c0 7B01     		.2byte	0x17b
+ 959 05c2 A5050000 		.4byte	0x5a5
+ 960 05c6 00       		.byte	0
+ 961 05c7 00       		.byte	0
+ 962 05c8 05       		.uleb128 0x5
+ 963 05c9 DA090000 		.4byte	.LASF116
+ 964 05cd 07       		.byte	0x7
+ 965 05ce 7C01     		.2byte	0x17c
+ 966 05d0 B1050000 		.4byte	0x5b1
+ 967 05d4 0C       		.uleb128 0xc
+ 968 05d5 0A       		.byte	0xa
+ 969 05d6 07       		.byte	0x7
+ 970 05d7 8201     		.2byte	0x182
+ 971 05d9 2C060000 		.4byte	0x62c
+ 972 05dd 0D       		.uleb128 0xd
+ 973 05de 72617700 		.ascii	"raw\000"
+ 974 05e2 07       		.byte	0x7
+ 975 05e3 8701     		.2byte	0x187
+ 976 05e5 2C060000 		.4byte	0x62c
+ 977 05e9 00       		.byte	0
+ 978 05ea 09       		.uleb128 0x9
+ 979 05eb 2C070000 		.4byte	.LASF117
+ 980 05ef 07       		.byte	0x7
+ 981 05f0 8C01     		.2byte	0x18c
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 21
+
+
+ 982 05f2 2C060000 		.4byte	0x62c
+ 983 05f6 02       		.byte	0x2
+ 984 05f7 09       		.uleb128 0x9
+ 985 05f8 55090000 		.4byte	.LASF118
+ 986 05fc 07       		.byte	0x7
+ 987 05fd 9201     		.2byte	0x192
+ 988 05ff AE040000 		.4byte	0x4ae
+ 989 0603 04       		.byte	0x4
+ 990 0604 09       		.uleb128 0x9
+ 991 0605 8E080000 		.4byte	.LASF119
+ 992 0609 07       		.byte	0x7
+ 993 060a 9701     		.2byte	0x197
+ 994 060c D5000000 		.4byte	0xd5
+ 995 0610 06       		.byte	0x6
+ 996 0611 09       		.uleb128 0x9
+ 997 0612 E40A0000 		.4byte	.LASF120
+ 998 0616 07       		.byte	0x7
+ 999 0617 9C01     		.2byte	0x19c
+ 1000 0619 3C060000 		.4byte	0x63c
+ 1001 061d 08       		.byte	0x8
+ 1002 061e 09       		.uleb128 0x9
+ 1003 061f F7050000 		.4byte	.LASF121
+ 1004 0623 07       		.byte	0x7
+ 1005 0624 A101     		.2byte	0x1a1
+ 1006 0626 AE040000 		.4byte	0x4ae
+ 1007 062a 09       		.byte	0x9
+ 1008 062b 00       		.byte	0
+ 1009 062c 0A       		.uleb128 0xa
+ 1010 062d A3000000 		.4byte	0xa3
+ 1011 0631 3C060000 		.4byte	0x63c
+ 1012 0635 0B       		.uleb128 0xb
+ 1013 0636 F4000000 		.4byte	0xf4
+ 1014 063a 00       		.byte	0
+ 1015 063b 00       		.byte	0
+ 1016 063c 0A       		.uleb128 0xa
+ 1017 063d E1000000 		.4byte	0xe1
+ 1018 0641 4C060000 		.4byte	0x64c
+ 1019 0645 0B       		.uleb128 0xb
+ 1020 0646 F4000000 		.4byte	0xf4
+ 1021 064a 00       		.byte	0
+ 1022 064b 00       		.byte	0
+ 1023 064c 05       		.uleb128 0x5
+ 1024 064d 61040000 		.4byte	.LASF122
+ 1025 0651 07       		.byte	0x7
+ 1026 0652 A201     		.2byte	0x1a2
+ 1027 0654 D4050000 		.4byte	0x5d4
+ 1028 0658 0C       		.uleb128 0xc
+ 1029 0659 8C       		.byte	0x8c
+ 1030 065a 07       		.byte	0x7
+ 1031 065b A801     		.2byte	0x1a8
+ 1032 065d 6F060000 		.4byte	0x66f
+ 1033 0661 09       		.uleb128 0x9
+ 1034 0662 C3030000 		.4byte	.LASF115
+ 1035 0666 07       		.byte	0x7
+ 1036 0667 AD01     		.2byte	0x1ad
+ 1037 0669 6F060000 		.4byte	0x66f
+ 1038 066d 00       		.byte	0
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 22
+
+
+ 1039 066e 00       		.byte	0
+ 1040 066f 0A       		.uleb128 0xa
+ 1041 0670 4C060000 		.4byte	0x64c
+ 1042 0674 7F060000 		.4byte	0x67f
+ 1043 0678 0B       		.uleb128 0xb
+ 1044 0679 F4000000 		.4byte	0xf4
+ 1045 067d 0D       		.byte	0xd
+ 1046 067e 00       		.byte	0
+ 1047 067f 05       		.uleb128 0x5
+ 1048 0680 FB0A0000 		.4byte	.LASF123
+ 1049 0684 07       		.byte	0x7
+ 1050 0685 AE01     		.2byte	0x1ae
+ 1051 0687 58060000 		.4byte	0x658
+ 1052 068b 0E       		.uleb128 0xe
+ 1053 068c 2801     		.2byte	0x128
+ 1054 068e 07       		.byte	0x7
+ 1055 068f B401     		.2byte	0x1b4
+ 1056 0691 BC070000 		.4byte	0x7bc
+ 1057 0695 09       		.uleb128 0x9
+ 1058 0696 CF070000 		.4byte	.LASF124
+ 1059 069a 07       		.byte	0x7
+ 1060 069b BB01     		.2byte	0x1bb
+ 1061 069d A3000000 		.4byte	0xa3
+ 1062 06a1 00       		.byte	0
+ 1063 06a2 09       		.uleb128 0x9
+ 1064 06a3 F20A0000 		.4byte	.LASF125
+ 1065 06a7 07       		.byte	0x7
+ 1066 06a8 C001     		.2byte	0x1c0
+ 1067 06aa A3000000 		.4byte	0xa3
+ 1068 06ae 02       		.byte	0x2
+ 1069 06af 09       		.uleb128 0x9
+ 1070 06b0 1D010000 		.4byte	.LASF126
+ 1071 06b4 07       		.byte	0x7
+ 1072 06b5 C501     		.2byte	0x1c5
+ 1073 06b7 A3000000 		.4byte	0xa3
+ 1074 06bb 04       		.byte	0x4
+ 1075 06bc 09       		.uleb128 0x9
+ 1076 06bd B7080000 		.4byte	.LASF127
+ 1077 06c1 07       		.byte	0x7
+ 1078 06c2 CB01     		.2byte	0x1cb
+ 1079 06c4 A3000000 		.4byte	0xa3
+ 1080 06c8 06       		.byte	0x6
+ 1081 06c9 09       		.uleb128 0x9
+ 1082 06ca 11010000 		.4byte	.LASF128
+ 1083 06ce 07       		.byte	0x7
+ 1084 06cf D001     		.2byte	0x1d0
+ 1085 06d1 A3000000 		.4byte	0xa3
+ 1086 06d5 08       		.byte	0x8
+ 1087 06d6 09       		.uleb128 0x9
+ 1088 06d7 AF050000 		.4byte	.LASF129
+ 1089 06db 07       		.byte	0x7
+ 1090 06dc D501     		.2byte	0x1d5
+ 1091 06de D0000000 		.4byte	0xd0
+ 1092 06e2 0C       		.byte	0xc
+ 1093 06e3 09       		.uleb128 0x9
+ 1094 06e4 83080000 		.4byte	.LASF130
+ 1095 06e8 07       		.byte	0x7
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 23
+
+
+ 1096 06e9 DB01     		.2byte	0x1db
+ 1097 06eb BC070000 		.4byte	0x7bc
+ 1098 06ef 10       		.byte	0x10
+ 1099 06f0 09       		.uleb128 0x9
+ 1100 06f1 EB080000 		.4byte	.LASF131
+ 1101 06f5 07       		.byte	0x7
+ 1102 06f6 E201     		.2byte	0x1e2
+ 1103 06f8 BC070000 		.4byte	0x7bc
+ 1104 06fc 14       		.byte	0x14
+ 1105 06fd 09       		.uleb128 0x9
+ 1106 06fe EA070000 		.4byte	.LASF132
+ 1107 0702 07       		.byte	0x7
+ 1108 0703 F201     		.2byte	0x1f2
+ 1109 0705 2C060000 		.4byte	0x62c
+ 1110 0709 18       		.byte	0x18
+ 1111 070a 09       		.uleb128 0x9
+ 1112 070b 07070000 		.4byte	.LASF133
+ 1113 070f 07       		.byte	0x7
+ 1114 0710 F801     		.2byte	0x1f8
+ 1115 0712 A3000000 		.4byte	0xa3
+ 1116 0716 1A       		.byte	0x1a
+ 1117 0717 09       		.uleb128 0x9
+ 1118 0718 57040000 		.4byte	.LASF134
+ 1119 071c 07       		.byte	0x7
+ 1120 071d FD01     		.2byte	0x1fd
+ 1121 071f 97000000 		.4byte	0x97
+ 1122 0723 1C       		.byte	0x1c
+ 1123 0724 09       		.uleb128 0x9
+ 1124 0725 D6060000 		.4byte	.LASF135
+ 1125 0729 07       		.byte	0x7
+ 1126 072a 0202     		.2byte	0x202
+ 1127 072c C8050000 		.4byte	0x5c8
+ 1128 0730 1E       		.byte	0x1e
+ 1129 0731 09       		.uleb128 0x9
+ 1130 0732 7C030000 		.4byte	.LASF136
+ 1131 0736 07       		.byte	0x7
+ 1132 0737 0702     		.2byte	0x207
+ 1133 0739 7F060000 		.4byte	0x67f
+ 1134 073d 36       		.byte	0x36
+ 1135 073e 09       		.uleb128 0x9
+ 1136 073f 88090000 		.4byte	.LASF137
+ 1137 0743 07       		.byte	0x7
+ 1138 0744 0C02     		.2byte	0x20c
+ 1139 0746 A2040000 		.4byte	0x4a2
+ 1140 074a C2       		.byte	0xc2
+ 1141 074b 0F       		.uleb128 0xf
+ 1142 074c 86020000 		.4byte	.LASF138
+ 1143 0750 07       		.byte	0x7
+ 1144 0751 1102     		.2byte	0x211
+ 1145 0753 AF000000 		.4byte	0xaf
+ 1146 0757 1801     		.2byte	0x118
+ 1147 0759 0F       		.uleb128 0xf
+ 1148 075a 240A0000 		.4byte	.LASF139
+ 1149 075e 07       		.byte	0x7
+ 1150 075f 1602     		.2byte	0x216
+ 1151 0761 AF000000 		.4byte	0xaf
+ 1152 0765 1C01     		.2byte	0x11c
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 24
+
+
+ 1153 0767 0F       		.uleb128 0xf
+ 1154 0768 8E000000 		.4byte	.LASF140
+ 1155 076c 07       		.byte	0x7
+ 1156 076d 1B02     		.2byte	0x21b
+ 1157 076f 97000000 		.4byte	0x97
+ 1158 0773 2001     		.2byte	0x120
+ 1159 0775 0F       		.uleb128 0xf
+ 1160 0776 CD030000 		.4byte	.LASF141
+ 1161 077a 07       		.byte	0x7
+ 1162 077b 2002     		.2byte	0x220
+ 1163 077d 97000000 		.4byte	0x97
+ 1164 0781 2101     		.2byte	0x121
+ 1165 0783 0F       		.uleb128 0xf
+ 1166 0784 BC070000 		.4byte	.LASF142
+ 1167 0788 07       		.byte	0x7
+ 1168 0789 2502     		.2byte	0x225
+ 1169 078b A3000000 		.4byte	0xa3
+ 1170 078f 2201     		.2byte	0x122
+ 1171 0791 0F       		.uleb128 0xf
+ 1172 0792 EE060000 		.4byte	.LASF143
+ 1173 0796 07       		.byte	0x7
+ 1174 0797 2A02     		.2byte	0x22a
+ 1175 0799 2C060000 		.4byte	0x62c
+ 1176 079d 2401     		.2byte	0x124
+ 1177 079f 0F       		.uleb128 0xf
+ 1178 07a0 5D090000 		.4byte	.LASF144
+ 1179 07a4 07       		.byte	0x7
+ 1180 07a5 2F02     		.2byte	0x22f
+ 1181 07a7 97000000 		.4byte	0x97
+ 1182 07ab 2601     		.2byte	0x126
+ 1183 07ad 0F       		.uleb128 0xf
+ 1184 07ae B3090000 		.4byte	.LASF145
+ 1185 07b2 07       		.byte	0x7
+ 1186 07b3 3402     		.2byte	0x234
+ 1187 07b5 97000000 		.4byte	0x97
+ 1188 07b9 2701     		.2byte	0x127
+ 1189 07bb 00       		.byte	0
+ 1190 07bc 0A       		.uleb128 0xa
+ 1191 07bd AF000000 		.4byte	0xaf
+ 1192 07c1 CC070000 		.4byte	0x7cc
+ 1193 07c5 0B       		.uleb128 0xb
+ 1194 07c6 F4000000 		.4byte	0xf4
+ 1195 07ca 00       		.byte	0
+ 1196 07cb 00       		.byte	0
+ 1197 07cc 05       		.uleb128 0x5
+ 1198 07cd 51080000 		.4byte	.LASF146
+ 1199 07d1 07       		.byte	0x7
+ 1200 07d2 3502     		.2byte	0x235
+ 1201 07d4 8B060000 		.4byte	0x68b
+ 1202 07d8 10       		.uleb128 0x10
+ 1203 07d9 9B0A0000 		.4byte	.LASF171
+ 1204 07dd 01       		.byte	0x1
+ 1205 07de 4C       		.byte	0x4c
+ 1206 07df 73000000 		.4byte	0x73
+ 1207 07e3 00000000 		.4byte	.LFB33
+ 1208 07e7 08010000 		.4byte	.LFE33-.LFB33
+ 1209 07eb 01       		.uleb128 0x1
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 25
+
+
+ 1210 07ec 9C       		.byte	0x9c
+ 1211 07ed 7B090000 		.4byte	0x97b
+ 1212 07f1 11       		.uleb128 0x11
+ 1213 07f2 11000000 		.4byte	.LASF147
+ 1214 07f6 01       		.byte	0x1
+ 1215 07f7 4F       		.byte	0x4f
+ 1216 07f8 AF000000 		.4byte	0xaf
+ 1217 07fc 00000000 		.4byte	.LLST0
+ 1218 0800 12       		.uleb128 0x12
+ 1219 0801 2E0A0000 		.4byte	.LASF148
+ 1220 0805 01       		.byte	0x1
+ 1221 0806 50       		.byte	0x50
+ 1222 0807 A3000000 		.4byte	0xa3
+ 1223 080b 01       		.uleb128 0x1
+ 1224 080c 56       		.byte	0x56
+ 1225 080d 11       		.uleb128 0x11
+ 1226 080e 3B0A0000 		.4byte	.LASF149
+ 1227 0812 01       		.byte	0x1
+ 1228 0813 53       		.byte	0x53
+ 1229 0814 AF000000 		.4byte	0xaf
+ 1230 0818 38000000 		.4byte	.LLST1
+ 1231 081c 13       		.uleb128 0x13
+ 1232 081d 08000000 		.4byte	.LVL0
+ 1233 0821 87090000 		.4byte	0x987
+ 1234 0825 13       		.uleb128 0x13
+ 1235 0826 0C000000 		.4byte	.LVL1
+ 1236 082a 92090000 		.4byte	0x992
+ 1237 082e 13       		.uleb128 0x13
+ 1238 082f 10000000 		.4byte	.LVL2
+ 1239 0833 9D090000 		.4byte	0x99d
+ 1240 0837 13       		.uleb128 0x13
+ 1241 0838 14000000 		.4byte	.LVL3
+ 1242 083c A9090000 		.4byte	0x9a9
+ 1243 0840 14       		.uleb128 0x14
+ 1244 0841 22000000 		.4byte	.LVL4
+ 1245 0845 B5090000 		.4byte	0x9b5
+ 1246 0849 62080000 		.4byte	0x862
+ 1247 084d 15       		.uleb128 0x15
+ 1248 084e 01       		.uleb128 0x1
+ 1249 084f 50       		.byte	0x50
+ 1250 0850 03       		.uleb128 0x3
+ 1251 0851 0A       		.byte	0xa
+ 1252 0852 2801     		.2byte	0x128
+ 1253 0854 15       		.uleb128 0x15
+ 1254 0855 01       		.uleb128 0x1
+ 1255 0856 51       		.byte	0x51
+ 1256 0857 03       		.uleb128 0x3
+ 1257 0858 0A       		.byte	0xa
+ 1258 0859 2801     		.2byte	0x128
+ 1259 085b 15       		.uleb128 0x15
+ 1260 085c 01       		.uleb128 0x1
+ 1261 085d 52       		.byte	0x52
+ 1262 085e 02       		.uleb128 0x2
+ 1263 085f 74       		.byte	0x74
+ 1264 0860 00       		.sleb128 0
+ 1265 0861 00       		.byte	0
+ 1266 0862 13       		.uleb128 0x13
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 26
+
+
+ 1267 0863 2E000000 		.4byte	.LVL5
+ 1268 0867 C0090000 		.4byte	0x9c0
+ 1269 086b 14       		.uleb128 0x14
+ 1270 086c 36000000 		.4byte	.LVL6
+ 1271 0870 CC090000 		.4byte	0x9cc
+ 1272 0874 7E080000 		.4byte	0x87e
+ 1273 0878 15       		.uleb128 0x15
+ 1274 0879 01       		.uleb128 0x1
+ 1275 087a 50       		.byte	0x50
+ 1276 087b 01       		.uleb128 0x1
+ 1277 087c 30       		.byte	0x30
+ 1278 087d 00       		.byte	0
+ 1279 087e 13       		.uleb128 0x13
+ 1280 087f 3A000000 		.4byte	.LVL7
+ 1281 0883 D8090000 		.4byte	0x9d8
+ 1282 0887 13       		.uleb128 0x13
+ 1283 0888 3E000000 		.4byte	.LVL8
+ 1284 088c E3090000 		.4byte	0x9e3
+ 1285 0890 13       		.uleb128 0x13
+ 1286 0891 46000000 		.4byte	.LVL9
+ 1287 0895 EE090000 		.4byte	0x9ee
+ 1288 0899 14       		.uleb128 0x14
+ 1289 089a 4C000000 		.4byte	.LVL10
+ 1290 089e F9090000 		.4byte	0x9f9
+ 1291 08a2 AC080000 		.4byte	0x8ac
+ 1292 08a6 15       		.uleb128 0x15
+ 1293 08a7 01       		.uleb128 0x1
+ 1294 08a8 50       		.byte	0x50
+ 1295 08a9 01       		.uleb128 0x1
+ 1296 08aa 30       		.byte	0x30
+ 1297 08ab 00       		.byte	0
+ 1298 08ac 14       		.uleb128 0x14
+ 1299 08ad 54000000 		.4byte	.LVL13
+ 1300 08b1 040A0000 		.4byte	0xa04
+ 1301 08b5 BF080000 		.4byte	0x8bf
+ 1302 08b9 15       		.uleb128 0x15
+ 1303 08ba 01       		.uleb128 0x1
+ 1304 08bb 50       		.byte	0x50
+ 1305 08bc 01       		.uleb128 0x1
+ 1306 08bd 30       		.byte	0x30
+ 1307 08be 00       		.byte	0
+ 1308 08bf 14       		.uleb128 0x14
+ 1309 08c0 7C000000 		.4byte	.LVL19
+ 1310 08c4 100A0000 		.4byte	0xa10
+ 1311 08c8 D3080000 		.4byte	0x8d3
+ 1312 08cc 15       		.uleb128 0x15
+ 1313 08cd 01       		.uleb128 0x1
+ 1314 08ce 50       		.byte	0x50
+ 1315 08cf 02       		.uleb128 0x2
+ 1316 08d0 74       		.byte	0x74
+ 1317 08d1 00       		.sleb128 0
+ 1318 08d2 00       		.byte	0
+ 1319 08d3 14       		.uleb128 0x14
+ 1320 08d4 82000000 		.4byte	.LVL20
+ 1321 08d8 1C0A0000 		.4byte	0xa1c
+ 1322 08dc E7080000 		.4byte	0x8e7
+ 1323 08e0 15       		.uleb128 0x15
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 27
+
+
+ 1324 08e1 01       		.uleb128 0x1
+ 1325 08e2 50       		.byte	0x50
+ 1326 08e3 02       		.uleb128 0x2
+ 1327 08e4 74       		.byte	0x74
+ 1328 08e5 00       		.sleb128 0
+ 1329 08e6 00       		.byte	0
+ 1330 08e7 13       		.uleb128 0x13
+ 1331 08e8 88000000 		.4byte	.LVL22
+ 1332 08ec 280A0000 		.4byte	0xa28
+ 1333 08f0 13       		.uleb128 0x13
+ 1334 08f1 98000000 		.4byte	.LVL23
+ 1335 08f5 100A0000 		.4byte	0xa10
+ 1336 08f9 13       		.uleb128 0x13
+ 1337 08fa 9E000000 		.4byte	.LVL24
+ 1338 08fe 340A0000 		.4byte	0xa34
+ 1339 0902 13       		.uleb128 0x13
+ 1340 0903 AE000000 		.4byte	.LVL25
+ 1341 0907 1C0A0000 		.4byte	0xa1c
+ 1342 090b 14       		.uleb128 0x14
+ 1343 090c B6000000 		.4byte	.LVL26
+ 1344 0910 400A0000 		.4byte	0xa40
+ 1345 0914 1E090000 		.4byte	0x91e
+ 1346 0918 15       		.uleb128 0x15
+ 1347 0919 01       		.uleb128 0x1
+ 1348 091a 50       		.byte	0x50
+ 1349 091b 01       		.uleb128 0x1
+ 1350 091c 31       		.byte	0x31
+ 1351 091d 00       		.byte	0
+ 1352 091e 14       		.uleb128 0x14
+ 1353 091f BE000000 		.4byte	.LVL27
+ 1354 0923 400A0000 		.4byte	0xa40
+ 1355 0927 31090000 		.4byte	0x931
+ 1356 092b 15       		.uleb128 0x15
+ 1357 092c 01       		.uleb128 0x1
+ 1358 092d 50       		.byte	0x50
+ 1359 092e 01       		.uleb128 0x1
+ 1360 092f 30       		.byte	0x30
+ 1361 0930 00       		.byte	0
+ 1362 0931 14       		.uleb128 0x14
+ 1363 0932 C6000000 		.4byte	.LVL28
+ 1364 0936 040A0000 		.4byte	0xa04
+ 1365 093a 44090000 		.4byte	0x944
+ 1366 093e 15       		.uleb128 0x15
+ 1367 093f 01       		.uleb128 0x1
+ 1368 0940 50       		.byte	0x50
+ 1369 0941 01       		.uleb128 0x1
+ 1370 0942 30       		.byte	0x30
+ 1371 0943 00       		.byte	0
+ 1372 0944 13       		.uleb128 0x13
+ 1373 0945 CE000000 		.4byte	.LVL29
+ 1374 0949 280A0000 		.4byte	0xa28
+ 1375 094d 13       		.uleb128 0x13
+ 1376 094e DC000000 		.4byte	.LVL30
+ 1377 0952 100A0000 		.4byte	0xa10
+ 1378 0956 13       		.uleb128 0x13
+ 1379 0957 E0000000 		.4byte	.LVL31
+ 1380 095b 340A0000 		.4byte	0xa34
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 28
+
+
+ 1381 095f 13       		.uleb128 0x13
+ 1382 0960 EE000000 		.4byte	.LVL32
+ 1383 0964 1C0A0000 		.4byte	0xa1c
+ 1384 0968 13       		.uleb128 0x13
+ 1385 0969 F2000000 		.4byte	.LVL33
+ 1386 096d 4B0A0000 		.4byte	0xa4b
+ 1387 0971 13       		.uleb128 0x13
+ 1388 0972 F6000000 		.4byte	.LVL34
+ 1389 0976 D8090000 		.4byte	0x9d8
+ 1390 097a 00       		.byte	0
+ 1391 097b 16       		.uleb128 0x16
+ 1392 097c DF060000 		.4byte	.LASF172
+ 1393 0980 07       		.byte	0x7
+ 1394 0981 AD04     		.2byte	0x4ad
+ 1395 0983 CC070000 		.4byte	0x7cc
+ 1396 0987 17       		.uleb128 0x17
+ 1397 0988 11050000 		.4byte	.LASF150
+ 1398 098c 11050000 		.4byte	.LASF150
+ 1399 0990 08       		.byte	0x8
+ 1400 0991 72       		.byte	0x72
+ 1401 0992 17       		.uleb128 0x17
+ 1402 0993 9A010000 		.4byte	.LASF151
+ 1403 0997 9A010000 		.4byte	.LASF151
+ 1404 099b 09       		.byte	0x9
+ 1405 099c 3B       		.byte	0x3b
+ 1406 099d 18       		.uleb128 0x18
+ 1407 099e 24060000 		.4byte	.LASF152
+ 1408 09a2 24060000 		.4byte	.LASF152
+ 1409 09a6 0A       		.byte	0xa
+ 1410 09a7 3201     		.2byte	0x132
+ 1411 09a9 18       		.uleb128 0x18
+ 1412 09aa 95040000 		.4byte	.LASF153
+ 1413 09ae 95040000 		.4byte	.LASF153
+ 1414 09b2 0B       		.byte	0xb
+ 1415 09b3 3201     		.2byte	0x132
+ 1416 09b5 17       		.uleb128 0x17
+ 1417 09b6 FF030000 		.4byte	.LASF154
+ 1418 09ba FF030000 		.4byte	.LASF154
+ 1419 09be 0C       		.byte	0xc
+ 1420 09bf A2       		.byte	0xa2
+ 1421 09c0 18       		.uleb128 0x18
+ 1422 09c1 47070000 		.4byte	.LASF155
+ 1423 09c5 47070000 		.4byte	.LASF155
+ 1424 09c9 0D       		.byte	0xd
+ 1425 09ca 0A01     		.2byte	0x10a
+ 1426 09cc 18       		.uleb128 0x18
+ 1427 09cd 85010000 		.4byte	.LASF156
+ 1428 09d1 85010000 		.4byte	.LASF156
+ 1429 09d5 0D       		.byte	0xd
+ 1430 09d6 1301     		.2byte	0x113
+ 1431 09d8 17       		.uleb128 0x17
+ 1432 09d9 0C0A0000 		.4byte	.LASF157
+ 1433 09dd 0C0A0000 		.4byte	.LASF157
+ 1434 09e1 0E       		.byte	0xe
+ 1435 09e2 59       		.byte	0x59
+ 1436 09e3 17       		.uleb128 0x17
+ 1437 09e4 EF010000 		.4byte	.LASF158
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 29
+
+
+ 1438 09e8 EF010000 		.4byte	.LASF158
+ 1439 09ec 0E       		.byte	0xe
+ 1440 09ed 5A       		.byte	0x5a
+ 1441 09ee 17       		.uleb128 0x17
+ 1442 09ef 56070000 		.4byte	.LASF159
+ 1443 09f3 56070000 		.4byte	.LASF159
+ 1444 09f7 09       		.byte	0x9
+ 1445 09f8 3F       		.byte	0x3f
+ 1446 09f9 17       		.uleb128 0x17
+ 1447 09fa E5040000 		.4byte	.LASF160
+ 1448 09fe E5040000 		.4byte	.LASF160
+ 1449 0a02 0F       		.byte	0xf
+ 1450 0a03 5E       		.byte	0x5e
+ 1451 0a04 18       		.uleb128 0x18
+ 1452 0a05 3D040000 		.4byte	.LASF161
+ 1453 0a09 3D040000 		.4byte	.LASF161
+ 1454 0a0d 07       		.byte	0x7
+ 1455 0a0e DE04     		.2byte	0x4de
+ 1456 0a10 18       		.uleb128 0x18
+ 1457 0a11 AD030000 		.4byte	.LASF162
+ 1458 0a15 AD030000 		.4byte	.LASF162
+ 1459 0a19 0A       		.byte	0xa
+ 1460 0a1a 5501     		.2byte	0x155
+ 1461 0a1c 18       		.uleb128 0x18
+ 1462 0a1d DD030000 		.4byte	.LASF163
+ 1463 0a21 DD030000 		.4byte	.LASF163
+ 1464 0a25 0B       		.byte	0xb
+ 1465 0a26 5501     		.2byte	0x155
+ 1466 0a28 18       		.uleb128 0x18
+ 1467 0a29 6E080000 		.4byte	.LASF164
+ 1468 0a2d 6E080000 		.4byte	.LASF164
+ 1469 0a31 0A       		.byte	0xa
+ 1470 0a32 5601     		.2byte	0x156
+ 1471 0a34 18       		.uleb128 0x18
+ 1472 0a35 F6090000 		.4byte	.LASF165
+ 1473 0a39 F6090000 		.4byte	.LASF165
+ 1474 0a3d 0B       		.byte	0xb
+ 1475 0a3e 5601     		.2byte	0x156
+ 1476 0a40 17       		.uleb128 0x17
+ 1477 0a41 01080000 		.4byte	.LASF166
+ 1478 0a45 01080000 		.4byte	.LASF166
+ 1479 0a49 10       		.byte	0x10
+ 1480 0a4a 33       		.byte	0x33
+ 1481 0a4b 17       		.uleb128 0x17
+ 1482 0a4c 95070000 		.4byte	.LASF167
+ 1483 0a50 95070000 		.4byte	.LASF167
+ 1484 0a54 11       		.byte	0x11
+ 1485 0a55 49       		.byte	0x49
+ 1486 0a56 00       		.byte	0
+ 1487              		.section	.debug_abbrev,"",%progbits
+ 1488              	.Ldebug_abbrev0:
+ 1489 0000 01       		.uleb128 0x1
+ 1490 0001 11       		.uleb128 0x11
+ 1491 0002 01       		.byte	0x1
+ 1492 0003 25       		.uleb128 0x25
+ 1493 0004 0E       		.uleb128 0xe
+ 1494 0005 13       		.uleb128 0x13
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 30
+
+
+ 1495 0006 0B       		.uleb128 0xb
+ 1496 0007 03       		.uleb128 0x3
+ 1497 0008 0E       		.uleb128 0xe
+ 1498 0009 1B       		.uleb128 0x1b
+ 1499 000a 0E       		.uleb128 0xe
+ 1500 000b 55       		.uleb128 0x55
+ 1501 000c 17       		.uleb128 0x17
+ 1502 000d 11       		.uleb128 0x11
+ 1503 000e 01       		.uleb128 0x1
+ 1504 000f 10       		.uleb128 0x10
+ 1505 0010 17       		.uleb128 0x17
+ 1506 0011 00       		.byte	0
+ 1507 0012 00       		.byte	0
+ 1508 0013 02       		.uleb128 0x2
+ 1509 0014 24       		.uleb128 0x24
+ 1510 0015 00       		.byte	0
+ 1511 0016 0B       		.uleb128 0xb
+ 1512 0017 0B       		.uleb128 0xb
+ 1513 0018 3E       		.uleb128 0x3e
+ 1514 0019 0B       		.uleb128 0xb
+ 1515 001a 03       		.uleb128 0x3
+ 1516 001b 0E       		.uleb128 0xe
+ 1517 001c 00       		.byte	0
+ 1518 001d 00       		.byte	0
+ 1519 001e 03       		.uleb128 0x3
+ 1520 001f 16       		.uleb128 0x16
+ 1521 0020 00       		.byte	0
+ 1522 0021 03       		.uleb128 0x3
+ 1523 0022 0E       		.uleb128 0xe
+ 1524 0023 3A       		.uleb128 0x3a
+ 1525 0024 0B       		.uleb128 0xb
+ 1526 0025 3B       		.uleb128 0x3b
+ 1527 0026 0B       		.uleb128 0xb
+ 1528 0027 49       		.uleb128 0x49
+ 1529 0028 13       		.uleb128 0x13
+ 1530 0029 00       		.byte	0
+ 1531 002a 00       		.byte	0
+ 1532 002b 04       		.uleb128 0x4
+ 1533 002c 24       		.uleb128 0x24
+ 1534 002d 00       		.byte	0
+ 1535 002e 0B       		.uleb128 0xb
+ 1536 002f 0B       		.uleb128 0xb
+ 1537 0030 3E       		.uleb128 0x3e
+ 1538 0031 0B       		.uleb128 0xb
+ 1539 0032 03       		.uleb128 0x3
+ 1540 0033 08       		.uleb128 0x8
+ 1541 0034 00       		.byte	0
+ 1542 0035 00       		.byte	0
+ 1543 0036 05       		.uleb128 0x5
+ 1544 0037 16       		.uleb128 0x16
+ 1545 0038 00       		.byte	0
+ 1546 0039 03       		.uleb128 0x3
+ 1547 003a 0E       		.uleb128 0xe
+ 1548 003b 3A       		.uleb128 0x3a
+ 1549 003c 0B       		.uleb128 0xb
+ 1550 003d 3B       		.uleb128 0x3b
+ 1551 003e 05       		.uleb128 0x5
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 31
+
+
+ 1552 003f 49       		.uleb128 0x49
+ 1553 0040 13       		.uleb128 0x13
+ 1554 0041 00       		.byte	0
+ 1555 0042 00       		.byte	0
+ 1556 0043 06       		.uleb128 0x6
+ 1557 0044 35       		.uleb128 0x35
+ 1558 0045 00       		.byte	0
+ 1559 0046 49       		.uleb128 0x49
+ 1560 0047 13       		.uleb128 0x13
+ 1561 0048 00       		.byte	0
+ 1562 0049 00       		.byte	0
+ 1563 004a 07       		.uleb128 0x7
+ 1564 004b 13       		.uleb128 0x13
+ 1565 004c 01       		.byte	0x1
+ 1566 004d 0B       		.uleb128 0xb
+ 1567 004e 0B       		.uleb128 0xb
+ 1568 004f 3A       		.uleb128 0x3a
+ 1569 0050 0B       		.uleb128 0xb
+ 1570 0051 3B       		.uleb128 0x3b
+ 1571 0052 0B       		.uleb128 0xb
+ 1572 0053 01       		.uleb128 0x1
+ 1573 0054 13       		.uleb128 0x13
+ 1574 0055 00       		.byte	0
+ 1575 0056 00       		.byte	0
+ 1576 0057 08       		.uleb128 0x8
+ 1577 0058 0D       		.uleb128 0xd
+ 1578 0059 00       		.byte	0
+ 1579 005a 03       		.uleb128 0x3
+ 1580 005b 0E       		.uleb128 0xe
+ 1581 005c 3A       		.uleb128 0x3a
+ 1582 005d 0B       		.uleb128 0xb
+ 1583 005e 3B       		.uleb128 0x3b
+ 1584 005f 0B       		.uleb128 0xb
+ 1585 0060 49       		.uleb128 0x49
+ 1586 0061 13       		.uleb128 0x13
+ 1587 0062 38       		.uleb128 0x38
+ 1588 0063 0B       		.uleb128 0xb
+ 1589 0064 00       		.byte	0
+ 1590 0065 00       		.byte	0
+ 1591 0066 09       		.uleb128 0x9
+ 1592 0067 0D       		.uleb128 0xd
+ 1593 0068 00       		.byte	0
+ 1594 0069 03       		.uleb128 0x3
+ 1595 006a 0E       		.uleb128 0xe
+ 1596 006b 3A       		.uleb128 0x3a
+ 1597 006c 0B       		.uleb128 0xb
+ 1598 006d 3B       		.uleb128 0x3b
+ 1599 006e 05       		.uleb128 0x5
+ 1600 006f 49       		.uleb128 0x49
+ 1601 0070 13       		.uleb128 0x13
+ 1602 0071 38       		.uleb128 0x38
+ 1603 0072 0B       		.uleb128 0xb
+ 1604 0073 00       		.byte	0
+ 1605 0074 00       		.byte	0
+ 1606 0075 0A       		.uleb128 0xa
+ 1607 0076 01       		.uleb128 0x1
+ 1608 0077 01       		.byte	0x1
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 32
+
+
+ 1609 0078 49       		.uleb128 0x49
+ 1610 0079 13       		.uleb128 0x13
+ 1611 007a 01       		.uleb128 0x1
+ 1612 007b 13       		.uleb128 0x13
+ 1613 007c 00       		.byte	0
+ 1614 007d 00       		.byte	0
+ 1615 007e 0B       		.uleb128 0xb
+ 1616 007f 21       		.uleb128 0x21
+ 1617 0080 00       		.byte	0
+ 1618 0081 49       		.uleb128 0x49
+ 1619 0082 13       		.uleb128 0x13
+ 1620 0083 2F       		.uleb128 0x2f
+ 1621 0084 0B       		.uleb128 0xb
+ 1622 0085 00       		.byte	0
+ 1623 0086 00       		.byte	0
+ 1624 0087 0C       		.uleb128 0xc
+ 1625 0088 13       		.uleb128 0x13
+ 1626 0089 01       		.byte	0x1
+ 1627 008a 0B       		.uleb128 0xb
+ 1628 008b 0B       		.uleb128 0xb
+ 1629 008c 3A       		.uleb128 0x3a
+ 1630 008d 0B       		.uleb128 0xb
+ 1631 008e 3B       		.uleb128 0x3b
+ 1632 008f 05       		.uleb128 0x5
+ 1633 0090 01       		.uleb128 0x1
+ 1634 0091 13       		.uleb128 0x13
+ 1635 0092 00       		.byte	0
+ 1636 0093 00       		.byte	0
+ 1637 0094 0D       		.uleb128 0xd
+ 1638 0095 0D       		.uleb128 0xd
+ 1639 0096 00       		.byte	0
+ 1640 0097 03       		.uleb128 0x3
+ 1641 0098 08       		.uleb128 0x8
+ 1642 0099 3A       		.uleb128 0x3a
+ 1643 009a 0B       		.uleb128 0xb
+ 1644 009b 3B       		.uleb128 0x3b
+ 1645 009c 05       		.uleb128 0x5
+ 1646 009d 49       		.uleb128 0x49
+ 1647 009e 13       		.uleb128 0x13
+ 1648 009f 38       		.uleb128 0x38
+ 1649 00a0 0B       		.uleb128 0xb
+ 1650 00a1 00       		.byte	0
+ 1651 00a2 00       		.byte	0
+ 1652 00a3 0E       		.uleb128 0xe
+ 1653 00a4 13       		.uleb128 0x13
+ 1654 00a5 01       		.byte	0x1
+ 1655 00a6 0B       		.uleb128 0xb
+ 1656 00a7 05       		.uleb128 0x5
+ 1657 00a8 3A       		.uleb128 0x3a
+ 1658 00a9 0B       		.uleb128 0xb
+ 1659 00aa 3B       		.uleb128 0x3b
+ 1660 00ab 05       		.uleb128 0x5
+ 1661 00ac 01       		.uleb128 0x1
+ 1662 00ad 13       		.uleb128 0x13
+ 1663 00ae 00       		.byte	0
+ 1664 00af 00       		.byte	0
+ 1665 00b0 0F       		.uleb128 0xf
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 33
+
+
+ 1666 00b1 0D       		.uleb128 0xd
+ 1667 00b2 00       		.byte	0
+ 1668 00b3 03       		.uleb128 0x3
+ 1669 00b4 0E       		.uleb128 0xe
+ 1670 00b5 3A       		.uleb128 0x3a
+ 1671 00b6 0B       		.uleb128 0xb
+ 1672 00b7 3B       		.uleb128 0x3b
+ 1673 00b8 05       		.uleb128 0x5
+ 1674 00b9 49       		.uleb128 0x49
+ 1675 00ba 13       		.uleb128 0x13
+ 1676 00bb 38       		.uleb128 0x38
+ 1677 00bc 05       		.uleb128 0x5
+ 1678 00bd 00       		.byte	0
+ 1679 00be 00       		.byte	0
+ 1680 00bf 10       		.uleb128 0x10
+ 1681 00c0 2E       		.uleb128 0x2e
+ 1682 00c1 01       		.byte	0x1
+ 1683 00c2 3F       		.uleb128 0x3f
+ 1684 00c3 19       		.uleb128 0x19
+ 1685 00c4 03       		.uleb128 0x3
+ 1686 00c5 0E       		.uleb128 0xe
+ 1687 00c6 3A       		.uleb128 0x3a
+ 1688 00c7 0B       		.uleb128 0xb
+ 1689 00c8 3B       		.uleb128 0x3b
+ 1690 00c9 0B       		.uleb128 0xb
+ 1691 00ca 27       		.uleb128 0x27
+ 1692 00cb 19       		.uleb128 0x19
+ 1693 00cc 49       		.uleb128 0x49
+ 1694 00cd 13       		.uleb128 0x13
+ 1695 00ce 8701     		.uleb128 0x87
+ 1696 00d0 19       		.uleb128 0x19
+ 1697 00d1 11       		.uleb128 0x11
+ 1698 00d2 01       		.uleb128 0x1
+ 1699 00d3 12       		.uleb128 0x12
+ 1700 00d4 06       		.uleb128 0x6
+ 1701 00d5 40       		.uleb128 0x40
+ 1702 00d6 18       		.uleb128 0x18
+ 1703 00d7 9742     		.uleb128 0x2117
+ 1704 00d9 19       		.uleb128 0x19
+ 1705 00da 01       		.uleb128 0x1
+ 1706 00db 13       		.uleb128 0x13
+ 1707 00dc 00       		.byte	0
+ 1708 00dd 00       		.byte	0
+ 1709 00de 11       		.uleb128 0x11
+ 1710 00df 34       		.uleb128 0x34
+ 1711 00e0 00       		.byte	0
+ 1712 00e1 03       		.uleb128 0x3
+ 1713 00e2 0E       		.uleb128 0xe
+ 1714 00e3 3A       		.uleb128 0x3a
+ 1715 00e4 0B       		.uleb128 0xb
+ 1716 00e5 3B       		.uleb128 0x3b
+ 1717 00e6 0B       		.uleb128 0xb
+ 1718 00e7 49       		.uleb128 0x49
+ 1719 00e8 13       		.uleb128 0x13
+ 1720 00e9 02       		.uleb128 0x2
+ 1721 00ea 17       		.uleb128 0x17
+ 1722 00eb 00       		.byte	0
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 34
+
+
+ 1723 00ec 00       		.byte	0
+ 1724 00ed 12       		.uleb128 0x12
+ 1725 00ee 34       		.uleb128 0x34
+ 1726 00ef 00       		.byte	0
+ 1727 00f0 03       		.uleb128 0x3
+ 1728 00f1 0E       		.uleb128 0xe
+ 1729 00f2 3A       		.uleb128 0x3a
+ 1730 00f3 0B       		.uleb128 0xb
+ 1731 00f4 3B       		.uleb128 0x3b
+ 1732 00f5 0B       		.uleb128 0xb
+ 1733 00f6 49       		.uleb128 0x49
+ 1734 00f7 13       		.uleb128 0x13
+ 1735 00f8 02       		.uleb128 0x2
+ 1736 00f9 18       		.uleb128 0x18
+ 1737 00fa 00       		.byte	0
+ 1738 00fb 00       		.byte	0
+ 1739 00fc 13       		.uleb128 0x13
+ 1740 00fd 898201   		.uleb128 0x4109
+ 1741 0100 00       		.byte	0
+ 1742 0101 11       		.uleb128 0x11
+ 1743 0102 01       		.uleb128 0x1
+ 1744 0103 31       		.uleb128 0x31
+ 1745 0104 13       		.uleb128 0x13
+ 1746 0105 00       		.byte	0
+ 1747 0106 00       		.byte	0
+ 1748 0107 14       		.uleb128 0x14
+ 1749 0108 898201   		.uleb128 0x4109
+ 1750 010b 01       		.byte	0x1
+ 1751 010c 11       		.uleb128 0x11
+ 1752 010d 01       		.uleb128 0x1
+ 1753 010e 31       		.uleb128 0x31
+ 1754 010f 13       		.uleb128 0x13
+ 1755 0110 01       		.uleb128 0x1
+ 1756 0111 13       		.uleb128 0x13
+ 1757 0112 00       		.byte	0
+ 1758 0113 00       		.byte	0
+ 1759 0114 15       		.uleb128 0x15
+ 1760 0115 8A8201   		.uleb128 0x410a
+ 1761 0118 00       		.byte	0
+ 1762 0119 02       		.uleb128 0x2
+ 1763 011a 18       		.uleb128 0x18
+ 1764 011b 9142     		.uleb128 0x2111
+ 1765 011d 18       		.uleb128 0x18
+ 1766 011e 00       		.byte	0
+ 1767 011f 00       		.byte	0
+ 1768 0120 16       		.uleb128 0x16
+ 1769 0121 34       		.uleb128 0x34
+ 1770 0122 00       		.byte	0
+ 1771 0123 03       		.uleb128 0x3
+ 1772 0124 0E       		.uleb128 0xe
+ 1773 0125 3A       		.uleb128 0x3a
+ 1774 0126 0B       		.uleb128 0xb
+ 1775 0127 3B       		.uleb128 0x3b
+ 1776 0128 05       		.uleb128 0x5
+ 1777 0129 49       		.uleb128 0x49
+ 1778 012a 13       		.uleb128 0x13
+ 1779 012b 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 35
+
+
+ 1780 012c 19       		.uleb128 0x19
+ 1781 012d 3C       		.uleb128 0x3c
+ 1782 012e 19       		.uleb128 0x19
+ 1783 012f 00       		.byte	0
+ 1784 0130 00       		.byte	0
+ 1785 0131 17       		.uleb128 0x17
+ 1786 0132 2E       		.uleb128 0x2e
+ 1787 0133 00       		.byte	0
+ 1788 0134 3F       		.uleb128 0x3f
+ 1789 0135 19       		.uleb128 0x19
+ 1790 0136 3C       		.uleb128 0x3c
+ 1791 0137 19       		.uleb128 0x19
+ 1792 0138 6E       		.uleb128 0x6e
+ 1793 0139 0E       		.uleb128 0xe
+ 1794 013a 03       		.uleb128 0x3
+ 1795 013b 0E       		.uleb128 0xe
+ 1796 013c 3A       		.uleb128 0x3a
+ 1797 013d 0B       		.uleb128 0xb
+ 1798 013e 3B       		.uleb128 0x3b
+ 1799 013f 0B       		.uleb128 0xb
+ 1800 0140 00       		.byte	0
+ 1801 0141 00       		.byte	0
+ 1802 0142 18       		.uleb128 0x18
+ 1803 0143 2E       		.uleb128 0x2e
+ 1804 0144 00       		.byte	0
+ 1805 0145 3F       		.uleb128 0x3f
+ 1806 0146 19       		.uleb128 0x19
+ 1807 0147 3C       		.uleb128 0x3c
+ 1808 0148 19       		.uleb128 0x19
+ 1809 0149 6E       		.uleb128 0x6e
+ 1810 014a 0E       		.uleb128 0xe
+ 1811 014b 03       		.uleb128 0x3
+ 1812 014c 0E       		.uleb128 0xe
+ 1813 014d 3A       		.uleb128 0x3a
+ 1814 014e 0B       		.uleb128 0xb
+ 1815 014f 3B       		.uleb128 0x3b
+ 1816 0150 05       		.uleb128 0x5
+ 1817 0151 00       		.byte	0
+ 1818 0152 00       		.byte	0
+ 1819 0153 00       		.byte	0
+ 1820              		.section	.debug_loc,"",%progbits
+ 1821              	.Ldebug_loc0:
+ 1822              	.LLST0:
+ 1823 0000 54000000 		.4byte	.LVL13
+ 1824 0004 58000000 		.4byte	.LVL15
+ 1825 0008 0100     		.2byte	0x1
+ 1826 000a 50       		.byte	0x50
+ 1827 000b 5A000000 		.4byte	.LVL16
+ 1828 000f 76000000 		.4byte	.LVL17
+ 1829 0013 0100     		.2byte	0x1
+ 1830 0015 54       		.byte	0x54
+ 1831 0016 76000000 		.4byte	.LVL17
+ 1832 001a 78000000 		.4byte	.LVL18
+ 1833 001e 0500     		.2byte	0x5
+ 1834 0020 70       		.byte	0x70
+ 1835 0021 00       		.sleb128 0
+ 1836 0022 40       		.byte	0x40
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 36
+
+
+ 1837 0023 25       		.byte	0x25
+ 1838 0024 9F       		.byte	0x9f
+ 1839 0025 84000000 		.4byte	.LVL21
+ 1840 0029 EE000000 		.4byte	.LVL32
+ 1841 002d 0100     		.2byte	0x1
+ 1842 002f 54       		.byte	0x54
+ 1843 0030 00000000 		.4byte	0
+ 1844 0034 00000000 		.4byte	0
+ 1845              	.LLST1:
+ 1846 0038 4E000000 		.4byte	.LVL11
+ 1847 003c 50000000 		.4byte	.LVL12
+ 1848 0040 0100     		.2byte	0x1
+ 1849 0042 50       		.byte	0x50
+ 1850 0043 50000000 		.4byte	.LVL12
+ 1851 0047 08010000 		.4byte	.LFE33
+ 1852 004b 0100     		.2byte	0x1
+ 1853 004d 55       		.byte	0x55
+ 1854 004e 00000000 		.4byte	0
+ 1855 0052 00000000 		.4byte	0
+ 1856              		.section	.debug_aranges,"",%progbits
+ 1857 0000 1C000000 		.4byte	0x1c
+ 1858 0004 0200     		.2byte	0x2
+ 1859 0006 00000000 		.4byte	.Ldebug_info0
+ 1860 000a 04       		.byte	0x4
+ 1861 000b 00       		.byte	0
+ 1862 000c 0000     		.2byte	0
+ 1863 000e 0000     		.2byte	0
+ 1864 0010 00000000 		.4byte	.LFB33
+ 1865 0014 08010000 		.4byte	.LFE33-.LFB33
+ 1866 0018 00000000 		.4byte	0
+ 1867 001c 00000000 		.4byte	0
+ 1868              		.section	.debug_ranges,"",%progbits
+ 1869              	.Ldebug_ranges0:
+ 1870 0000 00000000 		.4byte	.LFB33
+ 1871 0004 08010000 		.4byte	.LFE33
+ 1872 0008 00000000 		.4byte	0
+ 1873 000c 00000000 		.4byte	0
+ 1874              		.section	.debug_line,"",%progbits
+ 1875              	.Ldebug_line0:
+ 1876 0000 94020000 		.section	.debug_str,"MS",%progbits,1
+ 1876      02002B02 
+ 1876      00000201 
+ 1876      FB0E0D00 
+ 1876      01010101 
+ 1877              	.LASF80:
+ 1878 0000 65646765 		.ascii	"edgeSwipeTimeout\000"
+ 1878      53776970 
+ 1878      6554696D 
+ 1878      656F7574 
+ 1878      00
+ 1879              	.LASF147:
+ 1880 0011 58636F72 		.ascii	"Xcord\000"
+ 1880      6400
+ 1881              	.LASF28:
+ 1882 0017 666C6963 		.ascii	"flickActiveDistanceX\000"
+ 1882      6B416374 
+ 1882      69766544 
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 37
+
+
+ 1882      69737461 
+ 1882      6E636558 
+ 1883              	.LASF29:
+ 1884 002c 666C6963 		.ascii	"flickActiveDistanceY\000"
+ 1884      6B416374 
+ 1884      69766544 
+ 1884      69737461 
+ 1884      6E636559 
+ 1885              	.LASF24:
+ 1886 0041 70616E41 		.ascii	"panActiveDistanceX\000"
+ 1886      63746976 
+ 1886      65446973 
+ 1886      74616E63 
+ 1886      655800
+ 1887              	.LASF25:
+ 1888 0054 70616E41 		.ascii	"panActiveDistanceY\000"
+ 1888      63746976 
+ 1888      65446973 
+ 1888      74616E63 
+ 1888      655900
+ 1889              	.LASF67:
+ 1890 0067 53545061 		.ascii	"STPanDebounce\000"
+ 1890      6E446562 
+ 1890      6F756E63 
+ 1890      6500
+ 1891              	.LASF169:
+ 1892 0075 6D61696E 		.ascii	"main.c\000"
+ 1892      2E6300
+ 1893              	.LASF59:
+ 1894 007c 7374496E 		.ascii	"stInScrCountLevel\000"
+ 1894      53637243 
+ 1894      6F756E74 
+ 1894      4C657665 
+ 1894      6C00
+ 1895              	.LASF140:
+ 1896 008e 736E7254 		.ascii	"snrTestWidgetId\000"
+ 1896      65737457 
+ 1896      69646765 
+ 1896      74496400 
+ 1897              	.LASF60:
+ 1898 009e 6474496E 		.ascii	"dtInScrActiveDistanceX\000"
+ 1898      53637241 
+ 1898      63746976 
+ 1898      65446973 
+ 1898      74616E63 
+ 1899              	.LASF61:
+ 1900 00b5 6474496E 		.ascii	"dtInScrActiveDistanceY\000"
+ 1900      53637241 
+ 1900      63746976 
+ 1900      65446973 
+ 1900      74616E63 
+ 1901              	.LASF32:
+ 1902 00cc 73745363 		.ascii	"stScrollThreshold3X\000"
+ 1902      726F6C6C 
+ 1902      54687265 
+ 1902      73686F6C 
+ 1902      64335800 
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 38
+
+
+ 1903              	.LASF36:
+ 1904 00e0 73745363 		.ascii	"stScrollThreshold3Y\000"
+ 1904      726F6C6C 
+ 1904      54687265 
+ 1904      73686F6C 
+ 1904      64335900 
+ 1905              	.LASF76:
+ 1906 00f4 73657474 		.ascii	"settlingTimeout\000"
+ 1906      6C696E67 
+ 1906      54696D65 
+ 1906      6F757400 
+ 1907              	.LASF10:
+ 1908 0104 756E7369 		.ascii	"unsigned int\000"
+ 1908      676E6564 
+ 1908      20696E74 
+ 1908      00
+ 1909              	.LASF128:
+ 1910 0111 7363616E 		.ascii	"scanCounter\000"
+ 1910      436F756E 
+ 1910      74657200 
+ 1911              	.LASF126:
+ 1912 011d 6877436C 		.ascii	"hwClock\000"
+ 1912      6F636B00 
+ 1913              	.LASF38:
+ 1914 0125 73745363 		.ascii	"stScrollStep1\000"
+ 1914      726F6C6C 
+ 1914      53746570 
+ 1914      3100
+ 1915              	.LASF39:
+ 1916 0133 73745363 		.ascii	"stScrollStep2\000"
+ 1916      726F6C6C 
+ 1916      53746570 
+ 1916      3200
+ 1917              	.LASF40:
+ 1918 0141 73745363 		.ascii	"stScrollStep3\000"
+ 1918      726F6C6C 
+ 1918      53746570 
+ 1918      3300
+ 1919              	.LASF41:
+ 1920 014f 73745363 		.ascii	"stScrollStep4\000"
+ 1920      726F6C6C 
+ 1920      53746570 
+ 1920      3400
+ 1921              	.LASF43:
+ 1922 015d 64745363 		.ascii	"dtScrollThreshold1X\000"
+ 1922      726F6C6C 
+ 1922      54687265 
+ 1922      73686F6C 
+ 1922      64315800 
+ 1923              	.LASF47:
+ 1924 0171 64745363 		.ascii	"dtScrollThreshold1Y\000"
+ 1924      726F6C6C 
+ 1924      54687265 
+ 1924      73686F6C 
+ 1924      64315900 
+ 1925              	.LASF156:
+ 1926 0185 43795379 		.ascii	"CySysTickSetCallback\000"
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 39
+
+
+ 1926      73546963 
+ 1926      6B536574 
+ 1926      43616C6C 
+ 1926      6261636B 
+ 1927              	.LASF151:
+ 1928 019a 43617053 		.ascii	"CapSense_Start\000"
+ 1928      656E7365 
+ 1928      5F537461 
+ 1928      727400
+ 1929              	.LASF90:
+ 1930 01a9 67726F75 		.ascii	"group2Start\000"
+ 1930      70325374 
+ 1930      61727400 
+ 1931              	.LASF33:
+ 1932 01b5 73745363 		.ascii	"stScrollThreshold4X\000"
+ 1932      726F6C6C 
+ 1932      54687265 
+ 1932      73686F6C 
+ 1932      64345800 
+ 1933              	.LASF37:
+ 1934 01c9 73745363 		.ascii	"stScrollThreshold4Y\000"
+ 1934      726F6C6C 
+ 1934      54687265 
+ 1934      73686F6C 
+ 1934      64345900 
+ 1935              	.LASF81:
+ 1936 01dd 4454436C 		.ascii	"DTClickTimeoutMax\000"
+ 1936      69636B54 
+ 1936      696D656F 
+ 1936      75744D61 
+ 1936      7800
+ 1937              	.LASF158:
+ 1938 01ef 43617053 		.ascii	"CapSense_IsBusy\000"
+ 1938      656E7365 
+ 1938      5F497342 
+ 1938      75737900 
+ 1939              	.LASF55:
+ 1940 01ff 64745363 		.ascii	"dtScrollDebounce\000"
+ 1940      726F6C6C 
+ 1940      4465626F 
+ 1940      756E6365 
+ 1940      00
+ 1941              	.LASF44:
+ 1942 0210 64745363 		.ascii	"dtScrollThreshold2X\000"
+ 1942      726F6C6C 
+ 1942      54687265 
+ 1942      73686F6C 
+ 1942      64325800 
+ 1943              	.LASF48:
+ 1944 0224 64745363 		.ascii	"dtScrollThreshold2Y\000"
+ 1944      726F6C6C 
+ 1944      54687265 
+ 1944      73686F6C 
+ 1944      64325900 
+ 1945              	.LASF91:
+ 1946 0238 67726F75 		.ascii	"group2End\000"
+ 1946      7032456E 
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 40
+
+
+ 1946      6400
+ 1947              	.LASF73:
+ 1948 0242 646F7562 		.ascii	"doubleClickRadius\000"
+ 1948      6C65436C 
+ 1948      69636B52 
+ 1948      61646975 
+ 1948      7300
+ 1949              	.LASF87:
+ 1950 0254 67726F75 		.ascii	"groupMask\000"
+ 1950      704D6173 
+ 1950      6B00
+ 1951              	.LASF26:
+ 1952 025e 7A6F6F6D 		.ascii	"zoomActiveDistanceX\000"
+ 1952      41637469 
+ 1952      76654469 
+ 1952      7374616E 
+ 1952      63655800 
+ 1953              	.LASF27:
+ 1954 0272 7A6F6F6D 		.ascii	"zoomActiveDistanceY\000"
+ 1954      41637469 
+ 1954      76654469 
+ 1954      7374616E 
+ 1954      63655900 
+ 1955              	.LASF138:
+ 1956 0286 74696D65 		.ascii	"timestampInterval\000"
+ 1956      7374616D 
+ 1956      70496E74 
+ 1956      65727661 
+ 1956      6C00
+ 1957              	.LASF79:
+ 1958 0298 666C6963 		.ascii	"flickSampleTime\000"
+ 1958      6B53616D 
+ 1958      706C6554 
+ 1958      696D6500 
+ 1959              	.LASF70:
+ 1960 02a8 44545061 		.ascii	"DTPanToZoomDebounce\000"
+ 1960      6E546F5A 
+ 1960      6F6F6D44 
+ 1960      65626F75 
+ 1960      6E636500 
+ 1961              	.LASF16:
+ 1962 02bc 666C6F61 		.ascii	"float\000"
+ 1962      7400
+ 1963              	.LASF168:
+ 1964 02c2 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1964      43313120 
+ 1964      352E342E 
+ 1964      31203230 
+ 1964      31363036 
+ 1965 02f5 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 1965      20726576 
+ 1965      6973696F 
+ 1965      6E203233 
+ 1965      37373135 
+ 1966 0328 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 1966      67202D66 
+ 1966      66756E63 
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 41
+
+
+ 1966      74696F6E 
+ 1966      2D736563 
+ 1967              	.LASF45:
+ 1968 0354 64745363 		.ascii	"dtScrollThreshold3X\000"
+ 1968      726F6C6C 
+ 1968      54687265 
+ 1968      73686F6C 
+ 1968      64335800 
+ 1969              	.LASF49:
+ 1970 0368 64745363 		.ascii	"dtScrollThreshold3Y\000"
+ 1970      726F6C6C 
+ 1970      54687265 
+ 1970      73686F6C 
+ 1970      64335900 
+ 1971              	.LASF136:
+ 1972 037c 736E734C 		.ascii	"snsList\000"
+ 1972      69737400 
+ 1973              	.LASF9:
+ 1974 0384 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1974      206C6F6E 
+ 1974      6720756E 
+ 1974      7369676E 
+ 1974      65642069 
+ 1975              	.LASF62:
+ 1976 039b 6474496E 		.ascii	"dtInScrCountLevel\000"
+ 1976      53637243 
+ 1976      6F756E74 
+ 1976      4C657665 
+ 1976      6C00
+ 1977              	.LASF162:
+ 1978 03ad 50574D5F 		.ascii	"PWM_Blue_WriteCompare\000"
+ 1978      426C7565 
+ 1978      5F577269 
+ 1978      7465436F 
+ 1978      6D706172 
+ 1979              	.LASF115:
+ 1980 03c3 746F7563 		.ascii	"touchpad0\000"
+ 1980      68706164 
+ 1980      3000
+ 1981              	.LASF141:
+ 1982 03cd 736E7254 		.ascii	"snrTestSensorId\000"
+ 1982      65737453 
+ 1982      656E736F 
+ 1982      72496400 
+ 1983              	.LASF163:
+ 1984 03dd 50574D5F 		.ascii	"PWM_Green_WriteCompare\000"
+ 1984      47726565 
+ 1984      6E5F5772 
+ 1984      69746543 
+ 1984      6F6D7061 
+ 1985              	.LASF4:
+ 1986 03f4 5F5F7569 		.ascii	"__uint16_t\000"
+ 1986      6E743136 
+ 1986      5F7400
+ 1987              	.LASF154:
+ 1988 03ff 455A4932 		.ascii	"EZI2C_EzI2CSetBuffer1\000"
+ 1988      435F457A 
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 42
+
+
+ 1988      49324353 
+ 1988      65744275 
+ 1988      66666572 
+ 1989              	.LASF46:
+ 1990 0415 64745363 		.ascii	"dtScrollThreshold4X\000"
+ 1990      726F6C6C 
+ 1990      54687265 
+ 1990      73686F6C 
+ 1990      64345800 
+ 1991              	.LASF50:
+ 1992 0429 64745363 		.ascii	"dtScrollThreshold4Y\000"
+ 1992      726F6C6C 
+ 1992      54687265 
+ 1992      73686F6C 
+ 1992      64345900 
+ 1993              	.LASF161:
+ 1994 043d 43617053 		.ascii	"CapSense_GetXYCoordinates\000"
+ 1994      656E7365 
+ 1994      5F476574 
+ 1994      5859436F 
+ 1994      6F726469 
+ 1995              	.LASF134:
+ 1996 0457 6D6F6443 		.ascii	"modCsdClk\000"
+ 1996      7364436C 
+ 1996      6B00
+ 1997              	.LASF122:
+ 1998 0461 43617053 		.ascii	"CapSense_RAM_SNS_STRUCT\000"
+ 1998      656E7365 
+ 1998      5F52414D 
+ 1998      5F534E53 
+ 1998      5F535452 
+ 1999              	.LASF95:
+ 2000 0479 67726F75 		.ascii	"group4End\000"
+ 2000      7034456E 
+ 2000      6400
+ 2001              	.LASF84:
+ 2002 0483 5354436C 		.ascii	"STClickTimeoutMin\000"
+ 2002      69636B54 
+ 2002      696D656F 
+ 2002      75744D69 
+ 2002      6E00
+ 2003              	.LASF153:
+ 2004 0495 50574D5F 		.ascii	"PWM_Green_Start\000"
+ 2004      47726565 
+ 2004      6E5F5374 
+ 2004      61727400 
+ 2005              	.LASF101:
+ 2006 04a5 68797374 		.ascii	"hysteresis\000"
+ 2006      65726573 
+ 2006      697300
+ 2007              	.LASF86:
+ 2008 04b0 5354446F 		.ascii	"STDoubleClickTimeoutMin\000"
+ 2008      75626C65 
+ 2008      436C6963 
+ 2008      6B54696D 
+ 2008      656F7574 
+ 2009              	.LASF103:
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 43
+
+
+ 2010 04c8 6C6F7742 		.ascii	"lowBslnRst\000"
+ 2010      736C6E52 
+ 2010      737400
+ 2011              	.LASF72:
+ 2012 04d3 636F6D70 		.ascii	"completedDebounce\000"
+ 2012      6C657465 
+ 2012      64446562 
+ 2012      6F756E63 
+ 2012      6500
+ 2013              	.LASF160:
+ 2014 04e5 43617053 		.ascii	"CapSense_DecodeWidgetGestures\000"
+ 2014      656E7365 
+ 2014      5F446563 
+ 2014      6F646557 
+ 2014      69646765 
+ 2015              	.LASF106:
+ 2016 0503 69646163 		.ascii	"idacGainIndex\000"
+ 2016      4761696E 
+ 2016      496E6465 
+ 2016      7800
+ 2017              	.LASF150:
+ 2018 0511 455A4932 		.ascii	"EZI2C_Start\000"
+ 2018      435F5374 
+ 2018      61727400 
+ 2019              	.LASF56:
+ 2020 051d 64745363 		.ascii	"dtScrollToZoomDebounce\000"
+ 2020      726F6C6C 
+ 2020      546F5A6F 
+ 2020      6F6D4465 
+ 2020      626F756E 
+ 2021              	.LASF57:
+ 2022 0534 7374496E 		.ascii	"stInScrActiveDistanceX\000"
+ 2022      53637241 
+ 2022      63746976 
+ 2022      65446973 
+ 2022      74616E63 
+ 2023              	.LASF58:
+ 2024 054b 7374496E 		.ascii	"stInScrActiveDistanceY\000"
+ 2024      53637241 
+ 2024      63746976 
+ 2024      65446973 
+ 2024      74616E63 
+ 2025              	.LASF99:
+ 2026 0562 6E6F6973 		.ascii	"noiseTh\000"
+ 2026      65546800 
+ 2027              	.LASF18:
+ 2028 056a 63686172 		.ascii	"char\000"
+ 2028      00
+ 2029              	.LASF110:
+ 2030 056f 726F7753 		.ascii	"rowSnsClkSource\000"
+ 2030      6E73436C 
+ 2030      6B536F75 
+ 2030      72636500 
+ 2031              	.LASF94:
+ 2032 057f 67726F75 		.ascii	"group4Start\000"
+ 2032      70345374 
+ 2032      61727400 
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 44
+
+
+ 2033              	.LASF14:
+ 2034 058b 75696E74 		.ascii	"uint16\000"
+ 2034      313600
+ 2035              	.LASF108:
+ 2036 0592 726F7753 		.ascii	"rowSnsClk\000"
+ 2036      6E73436C 
+ 2036      6B00
+ 2037              	.LASF97:
+ 2038 059c 7265736F 		.ascii	"resolution\000"
+ 2038      6C757469 
+ 2038      6F6E00
+ 2039              	.LASF11:
+ 2040 05a7 75696E74 		.ascii	"uint8_t\000"
+ 2040      385F7400 
+ 2041              	.LASF129:
+ 2042 05af 73746174 		.ascii	"status\000"
+ 2042      757300
+ 2043              	.LASF20:
+ 2044 05b6 43617053 		.ascii	"CapSense_LOW_BSLN_RST_TYPE\000"
+ 2044      656E7365 
+ 2044      5F4C4F57 
+ 2044      5F42534C 
+ 2044      4E5F5253 
+ 2045              	.LASF65:
+ 2046 05d1 626F7474 		.ascii	"bottomAngleThreshold\000"
+ 2046      6F6D416E 
+ 2046      676C6554 
+ 2046      68726573 
+ 2046      686F6C64 
+ 2047              	.LASF42:
+ 2048 05e6 73745363 		.ascii	"stScrollDebounce\000"
+ 2048      726F6C6C 
+ 2048      4465626F 
+ 2048      756E6365 
+ 2048      00
+ 2049              	.LASF121:
+ 2050 05f7 69646163 		.ascii	"idacComp\000"
+ 2050      436F6D70 
+ 2050      00
+ 2051              	.LASF66:
+ 2052 0600 77696474 		.ascii	"widthOfDisambiguation\000"
+ 2052      684F6644 
+ 2052      6973616D 
+ 2052      62696775 
+ 2052      6174696F 
+ 2053              	.LASF8:
+ 2054 0616 6C6F6E67 		.ascii	"long long int\000"
+ 2054      206C6F6E 
+ 2054      6720696E 
+ 2054      7400
+ 2055              	.LASF152:
+ 2056 0624 50574D5F 		.ascii	"PWM_Blue_Start\000"
+ 2056      426C7565 
+ 2056      5F537461 
+ 2056      727400
+ 2057              	.LASF170:
+ 2058 0633 433A5C55 		.ascii	"C:\\Users\\inspiron\\Documents\\PSoC Creator\\Proje"
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 45
+
+
+ 2058      73657273 
+ 2058      5C696E73 
+ 2058      7069726F 
+ 2058      6E5C446F 
+ 2059 0661 6374735C 		.ascii	"cts\\CE224821_PSoC4_Capsense_Touchpad_Gestures_CSD0"
+ 2059      43453232 
+ 2059      34383231 
+ 2059      5F50536F 
+ 2059      43345F43 
+ 2060 0693 315C4345 		.ascii	"1\\CE224821_PSoC4_Capsense_Touchpad_Gestures_CSD01."
+ 2060      32323438 
+ 2060      32315F50 
+ 2060      536F4334 
+ 2060      5F436170 
+ 2061 06c5 63796473 		.ascii	"cydsn\000"
+ 2061      6E00
+ 2062              	.LASF102:
+ 2063 06cb 6F6E4465 		.ascii	"onDebounce\000"
+ 2063      626F756E 
+ 2063      636500
+ 2064              	.LASF135:
+ 2065 06d6 77646774 		.ascii	"wdgtList\000"
+ 2065      4C697374 
+ 2065      00
+ 2066              	.LASF172:
+ 2067 06df 43617053 		.ascii	"CapSense_dsRam\000"
+ 2067      656E7365 
+ 2067      5F647352 
+ 2067      616D00
+ 2068              	.LASF143:
+ 2069 06ee 736E7254 		.ascii	"snrTestRawCount\000"
+ 2069      65737452 
+ 2069      6177436F 
+ 2069      756E7400 
+ 2070              	.LASF100:
+ 2071 06fe 6E4E6F69 		.ascii	"nNoiseTh\000"
+ 2071      73655468 
+ 2071      00
+ 2072              	.LASF133:
+ 2073 0707 63736430 		.ascii	"csd0Config\000"
+ 2073      436F6E66 
+ 2073      696700
+ 2074              	.LASF74:
+ 2075 0712 636C6963 		.ascii	"clickRadiusX\000"
+ 2075      6B526164 
+ 2075      69757358 
+ 2075      00
+ 2076              	.LASF75:
+ 2077 071f 636C6963 		.ascii	"clickRadiusY\000"
+ 2077      6B526164 
+ 2077      69757359 
+ 2077      00
+ 2078              	.LASF117:
+ 2079 072c 62736C6E 		.ascii	"bsln\000"
+ 2079      00
+ 2080              	.LASF23:
+ 2081 0731 73697A65 		.ascii	"size\000"
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 46
+
+
+ 2081      00
+ 2082              	.LASF111:
+ 2083 0736 67657374 		.ascii	"gestureId\000"
+ 2083      75726549 
+ 2083      6400
+ 2084              	.LASF15:
+ 2085 0740 75696E74 		.ascii	"uint32\000"
+ 2085      333200
+ 2086              	.LASF155:
+ 2087 0747 43795379 		.ascii	"CySysTickStart\000"
+ 2087      73546963 
+ 2087      6B537461 
+ 2087      727400
+ 2088              	.LASF159:
+ 2089 0756 43617053 		.ascii	"CapSense_ProcessAllWidgets\000"
+ 2089      656E7365 
+ 2089      5F50726F 
+ 2089      63657373 
+ 2089      416C6C57 
+ 2090              	.LASF88:
+ 2091 0771 67726F75 		.ascii	"group1Start\000"
+ 2091      70315374 
+ 2091      61727400 
+ 2092              	.LASF89:
+ 2093 077d 67726F75 		.ascii	"group1End\000"
+ 2093      7031456E 
+ 2093      6400
+ 2094              	.LASF68:
+ 2095 0787 44545061 		.ascii	"DTPanDebounce\000"
+ 2095      6E446562 
+ 2095      6F756E63 
+ 2095      6500
+ 2096              	.LASF167:
+ 2097 0795 43617053 		.ascii	"CapSense_RunTuner\000"
+ 2097      656E7365 
+ 2097      5F52756E 
+ 2097      54756E65 
+ 2097      7200
+ 2098              	.LASF21:
+ 2099 07a7 6C6F6E67 		.ascii	"long double\000"
+ 2099      20646F75 
+ 2099      626C6500 
+ 2100              	.LASF12:
+ 2101 07b3 75696E74 		.ascii	"uint16_t\000"
+ 2101      31365F74 
+ 2101      00
+ 2102              	.LASF142:
+ 2103 07bc 736E7254 		.ascii	"snrTestScanCounter\000"
+ 2103      65737453 
+ 2103      63616E43 
+ 2103      6F756E74 
+ 2103      657200
+ 2104              	.LASF124:
+ 2105 07cf 636F6E66 		.ascii	"configId\000"
+ 2105      69674964 
+ 2105      00
+ 2106              	.LASF82:
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 47
+
+
+ 2107 07d8 4454436C 		.ascii	"DTClickTimeoutMin\000"
+ 2107      69636B54 
+ 2107      696D656F 
+ 2107      75744D69 
+ 2107      6E00
+ 2108              	.LASF132:
+ 2109 07ea 736E7353 		.ascii	"snsStatus\000"
+ 2109      74617475 
+ 2109      7300
+ 2110              	.LASF109:
+ 2111 07f4 736E7343 		.ascii	"snsClkSource\000"
+ 2111      6C6B536F 
+ 2111      75726365 
+ 2111      00
+ 2112              	.LASF166:
+ 2113 0801 5265645F 		.ascii	"Red_LED_Write\000"
+ 2113      4C45445F 
+ 2113      57726974 
+ 2113      6500
+ 2114              	.LASF51:
+ 2115 080f 64745363 		.ascii	"dtScrollStep1\000"
+ 2115      726F6C6C 
+ 2115      53746570 
+ 2115      3100
+ 2116              	.LASF52:
+ 2117 081d 64745363 		.ascii	"dtScrollStep2\000"
+ 2117      726F6C6C 
+ 2117      53746570 
+ 2117      3200
+ 2118              	.LASF53:
+ 2119 082b 64745363 		.ascii	"dtScrollStep3\000"
+ 2119      726F6C6C 
+ 2119      53746570 
+ 2119      3300
+ 2120              	.LASF54:
+ 2121 0839 64745363 		.ascii	"dtScrollStep4\000"
+ 2121      726F6C6C 
+ 2121      53746570 
+ 2121      3400
+ 2122              	.LASF2:
+ 2123 0847 73686F72 		.ascii	"short int\000"
+ 2123      7420696E 
+ 2123      7400
+ 2124              	.LASF146:
+ 2125 0851 43617053 		.ascii	"CapSense_RAM_STRUCT\000"
+ 2125      656E7365 
+ 2125      5F52414D 
+ 2125      5F535452 
+ 2125      55435400 
+ 2126              	.LASF6:
+ 2127 0865 6C6F6E67 		.ascii	"long int\000"
+ 2127      20696E74 
+ 2127      00
+ 2128              	.LASF164:
+ 2129 086e 50574D5F 		.ascii	"PWM_Blue_ReadCompare\000"
+ 2129      426C7565 
+ 2129      5F526561 
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 48
+
+
+ 2129      64436F6D 
+ 2129      70617265 
+ 2130              	.LASF130:
+ 2131 0883 77646774 		.ascii	"wdgtEnable\000"
+ 2131      456E6162 
+ 2131      6C6500
+ 2132              	.LASF119:
+ 2133 088e 64696666 		.ascii	"diff\000"
+ 2133      00
+ 2134              	.LASF114:
+ 2135 0893 43617053 		.ascii	"CapSense_RAM_WD_CSD_TOUCHPAD_STRUCT\000"
+ 2135      656E7365 
+ 2135      5F52414D 
+ 2135      5F57445F 
+ 2135      4353445F 
+ 2136              	.LASF127:
+ 2137 08b7 74756E65 		.ascii	"tunerCmd\000"
+ 2137      72436D64 
+ 2137      00
+ 2138              	.LASF93:
+ 2139 08c0 67726F75 		.ascii	"group3End\000"
+ 2139      7033456E 
+ 2139      6400
+ 2140              	.LASF3:
+ 2141 08ca 5F5F7569 		.ascii	"__uint8_t\000"
+ 2141      6E74385F 
+ 2141      7400
+ 2142              	.LASF105:
+ 2143 08d4 726F7749 		.ascii	"rowIdacMod\000"
+ 2143      6461634D 
+ 2143      6F6400
+ 2144              	.LASF92:
+ 2145 08df 67726F75 		.ascii	"group3Start\000"
+ 2145      70335374 
+ 2145      61727400 
+ 2146              	.LASF131:
+ 2147 08eb 77646774 		.ascii	"wdgtStatus\000"
+ 2147      53746174 
+ 2147      757300
+ 2148              	.LASF96:
+ 2149 08f6 43617053 		.ascii	"CapSense_TMG_CONFIG_STRUCT\000"
+ 2149      656E7365 
+ 2149      5F544D47 
+ 2149      5F434F4E 
+ 2149      4649475F 
+ 2150              	.LASF22:
+ 2151 0911 73697A65 		.ascii	"sizetype\000"
+ 2151      74797065 
+ 2151      00
+ 2152              	.LASF7:
+ 2153 091a 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2153      20756E73 
+ 2153      69676E65 
+ 2153      6420696E 
+ 2153      7400
+ 2154              	.LASF104:
+ 2155 092c 69646163 		.ascii	"idacMod\000"
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 49
+
+
+ 2155      4D6F6400 
+ 2156              	.LASF77:
+ 2157 0934 7265736F 		.ascii	"resolutionX\000"
+ 2157      6C757469 
+ 2157      6F6E5800 
+ 2158              	.LASF78:
+ 2159 0940 7265736F 		.ascii	"resolutionY\000"
+ 2159      6C757469 
+ 2159      6F6E5900 
+ 2160              	.LASF98:
+ 2161 094c 66696E67 		.ascii	"fingerTh\000"
+ 2161      65725468 
+ 2161      00
+ 2162              	.LASF118:
+ 2163 0955 62736C6E 		.ascii	"bslnExt\000"
+ 2163      45787400 
+ 2164              	.LASF144:
+ 2165 095d 7363616E 		.ascii	"scanCsdISC\000"
+ 2165      43736449 
+ 2165      534300
+ 2166              	.LASF83:
+ 2167 0968 5354436C 		.ascii	"STClickTimeoutMax\000"
+ 2167      69636B54 
+ 2167      696D656F 
+ 2167      75744D61 
+ 2167      7800
+ 2168              	.LASF1:
+ 2169 097a 756E7369 		.ascii	"unsigned char\000"
+ 2169      676E6564 
+ 2169      20636861 
+ 2169      7200
+ 2170              	.LASF137:
+ 2171 0988 67657374 		.ascii	"gestures\000"
+ 2171      75726573 
+ 2171      00
+ 2172              	.LASF112:
+ 2173 0991 706F7358 		.ascii	"posX\000"
+ 2173      00
+ 2174              	.LASF113:
+ 2175 0996 706F7359 		.ascii	"posY\000"
+ 2175      00
+ 2176              	.LASF85:
+ 2177 099b 5354446F 		.ascii	"STDoubleClickTimeoutMax\000"
+ 2177      75626C65 
+ 2177      436C6963 
+ 2177      6B54696D 
+ 2177      656F7574 
+ 2178              	.LASF145:
+ 2179 09b3 7363616E 		.ascii	"scanCurrentISC\000"
+ 2179      43757272 
+ 2179      656E7449 
+ 2179      534300
+ 2180              	.LASF19:
+ 2181 09c2 43617053 		.ascii	"CapSense_THRESHOLD_TYPE\000"
+ 2181      656E7365 
+ 2181      5F544852 
+ 2181      4553484F 
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 50
+
+
+ 2181      4C445F54 
+ 2182              	.LASF116:
+ 2183 09da 43617053 		.ascii	"CapSense_RAM_WD_LIST_STRUCT\000"
+ 2183      656E7365 
+ 2183      5F52414D 
+ 2183      5F57445F 
+ 2183      4C495354 
+ 2184              	.LASF165:
+ 2185 09f6 50574D5F 		.ascii	"PWM_Green_ReadCompare\000"
+ 2185      47726565 
+ 2185      6E5F5265 
+ 2185      6164436F 
+ 2185      6D706172 
+ 2186              	.LASF157:
+ 2187 0a0c 43617053 		.ascii	"CapSense_ScanAllWidgets\000"
+ 2187      656E7365 
+ 2187      5F536361 
+ 2187      6E416C6C 
+ 2187      57696467 
+ 2188              	.LASF139:
+ 2189 0a24 74696D65 		.ascii	"timestamp\000"
+ 2189      7374616D 
+ 2189      7000
+ 2190              	.LASF148:
+ 2191 0a2e 59636F72 		.ascii	"Ycord\000"
+ 2191      6400
+ 2192              	.LASF107:
+ 2193 0a34 736E7343 		.ascii	"snsClk\000"
+ 2193      6C6B00
+ 2194              	.LASF149:
+ 2195 0a3b 67657374 		.ascii	"gesture\000"
+ 2195      75726500 
+ 2196              	.LASF0:
+ 2197 0a43 7369676E 		.ascii	"signed char\000"
+ 2197      65642063 
+ 2197      68617200 
+ 2198              	.LASF63:
+ 2199 0a4f 65646765 		.ascii	"edgeSwipeActiveDistance\000"
+ 2199      53776970 
+ 2199      65416374 
+ 2199      69766544 
+ 2199      69737461 
+ 2200              	.LASF64:
+ 2201 0a67 746F7041 		.ascii	"topAngleThreshold\000"
+ 2201      6E676C65 
+ 2201      54687265 
+ 2201      73686F6C 
+ 2201      6400
+ 2202              	.LASF5:
+ 2203 0a79 73686F72 		.ascii	"short unsigned int\000"
+ 2203      7420756E 
+ 2203      7369676E 
+ 2203      65642069 
+ 2203      6E7400
+ 2204              	.LASF69:
+ 2205 0a8c 44545A6F 		.ascii	"DTZoomDebounce\000"
+ 2205      6F6D4465 
+ARM GAS  C:\Users\inspiron\AppData\Local\Temp\ccEvJbLk.s 			page 51
+
+
+ 2205      626F756E 
+ 2205      636500
+ 2206              	.LASF171:
+ 2207 0a9b 6D61696E 		.ascii	"main\000"
+ 2207      00
+ 2208              	.LASF30:
+ 2209 0aa0 73745363 		.ascii	"stScrollThreshold1X\000"
+ 2209      726F6C6C 
+ 2209      54687265 
+ 2209      73686F6C 
+ 2209      64315800 
+ 2210              	.LASF34:
+ 2211 0ab4 73745363 		.ascii	"stScrollThreshold1Y\000"
+ 2211      726F6C6C 
+ 2211      54687265 
+ 2211      73686F6C 
+ 2211      64315900 
+ 2212              	.LASF13:
+ 2213 0ac8 75696E74 		.ascii	"uint8\000"
+ 2213      3800
+ 2214              	.LASF17:
+ 2215 0ace 646F7562 		.ascii	"double\000"
+ 2215      6C6500
+ 2216              	.LASF71:
+ 2217 0ad5 726F7461 		.ascii	"rotateDebounce\000"
+ 2217      74654465 
+ 2217      626F756E 
+ 2217      636500
+ 2218              	.LASF120:
+ 2219 0ae4 6E656742 		.ascii	"negBslnRstCnt\000"
+ 2219      736C6E52 
+ 2219      7374436E 
+ 2219      7400
+ 2220              	.LASF125:
+ 2221 0af2 64657669 		.ascii	"deviceId\000"
+ 2221      63654964 
+ 2221      00
+ 2222              	.LASF123:
+ 2223 0afb 43617053 		.ascii	"CapSense_RAM_SNS_LIST_STRUCT\000"
+ 2223      656E7365 
+ 2223      5F52414D 
+ 2223      5F534E53 
+ 2223      5F4C4953 
+ 2224              	.LASF31:
+ 2225 0b18 73745363 		.ascii	"stScrollThreshold2X\000"
+ 2225      726F6C6C 
+ 2225      54687265 
+ 2225      73686F6C 
+ 2225      64325800 
+ 2226              	.LASF35:
+ 2227 0b2c 73745363 		.ascii	"stScrollThreshold2Y\000"
+ 2227      726F6C6C 
+ 2227      54687265 
+ 2227      73686F6C 
+ 2227      64325900 
+ 2228              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

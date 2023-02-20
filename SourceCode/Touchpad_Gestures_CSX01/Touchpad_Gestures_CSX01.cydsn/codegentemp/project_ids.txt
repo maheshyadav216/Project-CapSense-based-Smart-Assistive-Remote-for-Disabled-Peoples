@@ -1,0 +1,7 @@
+C:\Users\inspiron\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|3e40b8e5-3bf6-4842-9379-acb055a74e70
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|853bb60c-f69f-4328-b833-490f905e5d93
+C:\Users\inspiron\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|de7e751c-17c9-46ee-a705-057bd2c7ad9e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|5d7a74ab-06a2-467f-a043-16e145104a03
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|6bcdd86c-6393-4c05-bc25-697b08881caa
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|e56f8b6e-d655-4865-aa6a-0b786e049a20
+C:\Users\inspiron\Documents\PSoC Creator\Projects\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.cydsn\CE224821_PSoC4_CapSense_Touchpad_Gestures_CSX01.cyprj|acc7f648-8e9c-4c25-acb0-64a532a97ddf
